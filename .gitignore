@@ -1,5 +1,6 @@
-/Temp
-/Library
+[Tt]emp/
+[Ll]ibrary/
+[Oo]bj/
 *.csproj
 *.unityproj
 *.sln
