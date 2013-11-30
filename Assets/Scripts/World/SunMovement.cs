@@ -7,7 +7,8 @@ public class SunMovement : MonoBehaviour {
 	public GameObject sky;
 	public GameObject moon;
 
-	private float speed = 360.0f / (24.0f*30.0f); //one hour in game = half minute in real life
+	private float speed = 360.0f / (24.0f*60.0f); //one hour in game = half minute in real life
+	private float time;
 
 	//Days is set to simulate the moon phases
 	private float days;
@@ -17,6 +18,7 @@ public class SunMovement : MonoBehaviour {
 	
 	void Start () {
 		days = 0.0f;
+		time = 0.0f;
 
 		sizeX = MineChunk.sizeX * MineWorld.sizeX;
 		sizeZ = MineChunk.sizeZ * MineWorld.sizeZ;
@@ -26,11 +28,16 @@ public class SunMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//Sun movement
-		sun.transform.RotateAround(new Vector3(sizeX/2.0f, 0.0f, sizeZ/2.0f), Vector3.left, speed*Time.deltaTime);
+		time+=Time.deltaTime;
+		if(time >= 1.0f) {
+			//Sun movement
+			sun.transform.RotateAround(new Vector3(sizeX/2.0f, 0.0f, sizeZ/2.0f), Vector3.left, speed*Time.deltaTime);
 
-		//Moon movement
-		moon.transform.RotateAround(new Vector3(sizeX/2.0f, 0.0f, sizeZ/2.0f), Vector3.left, speed*Time.deltaTime);
+			//Moon movement
+			moon.transform.RotateAround(new Vector3(sizeX/2.0f, 0.0f, sizeZ/2.0f), Vector3.left, speed*Time.deltaTime);
+
+			time = 0.0f;
+		}
 
 		//Sky color
 		float sunHeight = sun.transform.position.y;	//from [-astroHeight,astroHeight]
