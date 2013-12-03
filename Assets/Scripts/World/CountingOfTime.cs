@@ -7,7 +7,7 @@ public class SunMovement : MonoBehaviour {
 	public GameObject sky;
 	public GameObject moon;
 
-	private float speed = 360.0f / (24.0f*60.0f); //one hour in game = half minute in real life
+	private float speed = 360.0f / (24.0f*60.0f); //one hour in game = minute in real life
 	private float time;
 
 	//Days is set to simulate the moon phases
@@ -15,10 +15,21 @@ public class SunMovement : MonoBehaviour {
 	private float sizeX;
 	private float sizeZ;
 	private float astroHeight;
+	private bool isNight;
+
+	//Controlling the months and the years
+	private int day;
+	private int month;
+	private int year;
 	
 	void Start () {
 		days = 0.0f;
 		time = 0.0f;
+		isNight = false;
+
+		day = 1;
+		month = 1;
+		year = 0; //al (after Llaberia)
 
 		sizeX = MineChunk.sizeX * MineWorld.sizeX;
 		sizeZ = MineChunk.sizeZ * MineWorld.sizeZ;
@@ -44,7 +55,7 @@ public class SunMovement : MonoBehaviour {
 		sunHeight += astroHeight; //from [0,astroHeight*2]
 		sky.camera.backgroundColor = new Color(0.0f, 0.0f + sunHeight/(astroHeight*2.0f) - 0.25f, 0.0f + sunHeight/(astroHeight*2.0f) - 0.25f, 1.0f);
 
-		//Sun and Moon will be less intense as is falling down
+		//Sun and Moon will be less intense as are falling down
 		if(sunHeight >= astroHeight) {
 			sun.light.intensity = 0.3f * (sunHeight/(astroHeight*2.0f));
 			moon.light.intensity = 0.0f;
@@ -56,8 +67,35 @@ public class SunMovement : MonoBehaviour {
 		//We have to increment the days passed when sunHeight == astroHeight
 		//but only one time every two
 		if(sunHeight == astroHeight) {
+			if(sun.light.intensity == 0.0f) isNight = false;
+			else isNight = true;
 			days += 0.5f;
 			if(days==28.0f) days = 0.0f;
+			day++;
+			if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12) {
+				if(day==32) {
+					++month;
+					if(month==13) { 
+						month=1;
+						++year;
+					}
+					day = 1;
+				}
+			} else if(month==2) {
+				if(day==29) {
+					++month;
+					day = 1;
+				}
+			} else {
+				if(day==31) {
+					++month;
+					day = 1;
+				}
+			}
 		}
+	}
+
+	public bool ThisIsNight() {
+		return isNight;
 	}
 }
