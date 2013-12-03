@@ -15,6 +15,9 @@ public class MouseLook : MonoBehaviour {
 	public float maximumY = 60.0f;
 
 	public Camera mainCamera;
+
+	public GameObject steveHead;
+	public GameObject steveBody;
 	
 	float rotationX = 0.0f;
 	float rotationY = 0.0f;
@@ -36,6 +39,7 @@ public class MouseLook : MonoBehaviour {
 			Quaternion yQuaternion = Quaternion.AngleAxis (rotationY, -Vector3.right);
 			
 			mainCamera.transform.localRotation = originalRotation * yQuaternion;
+			steveHead.transform.localRotation = originalRotation * yQuaternion;
 
 			transform.localRotation = originalRotation * xQuaternion;
 		}
@@ -54,6 +58,7 @@ public class MouseLook : MonoBehaviour {
 			
 			Quaternion yQuaternion = Quaternion.AngleAxis (-rotationY, Vector3.right);
 			mainCamera.transform.localRotation = originalRotation * yQuaternion;
+			steveHead.transform.localRotation = originalRotation * yQuaternion;
 		}
 	}
 	

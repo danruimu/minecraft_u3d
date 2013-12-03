@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SunMovement : MonoBehaviour {
+public class CountingOfTime : MonoBehaviour {
 
 	public GameObject sun;
 	public GameObject sky;

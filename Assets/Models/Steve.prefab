@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SteveBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2761,6 +2761,8 @@ MonoBehaviour:
   minimumY: -60
   maximumY: 60
   mainCamera: {fileID: 2000002}
+  steveHead: {fileID: 100006}
+  steveBody: {fileID: 100000}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2772,6 +2774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab34befb634b3164cb7e85fa57accefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steveBody: {fileID: 100000}
   speed: 5
   jumpForce: 5
 --- !u!114 &11400004

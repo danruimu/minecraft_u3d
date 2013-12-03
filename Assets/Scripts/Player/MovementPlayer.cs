@@ -51,7 +51,6 @@ public class MovementPlayer : MonoBehaviour {
 		#region jump
 		if(Input.GetKeyDown(KeyCode.Space) && isGrounded) {
 			isGrounded = false;
-			//rigidbody.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
 			height = transform.position.y;
 			transform.Translate(Vector3.up * jumpForce * Time.deltaTime);
 			jumpEnough = false;
