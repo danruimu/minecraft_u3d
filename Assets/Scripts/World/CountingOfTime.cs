@@ -31,8 +31,8 @@ public class CountingOfTime : MonoBehaviour {
 		month = 1;
 		year = 0; //al (after Llaberia)
 
-		sizeX = MineChunk.sizeX * MineWorld.sizeX;
-		sizeZ = MineChunk.sizeZ * MineWorld.sizeZ;
+		sizeX = Chunk.sizex * World.sizex;
+		sizeZ = Chunk.sizez * World.sizez;
 
 		astroHeight = sun.transform.position.y;
 	}

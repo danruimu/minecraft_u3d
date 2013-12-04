@@ -23,10 +23,10 @@ public class MouseClick : MonoBehaviour {
 	public ParticleSystem _dirtyDestroy;
 	public ParticleSystem _stoneDestroy;
 	
-	private MineBlock _selectedBlock;
+//	private Block _selectedBlock;
 	private Vector3 _selectedBlockPosition;
 	private Vector3 _colisionPoint;
-	private BlockType _selectedBlockType;
+//	private BlockType _selectedBlockType;
 
 	void Start() {
 		attack = false;
