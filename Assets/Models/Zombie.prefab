@@ -656,6 +656,7 @@ GameObject:
   - 4: {fileID: 400080}
   - 65: {fileID: 6500008}
   - 23: {fileID: 2300068}
+  - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: Arm Right
   m_TagString: Untagged
@@ -673,6 +674,7 @@ GameObject:
   - 4: {fileID: 400074}
   - 65: {fileID: 6500002}
   - 23: {fileID: 2300026}
+  - 95: {fileID: 9500002}
   m_Layer: 0
   m_Name: Arm Left
   m_TagString: Untagged
@@ -1236,7 +1238,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100, y: 3, z: 100}
+  m_LocalPosition: {x: 100, y: 50, z: 103.06163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400082}
@@ -2479,6 +2481,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.25, y: 2.70000005, z: 1.10000002}
   m_Center: {x: -.300000012, y: -.400000006, z: 0}
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100076}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 809636b281fcc664fa6fedc8e53e08ad, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 1
+  m_HasTransformHierarchy: 1
+--- !u!95 &9500002
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d7fbf6b9fcdeb5f4b92a86d4dbb5c5e9, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 1
+  m_HasTransformHierarchy: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

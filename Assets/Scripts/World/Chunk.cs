@@ -68,7 +68,7 @@ public class Chunk : MonoBehaviour {
 
 	public bool newCube(Vector3 pos, BlockType type){
 		if(insideChunk(pos))return false;
-		Block c = new Block(type);
+		Block c = new Block(type, father);
 		if(!addCube(c,pos,true))return false;
 		cubes[(int)pos.x,(int)pos.y,(int)pos.z] = c;
 		return true;
