@@ -1093,7 +1093,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 99.6105194, y: 2.86430669, z: 100}
+  m_LocalPosition: {x: 100, y: 50, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400078}
@@ -1683,7 +1683,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 219a7f46f85da8a46a9a1e808b11152c, type: 2}
+  - {fileID: 2100000, guid: 41cfef975a0228d4d8a46e163ab839c4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1830,7 +1830,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2db4abe8a319a2d4687ce303f7b4e6d9, type: 2}
+  - {fileID: 2100000, guid: 78507a3cf930a054bbbd6891c48fc46a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2082,7 +2082,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 6cd1ce09a4142aa4c9a307061e812cbd, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2774,7 +2774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab34befb634b3164cb7e85fa57accefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steveBody: {fileID: 100000}
   speed: 5
   jumpForce: 5
 --- !u!114 &11400004

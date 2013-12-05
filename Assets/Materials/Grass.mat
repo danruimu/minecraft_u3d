@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Sand
+  m_Name: Grass
   m_Shader: {fileID: 4800000, guid: 732a3eb3457ae9e49af23225ad9a469f, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -17,21 +17,21 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 14939207ea34af146b329fa82c529bbb, type: 3}
+          m_Texture: {fileID: 2800000, guid: e259861d9ef45a04f879e3e5031a798e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 0f1b425fe25e1d4408808b9e01a51b65, type: 3}
+          m_Texture: {fileID: 2800000, guid: 15ad573ff587bbf4c911297c97e75a62, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _SpecMap
         second:
-          m_Texture: {fileID: 2800000, guid: 6c0e3612f118626409e5f68dc98a57fd, type: 3}
+          m_Texture: {fileID: 2800000, guid: 8685e3e2a233b4043bee7fb0eae8d95e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:

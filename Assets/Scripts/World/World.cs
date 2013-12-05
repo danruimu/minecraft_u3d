@@ -8,12 +8,16 @@ public class World : MonoBehaviour {
 	// Use this for initialization
 	public GameObject chunkPrefab;
 	public Material[] mats;
+	public string seed;
 	public static int sizex = 16;
 	public static int sizez = 16;
 	private Chunk[,] chunks;
 	private Perlin p;
-	public string seed;
-	void Start () {
+	private enum a{
+		alfa,beta,gamma
+	}
+
+	void init() {
 		p = new Perlin();
 		p.SetSeed(seed.GetHashCode());
 		GameObject GO;
@@ -40,6 +44,12 @@ public class World : MonoBehaviour {
 		DateTime tiempo2 = DateTime.Now;
 		TimeSpan total = new TimeSpan(tiempo2.Ticks - tiempo1.Ticks);
 		Debug.Log("creacion " + sizex + " * " + sizez + " Chunks -> tiempoTotal = " + total.ToString());
+	}
+	void Start () {
+//		string alfa = "alfa";
+//		if(alfa.Equals("alfa"))
+		Debug.Log("iguals");
+//		init();
 	}
 	
 	// Update is called once per frame
@@ -68,4 +78,43 @@ public class World : MonoBehaviour {
 	public void addFace(Vector3 pos,faceType face){
 		getChunk(pos).addFace(relativePos(pos),face);
 	}
+
+	//TODO hacer estructura para hacer esto rapido (array de tamaño BlockType.Length de (arrays de tamaño 6 de punteros a materiales))
+	public int[] getMatPointerArray(BlockType type){
+		string typeName = type.ToString();
+		int[] array = new int[6];
+		int i=0;
+		//TODO: posar un per defecte per a no tenir accidents
+
+		while(i<mats.Length && mats[i].name.CompareTo(typeName) != 0)i++;
+
+		return array;
+	}
+//	void CreateCollum(int x, int y, int z)
+//	{
+//		//		Debug.Log(y);
+//		_world[x,0,z] = new Block(BlockType.Bedrock);//Final del mon
+//		_world[x,1,z] = new Block(BlockType.Stone);//Base de pedra
+//		int dirtHeight = UnityEngine.Random.Range(2, y-2);
+//		for(int i=2;i<y-1;i++){
+//			float density = _simplexNoise3D.GetDensity( new Vector3(x, i, z) );
+//			if (density > 0){
+//				if(y < dirtHeight){
+//					_world[x,i,z] = new Block(BlockType.Stone, x,i,z);
+//				}
+//				else{
+//					_world[x,i,z] = new Block(BlockType.Dirt, x,i,z);
+//				}
+//			}
+//			else{
+//				_world[x,i,z] = new Block(BlockType.Air, x,i,z);
+//			}
+//		}
+//		_world[x,y-1,z] = new Block(BlockType.Grass, x,y-1,z);
+//		_world[x,y,z] = new Block(BlockType.Height, x,y,z);
+//		for(int i=y;i<_world.WorldVisibleSizeY;i++){
+//			_world[x,i,z] = new Block(BlockType.Air, x,i,z);
+//			_world[x,y,z].Light = Block.MaxLight;
+//		}
+//	}
 }

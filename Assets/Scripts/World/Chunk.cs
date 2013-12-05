@@ -10,7 +10,7 @@ public struct cubeProperties{
 }
 
 public class face{
-	public Cube cub;
+	public Block cub;
 	public Vector3[] vertexs;
 	public Vector2[] uv;
 	public Vector4[] tangents;
@@ -50,7 +50,7 @@ public class Chunk : MonoBehaviour {
 
 	#region stuff_mesh
 	private cubeProperties props;
-	private Cube[,,] cubes;
+	private Block[,,] cubes;
 	private int numMaterials;
 	private int numFacesAdded;
 	private Mesh mesh;
@@ -66,9 +66,9 @@ public class Chunk : MonoBehaviour {
 	Vector3[] posiciones = {new Vector3(0,0,-1),new Vector3(0,0,1),new Vector3(-1,0,0),new Vector3(1,0,0),new Vector3(0,1,0),new Vector3(0,-1,0)};
 	#endregion
 
-	public bool newCube(Vector3 pos, int material){
+	public bool newCube(Vector3 pos, BlockType type){
 		if(insideChunk(pos))return false;
-		Cube c = new Cube(material);
+		Block c = new Block(type);
 		if(!addCube(c,pos,true))return false;
 		cubes[(int)pos.x,(int)pos.y,(int)pos.z] = c;
 		return true;
@@ -136,29 +136,31 @@ public class Chunk : MonoBehaviour {
 			add[i] = new ArrayList();
 			remove[i] = new ArrayList();
 		}
-		cubes = new Cube[sizex,sizey,sizez];
+		cubes = new Block[sizex,sizey,sizez];
 		mesh = new Mesh();
 		GetComponent<MeshFilter> ().sharedMesh = mesh;
 		GetComponent<MeshCollider>().sharedMesh = mesh;
 		GetComponent<MeshRenderer>().sharedMaterials = materials;
 
-		for(int x = 0; x < sizex; x++){
-			for (int z=0; z < sizez; z++){
-				cubes[x,0,z] = new Cube(0);
-			}
-		}
 		//TODO:barra progres
 		//TODO: properly done terraingeneration
 		//TODO: provar eliminar y afegir block edge chunk
-		for(int x = 0; x < sizex; x++){
-			for (int z=0; z < sizez; z++){
-				int y;
-				for(y = 1;y < 20; y++){
-					cubes[x,y,z] = new Cube(UnityEngine.Random.Range(0,numMaterials));//stubCreacioMon
-				}
-				heightmap[x,z] = y;
-			}
-		}
+//		for(int x = 0; x < sizex; x++){
+//			for (int z=0; z < sizez; z++){
+//				cubes[x,0,z] = new Block(0);
+//			}
+//		}
+//		
+//		
+//		for(int x = 0; x < sizex; x++){
+//			for (int z=0; z < sizez; z++){
+//				int y;
+//				for(y = 1;y < 20; y++){
+//					cubes[x,y,z] = new Block(UnityEngine.Random.Range(0,Block.numTypesCubes));//stubCreacioMon
+//				}
+//				heightmap[x,z] = y;
+//			}
+//		}
 	}
 
 	public void ompleMesh(){
@@ -181,7 +183,7 @@ public class Chunk : MonoBehaviour {
 	//TODO:no recalcular normals sino pasarli, ja que no cal calcularles, son straightforward
 	
 	public void addFace(Vector3 pos,faceType face){
-		Cube cub = cubes[(int)pos.x,(int)pos.y,(int)pos.z];
+		Block cub = cubes[(int)pos.x,(int)pos.y,(int)pos.z];
 		if(cub.getFace(face)==null){
 			face f = new face();
 			f.cub=cub;
@@ -196,7 +198,7 @@ public class Chunk : MonoBehaviour {
 			}
 			f.added = true;
 			f.pos = -1;
-			add[cub.material].Add(f);
+			add[cub.getMatIndex(face)].Add(f);
 			cub.addFace(f,face);
 			numFacesAdded++;
 		}
@@ -206,8 +208,8 @@ public class Chunk : MonoBehaviour {
 	}
 	
 	public void delFace(Vector3 pos,faceType face){
-		Cube cub = cubes[(int)pos.x,(int)pos.y,(int)pos.z];
-		int material = cub.material;
+		Block cub = cubes[(int)pos.x,(int)pos.y,(int)pos.z];
+		int material = cub.getMatIndex(face);
 		face removeFace = cub.getFace(face);
 
 		
@@ -222,7 +224,7 @@ public class Chunk : MonoBehaviour {
 	}
 
 	//TODO: tener en cuenta que afectamos a varios chunks
-	private bool addCube (Cube cub,Vector3 position,bool update = false) {
+	private bool addCube (Block cub,Vector3 position,bool update = false) {
 		Vector3 p;
 //		int added = 0;
 //		for(int face=0;face<numFaces;face++){
