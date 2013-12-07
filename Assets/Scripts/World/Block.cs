@@ -16,7 +16,10 @@ public class Block {
 
 	public Block(BlockType type, World w){
 		faces = new face[]{null,null,null,null,null,null};
-		matPointer = w.getMatPointerArray(type);
+		if(type == BlockType.Grass)
+			matPointer = w.getMatPointerArray(type,new string[]{null,null,null,null,"Grass_top","Dirt"});
+		else
+			matPointer = w.getMatPointerArray(type);
 		this.type = type;
 	}
 

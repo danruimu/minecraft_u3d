@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+
 #region structures
 public struct cubeProperties{
 	public Vector3[,] vertexList;
@@ -68,7 +69,7 @@ public class Chunk : MonoBehaviour {
 
 	public bool newCube(Vector3 pos, BlockType type){
 		if(insideChunk(pos))return false;
-		Block c = new Block(type);
+		Block c = new Block(type,father);
 		if(!addCube(c,pos,true))return false;
 		cubes[(int)pos.x,(int)pos.y,(int)pos.z] = c;
 		return true;
@@ -139,41 +140,36 @@ public class Chunk : MonoBehaviour {
 		cubes = new Block[sizex,sizey,sizez];
 		mesh = new Mesh();
 		GetComponent<MeshFilter> ().sharedMesh = mesh;
-		GetComponent<MeshCollider>().sharedMesh = mesh;
 		GetComponent<MeshRenderer>().sharedMaterials = materials;
+		GetComponent<MeshCollider>().sharedMesh = mesh;
 
 		//TODO:barra progres
 		//TODO: properly done terraingeneration
 		//TODO: provar eliminar y afegir block edge chunk
-//		for(int x = 0; x < sizex; x++){
-//			for (int z=0; z < sizez; z++){
-//				cubes[x,0,z] = new Block(0);
-//			}
-//		}
-//		
-//		
-//		for(int x = 0; x < sizex; x++){
-//			for (int z=0; z < sizez; z++){
-//				int y;
-//				for(y = 1;y < 20; y++){
-//					cubes[x,y,z] = new Block(UnityEngine.Random.Range(0,Block.numTypesCubes));//stubCreacioMon
-//				}
-//				heightmap[x,z] = y;
-//			}
-//		}
+	}
+
+	public void fillColum(int height,int x, int z){
+		cubes[x,0,z] = new Block(BlockType.Bedrock,father);
+		for(int y = 1;y < height; y++){
+			cubes[x,y,z] = new Block(BlockType.Dirt,father);//stubCreacioMon
+		}
+		cubes[x,height,z] = new Block(BlockType.Grass,father);
+		heightmap[x,z] = height;
 	}
 
 	public void ompleMesh(){
 		//TODO:barra progres
 		for(int x = 0; x < sizex; x++){
 			for (int z=0; z < sizez; z++){
-				for(int y = 0;y < heightmap[x,z] && y <sizey; y++){
+				for(int y = 0;y <= heightmap[x,z] && y <sizey; y++){
 					if(cubes[x,y,z]!=null)
 						addCube(cubes[x,y,z],new Vector3(x,y,z));
 				}
 			}
 		}
 		meshLoad(false);
+		GetComponent<MeshCollider>().sharedMesh = mesh;
+//		GetComponent<MeshCollider>()
 	}
 
 	private bool insideChunk(Vector3 pos){
@@ -323,7 +319,10 @@ public class Chunk : MonoBehaviour {
 			mesh.SetTriangles(faces[i],i);
 		}
 		mesh.RecalculateNormals();
+//		mesh.RecalculateBounds();
 		mesh.Optimize();
+		GetComponent<MeshCollider>().sharedMesh = null;
+		GetComponent<MeshCollider>().sharedMesh = mesh;
 	}
 
 	private void fillProperties(){
