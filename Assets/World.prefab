@@ -241,11 +241,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkPrefab: {fileID: 100000, guid: ab3b58bab50feb641a3c8a4c44de089d, type: 2}
   mats:
+  - {fileID: 2100000, guid: af9260917c7a3ed4cbf42a1db5a709fe, type: 2}
+  - {fileID: 2100000, guid: 24ee334b61529e341ba1c8def8e10331, type: 2}
+  - {fileID: 2100000, guid: 7e4ca3c50e019a849a6eb66784433854, type: 2}
+  - {fileID: 2100000, guid: f454411f26b6c4246859af727b0ae328, type: 2}
+  - {fileID: 2100000, guid: 83ba9047f1e45e94bbf4b3a3e6742a62, type: 2}
+  - {fileID: 2100000, guid: 58ca3cb27b508284fa738ddbef700640, type: 2}
+  - {fileID: 2100000, guid: ac7d4a30b3e521744b1488751d9dc61d, type: 2}
+  - {fileID: 2100000, guid: 894693da93815774aac0ba368a7341d5, type: 2}
+  - {fileID: 2100000, guid: 0d1bcdcbb92318b4f9adaff4c59e5d7d, type: 2}
+  - {fileID: 2100000, guid: 21602ab24a0e55644bd0f14320e50f7e, type: 2}
+  - {fileID: 2100000, guid: 630475a5016ac6143831787c4f71a1f7, type: 2}
+  - {fileID: 2100000, guid: 8205d8930487b014ea089d6dd254b9c1, type: 2}
   - {fileID: 2100000, guid: c6566722de3398445969a75ab1765c23, type: 2}
   - {fileID: 2100000, guid: fbfca8549e9442b4cac72bfd3915d27a, type: 2}
-  - {fileID: 2100000, guid: 21602ab24a0e55644bd0f14320e50f7e, type: 2}
-  - {fileID: 2100000, guid: 8205d8930487b014ea089d6dd254b9c1, type: 2}
-  - {fileID: 2100000, guid: 630475a5016ac6143831787c4f71a1f7, type: 2}
   seed: Penes
 --- !u!1001 &100100000
 Prefab:
