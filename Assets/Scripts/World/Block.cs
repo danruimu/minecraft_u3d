@@ -2,24 +2,29 @@
 using System.Collections;
 
 public enum BlockType {
-	Grass=0,
-	Dirt,
-	Stone,
-	Bedrock
+	Grass=2,
+	Dirt=3,
+	Stone=1,
+	Bedrock=7,
+	Gravel=13,
+	CoalOre=16,
+	IronOre=15,
+	RedstoneOre=73,
+	DiamondOre=56,
+	GoldOre=14,
+	LapisOre=21,
+	Sand=12,
+	Clay=82
 };
 
 public class Block {
-	public static int numTypesCubes = 4;
 	private int[] matPointer;
 	private face[] faces;
 	private BlockType type;
 
-	public Block(BlockType type, World w){
+	public Block(BlockType type){
 		faces = new face[]{null,null,null,null,null,null};
-		if(type == BlockType.Grass)
-			matPointer = w.getMatPointerArray(type,new string[]{null,null,null,null,"Grass_top","Dirt"});
-		else
-			matPointer = w.getMatPointerArray(type);
+		matPointer = World.getMatPointerArray(type);
 		this.type = type;
 	}
 
@@ -37,5 +42,9 @@ public class Block {
 
 	public int getMatIndex(faceType f){
 		return matPointer[(int)f];
+	}
+
+	public BlockType getType(){
+		return type;
 	}
 }
