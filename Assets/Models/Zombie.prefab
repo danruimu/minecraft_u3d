@@ -2522,8 +2522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenActions: 5
-  speedMovement: 5
-  speedRotation: 15
+  speedMovement: 1
+  speedRotation: 30
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

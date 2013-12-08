@@ -12,6 +12,7 @@ public class IAZombie : MonoBehaviour {
 	public float timeBetweenActions;
 	public float speedMovement;
 	public float speedRotation;
+	public GameObject steve;	//TODO: research best option to obtain the Steve's position
 	#endregion
 
 	#region private variables
@@ -72,9 +73,12 @@ public class IAZombie : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collider other) {
-		for(int i = 0; i<other.contacts.Lenght; ++i) {
-			//TODO: detect if we are colliding with Steve or with the world or both
+	void OnCollisionEnter(Collision other) {
+		//TODO: not working
+		if(other.gameObject.ToString() == "Steve") {
+			Debug.Log ("Steve");
+		} else {
+			Debug.Log ("World");
 		}
 	}
 }
