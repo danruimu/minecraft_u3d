@@ -47,7 +47,7 @@ public class Chunk : MonoBehaviour {
 	#endregion
 	private Vector3 chunkPosition;
 	private World father;
-	private int[,] heightmap;
+	private byte[,] height;
 
 	#region stuff_mesh
 	private cubeProperties props;
@@ -69,7 +69,7 @@ public class Chunk : MonoBehaviour {
 
 	public bool newCube(Vector3 pos, BlockType type){
 		if(insideChunk(pos))return false;
-		Block c = new Block(type,father);
+		Block c = new Block(type);
 		if(!addCube(c,pos,true))return false;
 		cubes[(int)pos.x,(int)pos.y,(int)pos.z] = c;
 		return true;
@@ -126,7 +126,7 @@ public class Chunk : MonoBehaviour {
 		father = padre;
 		numMaterials = materials.Length;
 		fillProperties();
-		heightmap= new int[sizex,sizez];
+		height= new byte[sizex,sizez];
 		numFacesAdded = 0;
 		mats = new ArrayList[numMaterials];
 		add = new ArrayList[numMaterials];
@@ -148,28 +148,30 @@ public class Chunk : MonoBehaviour {
 		//TODO: provar eliminar y afegir block edge chunk
 	}
 
-	public void fillColum(int height,int x, int z){
-		cubes[x,0,z] = new Block(BlockType.Bedrock,father);
-		for(int y = 1;y < height; y++){
-			cubes[x,y,z] = new Block(BlockType.Dirt,father);//stubCreacioMon
+	public void fillColums(byte[] heightmap,byte[] data){
+		for (int cx=0;cx<Chunk.sizex;cx++){
+			for(int cz=0;cz<Chunk.sizez;cz++){
+				height[cx,cz] = heightmap[cx*Chunk.sizez + cz];
+				for(int cy=0;cy<Chunk.sizey && cy < height[cx,cz];cy++){
+					BlockType val = (BlockType)data[cx*Chunk.sizez*Chunk.sizey + cz*Chunk.sizey + cy];
+					if((int)val > 0 && (int)val != 9 && (int)val != 31 && (int)val != 11)//9=aigua,11=lava,31=tallgrass
+						cubes[cx,cy,cz] = new Block(val);
+				}
+			}
 		}
-		cubes[x,height,z] = new Block(BlockType.Grass,father);
-		heightmap[x,z] = height;
 	}
 
 	public void ompleMesh(){
 		//TODO:barra progres
 		for(int x = 0; x < sizex; x++){
 			for (int z=0; z < sizez; z++){
-				for(int y = 0;y <= heightmap[x,z] && y <sizey; y++){
+				for(int y = 0;y <= height[x,z] && y <sizey; y++){
 					if(cubes[x,y,z]!=null)
 						addCube(cubes[x,y,z],new Vector3(x,y,z));
 				}
 			}
 		}
 		meshLoad(false);
-		GetComponent<MeshCollider>().sharedMesh = mesh;
-//		GetComponent<MeshCollider>()
 	}
 
 	private bool insideChunk(Vector3 pos){
