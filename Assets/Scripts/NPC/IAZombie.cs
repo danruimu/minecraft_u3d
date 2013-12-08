@@ -93,20 +93,25 @@ public class IAZombie : MonoBehaviour {
 	}
 
 	private void goForSteve() {
-		Quaternion target = Quaternion.Euler(steve.rotation.x, steve.rotation.y, steve.rotation.z);
-		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5.0f);
+		//0 <= dirZtoS <= 180
+		Vector2 dirZtoS = new Vector2(steve.position.x - transform.position.x, steve.position.z - transform.position.z);
+		angleToSteve = Vector2.Angle(dirZtoS, new Vector2(1.0f, 0.0f));
 
-//		angleToSteve = Vector3.Angle(steve.position - transform.position, Vector3.left);
-//		if( angleToSteve >= 5.0f) {	//ROT
-//			transform.Rotate (Vector3.up, 10.0f * Time.deltaTime);
-//		} else {
-//			transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
-//		}
+		//0 <= zombieAngleY <= 360
+		float zombieAngleY = transform.rotation.eulerAngles.y;
+		if(zombieAngleY >= 180.0f) zombieAngleY -= 180.0f;
+
+		float angle = Mathf.Abs(zombieAngleY - angleToSteve);
+		Debug.Log ("resta = "+angle);
+		if( angle >= 5.0f) {	//ROT
+			transform.Rotate (Vector3.up, 30.0f * Time.deltaTime);
+		} else {
+			transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
+		}
 	}
 
 	private bool detectSteve() {
 		if(Vector3.Distance(steve.position, transform.position) <= detectionDistance) {
-			Debug.Log("detected!");
 			return true;
 		}
 		return false;
