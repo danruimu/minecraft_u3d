@@ -46,6 +46,7 @@ GameObject:
   - 33: {fileID: 3300002}
   - 23: {fileID: 2300002}
   - 108: {fileID: 10800002}
+  - 122: {fileID: 12200000}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -194,8 +195,8 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
+    m_Type: 2
+    m_Resolution: 3
     m_Strength: 1
     m_Bias: .0500000007
     m_Softness: 4
@@ -256,6 +257,17 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c6566722de3398445969a75ab1765c23, type: 2}
   - {fileID: 2100000, guid: fbfca8549e9442b4cac72bfd3915d27a, type: 2}
   seed: Penes
+--- !u!122 &12200000
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278960617
+  m_Size: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
