@@ -12,7 +12,7 @@ public class IAZombie : MonoBehaviour {
 	public float timeBetweenActions;
 	public float speedMovement;
 	public float speedRotation;
-	public GameObject steve;	//TODO: research best option to obtain the Steve's position
+	public Transform steve;
 	#endregion
 
 	#region private variables
@@ -57,14 +57,14 @@ public class IAZombie : MonoBehaviour {
 	private void doAction() {
 		actionTimer += Time.deltaTime;
 		if(isMoving) {
-			transform.Translate(Vector3.forward * speedMovement * Time.deltaTime);
+			transform.Translate(Vector3.forward * speedMovement * Time.deltaTime, Space.Self);
 			if(actionTimer == actionDuration) {
 				isMoving = false;
 			}
 		}
 		if(isRotating) {
 			float rotation = rotationDir==0 ? speedRotation : -speedRotation;
-			transform.Rotate (Vector3.up, rotation * Time.deltaTime);
+			transform.Rotate (Vector3.up, rotation * Time.deltaTime, Space.Self);
 			if(actionTimer == actionDuration) {
 				isRotating = false;
 				actionTimer = 0.0f;
@@ -74,7 +74,6 @@ public class IAZombie : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other) {
-		//TODO: not working
 		if(other.gameObject.ToString() == "Steve") {
 			Debug.Log ("Steve");
 		} else {
