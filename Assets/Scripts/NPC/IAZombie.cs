@@ -99,7 +99,7 @@ public class IAZombie : MonoBehaviour {
 
 		//0 <= zombieAngleY <= 360
 		float zombieAngleY = transform.rotation.eulerAngles.y;
-		if(zombieAngleY >= 180.0f) zombieAngleY -= 180.0f;
+		if(zombieAngleY >= 180.0f) zombieAngleY -= 360.0f;
 
 		float angle = Mathf.Abs(zombieAngleY - angleToSteve);
 		Debug.Log ("resta = "+angle);
