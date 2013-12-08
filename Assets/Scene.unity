@@ -454,6 +454,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 854d1a44dbcc90141a33734d20157bc1, type: 2}
+      propertyPath: sky
+      value: 
+      objectReference: {fileID: 1191283230}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 854d1a44dbcc90141a33734d20157bc1, type: 2}
   m_RootGameObject: {fileID: 1331131891}
@@ -3640,7 +3644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sun: {fileID: 1741747109}
-  sky: {fileID: 0}
+  sky: {fileID: 1191283230}
   moon: {fileID: 2064902416}
 --- !u!114 &1331131893
 MonoBehaviour:
