@@ -2465,7 +2465,7 @@ MonoBehaviour:
   speedMovement: 1
   speedRotation: 90
   speedJump: 1
-  steve: {fileID: 400040, guid: 9c3c7e6f224fd2b44a75fc7b1a1e38c9, type: 2}
+  steve: {fileID: 400000, guid: 9c3c7e6f224fd2b44a75fc7b1a1e38c9, type: 2}
   legLeft: {fileID: 9500004}
   legRight: {fileID: 9500006}
 --- !u!136 &13600000

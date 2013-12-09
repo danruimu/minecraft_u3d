@@ -90,7 +90,7 @@ public class MovementPlayer : MonoBehaviour {
 				dir[(int)directions.RIGHT] = false;
 				objectCollision = false;
 			}
-		} else if(!otherIsFloor) {
+		} else {
 			objectCollision = true;
 			if(Input.GetKey(KeyCode.W)) {
 				dir[(int)directions.UP] = true;
