@@ -73,17 +73,14 @@ public class MovementPlayer : MonoBehaviour {
 	void OnCollisionEnter(Collision other) {
 		//detecting if we are colliding with the floor or not
 		bool otherIsFloor = false;
-		bool otherIsWall = false;
+		bool otherIsMOB = false;
 		for (int i = 0; i<other.contacts.Length; ++i) {
-			bool aux = other.contacts[i].otherCollider.CompareTag("Chunk");
-			otherIsFloor = otherIsFloor || aux;
-			//Checking if it is wall or floor
-//			if(aux) {
-//				otherIsWall = (other.contacts[i].normal.y <= threshold || other.contacts[i].normal.y >= -threshold);
-//			}
+			otherIsFloor = otherIsFloor || other.contacts[i].otherCollider.CompareTag("Chunk");
+			otherIsMOB = otherIsMOB || other.contacts[i].otherCollider.CompareTag ("MOB");
 		}
 
-		if(otherIsFloor && !otherIsWall) {
+		#region collision floor
+		if(otherIsFloor) {
 			for(int i = 0;i<other.contacts.Length && !isGrounded;i++){
 				isGrounded = true;
 
@@ -93,7 +90,7 @@ public class MovementPlayer : MonoBehaviour {
 				dir[(int)directions.RIGHT] = false;
 				objectCollision = false;
 			}
-		} else if(otherIsWall) {
+		} else if(!otherIsFloor) {
 			objectCollision = true;
 			if(Input.GetKey(KeyCode.W)) {
 				dir[(int)directions.UP] = true;
@@ -108,6 +105,14 @@ public class MovementPlayer : MonoBehaviour {
 				dir[(int)directions.RIGHT] = true;
 			}
 		}
+		#endregion
+
+		#region collision MOB
+		if(otherIsMOB) {
+			transform.rigidbody.AddForce(Vector3.left * 500.0f, ForceMode.Impulse);
+			//TODO: vidas steve
+		}
+		#endregion
 	}
 
 	void OnCollisionExit(Collision other) {
