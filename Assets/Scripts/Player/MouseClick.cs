@@ -44,6 +44,8 @@ public class MouseClick : MonoBehaviour {
 				dirForw = Vector3.forward;
 				dirHori = Vector3.left;
 				dirVert = Vector3.up;
+
+				hitWhatever();
 			}
 		}
 
@@ -67,6 +69,10 @@ public class MouseClick : MonoBehaviour {
 			transform.localPosition = originalPosition;
 		}
 		#endregion
+	}
+
+	private void hitWhatever() {
+		//TODO: cast ray and detect collisions
 	}
 
 }

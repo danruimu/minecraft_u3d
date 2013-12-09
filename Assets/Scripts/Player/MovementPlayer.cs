@@ -48,7 +48,6 @@ public class MovementPlayer : MonoBehaviour {
 		}
 		#endregion
 
-		//TODO: revisar
 		#region jump
 		if(Input.GetKeyDown(KeyCode.Space) && isGrounded) {
 			isGrounded = false;
@@ -78,7 +77,7 @@ public class MovementPlayer : MonoBehaviour {
 		for (int i = 0; i<other.contacts.Length; ++i) {
 			otherIsFloor = otherIsFloor || other.contacts[i].otherCollider.CompareTag("Chunk");
 			otherIsMOB = otherIsMOB || other.contacts[i].otherCollider.CompareTag ("MOB");
-			otherIsWall = otherIsFloor && (otherIsWall || Vector3.Cross(other.contacts[i].normal, Vector3.up).magnitude > threshold);
+			//otherIsWall = otherIsFloor && (otherIsWall || Vector3.Cross(other.contacts[i].normal, Vector3.up).magnitude > threshold);
 		}
 
 		#region collision floor
@@ -96,7 +95,8 @@ public class MovementPlayer : MonoBehaviour {
 		#endregion
 
 		#region collision wall
-		if(otherIsWall) {
+		//if(otherIsWall) {	TODO: return to the otherIsWall
+		if(!otherIsFloor) {
 			objectCollision = true;
 			if(Input.GetKey(KeyCode.W)) {
 				dir[(int)directions.UP] = true;
