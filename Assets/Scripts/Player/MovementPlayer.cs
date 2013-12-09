@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MovementPlayer : MonoBehaviour {
-	private float threshold = 0.1f;
+	private float threshold = 0.2f;
 	public float speed = 5.0f;
 	public float jumpForce = 5.0f;
 
@@ -74,9 +74,11 @@ public class MovementPlayer : MonoBehaviour {
 		//detecting if we are colliding with the floor or not
 		bool otherIsFloor = false;
 		bool otherIsMOB = false;
+		bool otherIsWall = false;
 		for (int i = 0; i<other.contacts.Length; ++i) {
 			otherIsFloor = otherIsFloor || other.contacts[i].otherCollider.CompareTag("Chunk");
 			otherIsMOB = otherIsMOB || other.contacts[i].otherCollider.CompareTag ("MOB");
+			otherIsWall = otherIsFloor && (otherIsWall || Vector3.Cross(other.contacts[i].normal, Vector3.up).magnitude > threshold);
 		}
 
 		#region collision floor
@@ -90,7 +92,11 @@ public class MovementPlayer : MonoBehaviour {
 				dir[(int)directions.RIGHT] = false;
 				objectCollision = false;
 			}
-		} else {
+		}
+		#endregion
+
+		#region collision wall
+		if(otherIsWall) {
 			objectCollision = true;
 			if(Input.GetKey(KeyCode.W)) {
 				dir[(int)directions.UP] = true;
