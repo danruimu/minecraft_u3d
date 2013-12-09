@@ -58,9 +58,11 @@ public class MovementPlayer : MonoBehaviour {
 		if(Input.GetKey(KeyCode.LeftShift) && godMode) {
 			transform.Translate(Vector3.down * speed * Time.deltaTime);
 		}
+
+
 		if(!isGrounded && !jumpEnough) {
 			transform.Translate(Vector3.up * jumpForce  * Time.deltaTime);
-			if(transform.position.y - height > 1.0f ) {
+			if(transform.position.y - height > 1.5f ) {
 				jumpEnough = true;
 			}
 		}
@@ -68,19 +70,23 @@ public class MovementPlayer : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other) {
-		if(!isGrounded) {
-			for(int i = 0;i<other.contacts.Length && !isGrounded;i++){
-				if(Vector3.Cross(other.contacts[i].normal, Vector3.up).magnitude < threshold) {
-					isGrounded = true;
+		bool otherIsFloor = false;
+		for (int i = 0; i<other.contacts.Length && !otherIsFloor; ++i) {
+			Debug.Log (other.contacts[i].thisCollider.name+" hits "+other.contacts[i].otherCollider.name);
+			otherIsFloor = (Vector3.Cross(other.contacts[i].normal, Vector3.up).magnitude < threshold);
+		}
 
-					dir[(int)directions.UP] = false;
-					dir[(int)directions.LEFT] = false;
-					dir[(int)directions.DOWN] = false;
-					dir[(int)directions.RIGHT] = false;
-					objectCollision = false;
-				}
+		if(otherIsFloor) {
+			for(int i = 0;i<other.contacts.Length && !isGrounded;i++){
+				isGrounded = true;
+
+				dir[(int)directions.UP] = false;
+				dir[(int)directions.LEFT] = false;
+				dir[(int)directions.DOWN] = false;
+				dir[(int)directions.RIGHT] = false;
+				objectCollision = false;
 			}
-		} else {
+		} else if(!otherIsFloor) {
 			objectCollision = true;
 			if(Input.GetKey(KeyCode.W)) {
 				dir[(int)directions.UP] = true;
@@ -98,7 +104,7 @@ public class MovementPlayer : MonoBehaviour {
 	}
 
 	void OnCollisionExit(Collision other) {
-		if(objectCollision && isGrounded) {
+		if(objectCollision) {
 			dir[(int)directions.UP] = false;
 			dir[(int)directions.LEFT] = false;
 			dir[(int)directions.DOWN] = false;
