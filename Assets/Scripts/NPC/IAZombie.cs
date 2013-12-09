@@ -15,6 +15,8 @@ public class IAZombie : MonoBehaviour {
 	public float speedRotation;
 	public float speedJump;
 	public Transform steve;
+	public Animator legLeft;
+	public Animator legRight;
 	#endregion
 
 	#region private variables
@@ -40,6 +42,9 @@ public class IAZombie : MonoBehaviour {
 		isSteveNear = false;
 		isJumping = false;
 		jumpEnough = false;
+
+		legLeft.enabled = false;
+		legRight.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -75,6 +80,8 @@ public class IAZombie : MonoBehaviour {
 		actionTimer += Time.deltaTime;
 		if(isMoving) {
 			transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
+			legLeft.enabled = true;
+			legRight.enabled = true;
 			if(actionTimer >= actionDuration) {
 				isMoving = false;
 				actionTimer = 0.0f;
@@ -109,16 +116,21 @@ public class IAZombie : MonoBehaviour {
 		float zombieAngleY = transform.rotation.eulerAngles.y;
 
 		float angle = angleToSteve - zombieAngleY;
-		Debug.Log ("angle = "+angle);
 		if( angle >= 5.0f || angle <= -5.0f) {	//ROT
-			if(angle < 0.0f) {
-				transform.Rotate (Vector3.up, -15.0f * Time.deltaTime);
-			} else {
-				transform.Rotate (Vector3.up, 15.0f * Time.deltaTime);
-			}
+			legLeft.enabled = false;
+			legRight.enabled = false;
+			float rotation = angle<0.0f ? -speedRotation : speedRotation;
+			transform.Rotate (Vector3.up, rotation * Time.deltaTime);
+//			if(angle < 0.0f) {
+//				transform.Rotate (Vector3.up, -speedRotation * Time.deltaTime);
+//			} else {
+//				transform.Rotate (Vector3.up, speedRotation * Time.deltaTime);
+//			}
 			
 		} else {
 			transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
+			legLeft.enabled = true;
+			legRight.enabled = true;
 		}
 	}
 
@@ -126,6 +138,8 @@ public class IAZombie : MonoBehaviour {
 		if(Vector3.Distance(steve.position, transform.position) <= detectionDistance) {
 			return true;
 		}
+		legLeft.enabled = false;
+		legRight.enabled = false;
 		return false;
 	}
 

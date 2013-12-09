@@ -621,6 +621,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400072}
   - 23: {fileID: 2300012}
+  - 95: {fileID: 9500006}
   m_Layer: 0
   m_Name: Leg Right
   m_TagString: Untagged
@@ -637,6 +638,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400082}
   - 23: {fileID: 2300082}
+  - 95: {fileID: 9500004}
   m_Layer: 0
   m_Name: Leg Left
   m_TagString: Untagged
@@ -2420,6 +2422,34 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 1
   m_HasTransformHierarchy: 1
+--- !u!95 &9500004
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100074}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 583d7528228ea874a8faa720b242460e, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
+--- !u!95 &9500006
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100072}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f74303b3ebbe8f64fa17bd08f4000935, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2434,7 +2464,10 @@ MonoBehaviour:
   timeBetweenActions: 5
   speedMovement: 1
   speedRotation: 90
+  speedJump: 1
   steve: {fileID: 0}
+  legLeft: {fileID: 9500004}
+  legRight: {fileID: 9500006}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
