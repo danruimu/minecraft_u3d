@@ -96,15 +96,27 @@ public class IAZombie : MonoBehaviour {
 		//0 <= dirZtoS <= 180
 		Vector2 dirZtoS = new Vector2(steve.position.x - transform.position.x, steve.position.z - transform.position.z);
 		angleToSteve = Vector2.Angle(dirZtoS, new Vector2(1.0f, 0.0f));
+		//Convert anglToSteve in a 0-360 vector in the same axis of zombieAngleY
+		if(dirZtoS.y >= 0) {
+			angleToSteve = 360.0f - angleToSteve;
+		}
+		angleToSteve += 180.0f;
+		if(angleToSteve >= 360.0f) {
+			angleToSteve -= 360.0f;
+		}
 
 		//0 <= zombieAngleY <= 360
 		float zombieAngleY = transform.rotation.eulerAngles.y;
-		if(zombieAngleY >= 180.0f) zombieAngleY -= 360.0f;
 
-		float angle = Mathf.Abs(zombieAngleY - angleToSteve);
-		Debug.Log ("resta = "+angle);
-		if( angle >= 5.0f) {	//ROT
-			transform.Rotate (Vector3.up, 30.0f * Time.deltaTime);
+		float angle = angleToSteve - zombieAngleY;
+		Debug.Log ("angle = "+angle);
+		if( angle >= 5.0f || angle <= -5.0f) {	//ROT
+			if(angle < 0.0f) {
+				transform.Rotate (Vector3.up, -15.0f * Time.deltaTime);
+			} else {
+				transform.Rotate (Vector3.up, 15.0f * Time.deltaTime);
+			}
+			
 		} else {
 			transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
 		}
