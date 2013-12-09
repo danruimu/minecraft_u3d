@@ -68,10 +68,13 @@ public class Chunk : MonoBehaviour {
 	#endregion
 
 	public bool newCube(Vector3 pos, BlockType type){
-		if(insideChunk(pos))return false;
+		if(!insideChunk(pos))return false;
 		Block c = new Block(type);
-		if(!addCube(c,pos,true))return false;
 		cubes[(int)pos.x,(int)pos.y,(int)pos.z] = c;
+		if(!addCube(c,pos,true)) {
+			cubes[(int)pos.x,(int)pos.y,(int)pos.z] = null;
+			return false;
+		}
 		return true;
 	}
 
@@ -99,11 +102,11 @@ public class Chunk : MonoBehaviour {
 		for(int face=0;face<numFaces;face++){
 			Vector3 colliding = posiciones[face] + position;
 			if(existsCube(colliding)){
-				if(insideChunk(colliding))
-					addFace(colliding,(faceType)(face^1));
-				else{
-					father.addFace(chunkPosition + colliding,(faceType)(face^1));
-				}
+//				if(insideChunk(colliding))
+//					addFace(colliding,(faceType)(face^1));
+//				else{
+//					father.addFace(chunkPosition + colliding,(faceType)(face^1));
+//				}
 			}
 			else{
 				delFace(position,(faceType)face);

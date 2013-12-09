@@ -2650,6 +2650,7 @@ MonoBehaviour:
   _grassDestroy: {fileID: 0}
   _dirtyDestroy: {fileID: 0}
   _stoneDestroy: {fileID: 0}
+  center: {fileID: 400024}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

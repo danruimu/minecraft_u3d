@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MovementPlayer : MonoBehaviour {
-	private float threshold = 0.2f;
+	//private float threshold = 0.2f;
 	public float speed = 5.0f;
 	public float jumpForce = 5.0f;
 
@@ -115,7 +115,7 @@ public class MovementPlayer : MonoBehaviour {
 
 		#region collision MOB
 		if(otherIsMOB) {
-			transform.rigidbody.AddForce(Vector3.left * 500.0f, ForceMode.Impulse);
+			transform.rigidbody.AddForce(-transform.forward * 500.0f, ForceMode.Impulse);
 			//TODO: vidas steve
 		}
 		#endregion
