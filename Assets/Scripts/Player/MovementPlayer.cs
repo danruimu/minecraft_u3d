@@ -98,7 +98,7 @@ public class MovementPlayer : MonoBehaviour {
 	}
 
 	void OnCollisionExit(Collision other) {
-		if(objectCollision) {
+		if(objectCollision && isGrounded) {
 			dir[(int)directions.UP] = false;
 			dir[(int)directions.LEFT] = false;
 			dir[(int)directions.DOWN] = false;
