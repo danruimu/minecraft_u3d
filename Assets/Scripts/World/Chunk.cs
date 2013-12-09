@@ -67,7 +67,8 @@ public class Chunk : MonoBehaviour {
 	Vector3[] posiciones = {new Vector3(0,0,-1),new Vector3(0,0,1),new Vector3(-1,0,0),new Vector3(1,0,0),new Vector3(0,1,0),new Vector3(0,-1,0)};
 	#endregion
 
-	public bool newCube(Vector3 pos, BlockType type){
+	public bool newCube(int x,int y,int z, BlockType type){
+		Vector3 pos = new Vector3 (x, y, z);
 		if(insideChunk(pos))return false;
 		Block c = new Block(type);
 		if(!addCube(c,pos,true))return false;
@@ -80,7 +81,8 @@ public class Chunk : MonoBehaviour {
 	}
 
 	//TODO: tener en cuenta que afectamos a varios chunks
-	public bool removeCube(Vector3 position){
+	public bool removeCube(int x,int y,int z){
+		Vector3 position = new Vector3 (x, y, z);
 		if(!existsCube(position))return false;
 //		int added = 0;
 //
@@ -159,6 +161,31 @@ public class Chunk : MonoBehaviour {
 				}
 			}
 		}
+//		cubes[0,0,0] = new Block(BlockType.Bedrock);
+//		cubes[0,1,0] = new Block(BlockType.Bedrock);
+//		cubes[0,2,0] = new Block(BlockType.Bedrock);
+//		cubes[0,3,0] = new Block(BlockType.Bedrock);
+//		cubes[0,4,0] = new Block(BlockType.Bedrock);
+//		height [0, 0] = 4;
+//		cubes[1,0,0] = new Block(BlockType.Dirt);
+//		cubes[1,1,0] = new Block(BlockType.Dirt);
+//		cubes[1,2,0] = new Block(BlockType.Dirt);
+//		cubes[1,3,0] = new Block(BlockType.Dirt);
+//		cubes[1,4,0] = new Block(BlockType.Dirt);
+//		height [1, 0] = 4;
+//		cubes[0,0,1] = new Block(BlockType.Clay);
+//		cubes[0,1,1] = new Block(BlockType.Clay);
+//		cubes[0,2,1] = new Block(BlockType.Clay);
+//		cubes[0,3,1] = new Block(BlockType.Clay);
+//		cubes[0,4,1] = new Block(BlockType.Clay);
+//		height [0, 1] = 4;
+//		cubes[1,0,1] = new Block(BlockType.Stone);
+//		cubes[1,1,1] = new Block(BlockType.Stone);
+//		cubes[1,2,1] = new Block(BlockType.Stone);
+//		cubes[1,3,1] = new Block(BlockType.Stone);
+//		cubes[1,4,1] = new Block(BlockType.Stone);
+//		height [1, 1] = 4;
+
 	}
 
 	public void ompleMesh(){
@@ -171,6 +198,8 @@ public class Chunk : MonoBehaviour {
 				}
 			}
 		}
+//		addCube (cubes[0,0,0],new Vector3(0,0,0));
+//		addCube (cubes[0,1,0],new Vector3(0,1,0));
 		meshLoad(false);
 	}
 
@@ -185,7 +214,6 @@ public class Chunk : MonoBehaviour {
 		if(cub.getFace(face)==null){
 			face f = new face();
 			f.cub=cub;
-			f.added = true;
 			f.uv = new Vector2[numVertexsFace];
 			f.tangents = new Vector4[numVertexsFace];
 			f.vertexs = new Vector3[numVertexsFace];
@@ -212,7 +240,7 @@ public class Chunk : MonoBehaviour {
 
 		
 		if(removeFace!=null){
-			remove[material].Add(mats[material].IndexOf(removeFace));
+			remove[material].Add(removeFace);
 			cub.delFace(face);
 			numFacesAdded--;
 		}
@@ -255,7 +283,7 @@ public class Chunk : MonoBehaviour {
 	}
 
 	//TODO: no fer el recalculate normals
-	private void meshLoad(bool update = true){
+	public void meshLoad(bool update = true){
 		if(update){
 			mesh.Clear();
 			Array.Resize(ref vertexs,numFacesAdded*numVertexsFace);
@@ -269,50 +297,46 @@ public class Chunk : MonoBehaviour {
 		}
 		
 		mesh.subMeshCount = numMaterials;
-		
-		int pos=0;
+		int pos = 0;
 		for(int i=0;i<numMaterials;i++){
-			if(remove[i] != null && remove[i].Count > 0)remove[i].Sort();
-			
-			if(faces[i] == null)faces[i] = new int[(mats[i].Count + add[i].Count - remove[i].Count)*numPointsPerFace];
-			else Array.Resize(ref faces[i],(mats[i].Count + add[i].Count - remove[i].Count)*numPointsPerFace);
-			
-			for(int j=0;j<Math.Min(add[i].Count,remove[i].Count);j++){
-				((face)add[i][j]).added = false;
-				mats[i][(int)remove[i][j]] = (face)add[i][j];
-				add[i].RemoveAt(j);
-				remove[i].RemoveAt(j);
-			}
-			if(remove[i].Count > 0){
-				for(int j=0;j<remove[i].Count;j++){
-					mats[i].RemoveAt((int)remove[i][j]);
+			int numAdded = add[i].Count;
+			int numDel = remove[i].Count;
+
+			if(numDel > 0){
+				foreach(face f in remove[i]){
+					mats[i].Remove(f);
 				}
+				remove[i] = new ArrayList();
 			}
-			remove[i] = new ArrayList();
-			
-			if(add[i].Count > 0){
-				for(int j=0;j<add[i].Count;j++){
-					mats[i].Add((face)add[i][j]);
+
+			if(numAdded > 0){
+				foreach(face f in add[i]){
+					mats[i].Add(f);
 				}
+				add[i] = new ArrayList();
 			}
-			add[i] = new ArrayList();
-			
+
+			if(faces[i] == null)faces[i] = new int[(mats[i].Count)*numPointsPerFace];
+			else Array.Resize(ref faces[i],(mats[i].Count)*numPointsPerFace);
+
 			for(int j=0;j<mats[i].Count;j++){
 				face f = (face)mats[i][j];
-				if(f.pos != j){
-					f.vertexs.CopyTo(vertexs,pos);
-					f.tangents.CopyTo(tangents,pos);
+				if(f.pos != pos + j){
+					f.vertexs.CopyTo(vertexs,(pos+j)*numVertexsFace);
+					f.tangents.CopyTo(tangents,(pos+j)*numVertexsFace);
+					for(int k=0;k<numPointsPerFace;k++){
+						faces[i][j*numPointsPerFace+k]=(pos+j)*numVertexsFace+props.faceList[k];
+					}
 					if(f.added){
-						f.uv.CopyTo(uv,pos);
-						for(int k=0;k<numPointsPerFace;k++){
-							faces[i][j*numPointsPerFace+k]=pos+props.faceList[k];
-						}
+						f.uv.CopyTo(uv,(pos+j)*numVertexsFace);
+
 						f.added = false;
 					}
-					f.pos = j;
+					f.pos = pos + j;
 				}
-				pos += numVertexsFace;
 			}
+
+			pos += mats[i].Count;
 		}
 		mesh.vertices = vertexs;
 		mesh.uv = uv;
