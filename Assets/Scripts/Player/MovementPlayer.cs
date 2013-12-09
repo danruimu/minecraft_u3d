@@ -48,6 +48,7 @@ public class MovementPlayer : MonoBehaviour {
 		}
 		#endregion
 
+		//TODO: revisar
 		#region jump
 		if(Input.GetKeyDown(KeyCode.Space) && isGrounded) {
 			isGrounded = false;
@@ -62,7 +63,7 @@ public class MovementPlayer : MonoBehaviour {
 
 		if(!isGrounded && !jumpEnough) {
 			transform.Translate(Vector3.up * jumpForce  * Time.deltaTime);
-			if(transform.position.y - height > 1.5f ) {
+			if(transform.position.y - height > 1.2f ) {
 				jumpEnough = true;
 			}
 		}
@@ -70,13 +71,19 @@ public class MovementPlayer : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other) {
+		//detecting if we are colliding with the floor or not
 		bool otherIsFloor = false;
-		for (int i = 0; i<other.contacts.Length && !otherIsFloor; ++i) {
-			Debug.Log (other.contacts[i].thisCollider.name+" hits "+other.contacts[i].otherCollider.name);
-			otherIsFloor = (Vector3.Cross(other.contacts[i].normal, Vector3.up).magnitude < threshold);
+		bool otherIsWall = false;
+		for (int i = 0; i<other.contacts.Length; ++i) {
+			bool aux = other.contacts[i].otherCollider.CompareTag("Chunk");
+			otherIsFloor = otherIsFloor || aux;
+			//Checking if it is wall or floor
+//			if(aux) {
+//				otherIsWall = (other.contacts[i].normal.y <= threshold || other.contacts[i].normal.y >= -threshold);
+//			}
 		}
 
-		if(otherIsFloor) {
+		if(otherIsFloor && !otherIsWall) {
 			for(int i = 0;i<other.contacts.Length && !isGrounded;i++){
 				isGrounded = true;
 
@@ -86,7 +93,7 @@ public class MovementPlayer : MonoBehaviour {
 				dir[(int)directions.RIGHT] = false;
 				objectCollision = false;
 			}
-		} else if(!otherIsFloor) {
+		} else if(otherIsWall) {
 			objectCollision = true;
 			if(Input.GetKey(KeyCode.W)) {
 				dir[(int)directions.UP] = true;
