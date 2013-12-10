@@ -67,12 +67,16 @@ public class Chunk : MonoBehaviour {
 	Vector3[] posiciones = {new Vector3(0,0,-1),new Vector3(0,0,1),new Vector3(-1,0,0),new Vector3(1,0,0),new Vector3(0,1,0),new Vector3(0,-1,0)};
 	#endregion
 
+
 	public bool newCube(int x,int y,int z, BlockType type){
 		Vector3 pos = new Vector3 (x, y, z);
-		if(insideChunk(pos))return false;
+		if(!insideChunk(pos))return false;
 		Block c = new Block(type);
-		if(!addCube(c,pos,true))return false;
 		cubes[(int)pos.x,(int)pos.y,(int)pos.z] = c;
+		if(!addCube(c,pos,true)) {
+			cubes[(int)pos.x,(int)pos.y,(int)pos.z] = null;
+			return false;
+		}
 		return true;
 	}
 
@@ -101,11 +105,11 @@ public class Chunk : MonoBehaviour {
 		for(int face=0;face<numFaces;face++){
 			Vector3 colliding = posiciones[face] + position;
 			if(existsCube(colliding)){
-				if(insideChunk(colliding))
-					addFace(colliding,(faceType)(face^1));
-				else{
-					father.addFace(chunkPosition + colliding,(faceType)(face^1));
-				}
+//				if(insideChunk(colliding))
+//					addFace(colliding,(faceType)(face^1));
+//				else{
+//					father.addFace(chunkPosition + colliding,(faceType)(face^1));
+//				}
 			}
 			else{
 				delFace(position,(faceType)face);

@@ -6,13 +6,17 @@ public class IAZombie : MonoBehaviour {
 	#region constant variables
 	private const float minTimeBetweenActions = 3.0f;
 	private const float actionDuration = 1.0f;
+	private const float detectionDistance = 10.0f;
 	#endregion
 
 	#region public variables
 	public float timeBetweenActions;
 	public float speedMovement;
 	public float speedRotation;
-	public GameObject steve;	//TODO: research best option to obtain the Steve's position
+	public float speedJump;
+	public Transform steve;
+	public Animator legLeft;
+	public Animator legRight;
 	#endregion
 
 	#region private variables
@@ -21,6 +25,12 @@ public class IAZombie : MonoBehaviour {
 	private bool isRotating;
 	private int rotationDir; //1 = left, 0 = right
 	private float actionTimer;
+	private bool isSteveNear;
+	private float angleToSteve;
+	private bool isJumping;
+	private bool isGrounded;
+	private bool jumpEnough;
+	private float heightZombie;
 	#endregion
 
 	// Use this for initialization
@@ -29,15 +39,24 @@ public class IAZombie : MonoBehaviour {
 		timeBetweenActions = Mathf.Min(minTimeBetweenActions, timeBetweenActions);
 		isMoving = false;
 		isRotating = false;
+		isSteveNear = false;
+		isJumping = false;
+		jumpEnough = false;
+
+		legLeft.enabled = false;
+		legRight.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		time += Time.deltaTime;
 
+		isSteveNear = detectSteve();
+
 		if(time >= timeBetweenActions) {
 			time = 0.0f;
-			int action = Random.Range(0, 2);
+			int action;
+			action = Random.Range(0, 2);
 			switch(action) {
 			case 0:	//MOV forward
 				isMoving = true;
@@ -51,21 +70,28 @@ public class IAZombie : MonoBehaviour {
 			}
 		}
 
-		doAction();
+		if(isSteveNear) goForSteve();
+		else doAction();
+
+		if(isJumping && !jumpEnough) doJump();
 	}
 
 	private void doAction() {
 		actionTimer += Time.deltaTime;
 		if(isMoving) {
-			transform.Translate(Vector3.forward * speedMovement * Time.deltaTime);
-			if(actionTimer == actionDuration) {
+			transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
+			legLeft.enabled = true;
+			legRight.enabled = true;
+			if(actionTimer >= actionDuration) {
 				isMoving = false;
+				actionTimer = 0.0f;
 			}
 		}
 		if(isRotating) {
-			float rotation = rotationDir==0 ? speedRotation : -speedRotation;
+			float rotation;
+			rotation = rotationDir==0 ? speedRotation : -speedRotation;
 			transform.Rotate (Vector3.up, rotation * Time.deltaTime);
-			if(actionTimer == actionDuration) {
+			if(actionTimer >= actionDuration) {
 				isRotating = false;
 				actionTimer = 0.0f;
 				isMoving = true;
@@ -73,12 +99,66 @@ public class IAZombie : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision other) {
-		//TODO: not working
-		if(other.gameObject.ToString() == "Steve") {
-			Debug.Log ("Steve");
+	private void goForSteve() {
+		//0 <= dirZtoS <= 180
+		Vector2 dirZtoS = new Vector2(steve.position.x - transform.position.x, steve.position.z - transform.position.z);
+		angleToSteve = Vector2.Angle(dirZtoS, new Vector2(1.0f, 0.0f));
+		//Convert anglToSteve in a 0-360 vector in the same axis of zombieAngleY
+		if(dirZtoS.y >= 0) {
+			angleToSteve = 360.0f - angleToSteve;
+		}
+		angleToSteve += 180.0f;
+		if(angleToSteve >= 360.0f) {
+			angleToSteve -= 360.0f;
+		}
+
+		//0 <= zombieAngleY <= 360
+		float zombieAngleY = transform.rotation.eulerAngles.y;
+
+		float angle = angleToSteve - zombieAngleY;
+		if( angle >= 5.0f || angle <= -5.0f) {	//ROT
+			legLeft.enabled = false;
+			legRight.enabled = false;
+			float rotation = angle<0.0f ? -speedRotation : speedRotation;
+			transform.Rotate (Vector3.up, rotation * Time.deltaTime);
+//			if(angle < 0.0f) {
+//				transform.Rotate (Vector3.up, -speedRotation * Time.deltaTime);
+//			} else {
+//				transform.Rotate (Vector3.up, speedRotation * Time.deltaTime);
+//			}
+			
 		} else {
-			Debug.Log ("World");
+			transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
+			legLeft.enabled = true;
+			legRight.enabled = true;
+		}
+	}
+
+	private bool detectSteve() {
+		if(Vector3.Distance(steve.position, transform.position) <= detectionDistance) {
+			return true;
+		}
+		legLeft.enabled = false;
+		legRight.enabled = false;
+		return false;
+	}
+
+	private void doJump() {
+		transform.Translate(Vector3.up * speedJump * Time.deltaTime);
+		transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
+		if (transform.position.y - heightZombie > 1.0f) {
+			jumpEnough = true;
+		}
+	}
+
+	void OnCollisionEnter(Collision other) {
+		if(!isJumping) {
+			isJumping = true;
+			jumpEnough = false;
+			heightZombie = transform.position.y;
+		} else {
+			isJumping = false;
+			jumpEnough = false;
 		}
 	}
 }

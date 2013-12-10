@@ -22,11 +22,10 @@ public class MouseClick : MonoBehaviour {
 	public ParticleSystem _grassDestroy;
 	public ParticleSystem _dirtyDestroy;
 	public ParticleSystem _stoneDestroy;
+	public Transform center;
 	
-//	private Block _selectedBlock;
 	private Vector3 _selectedBlockPosition;
 	private Vector3 _colisionPoint;
-//	private BlockType _selectedBlockType;
 
 	void Start() {
 		attack = false;
@@ -44,6 +43,8 @@ public class MouseClick : MonoBehaviour {
 				dirForw = Vector3.forward;
 				dirHori = Vector3.left;
 				dirVert = Vector3.up;
+
+				hitWhatever();
 			}
 		}
 
@@ -67,6 +68,38 @@ public class MouseClick : MonoBehaviour {
 			transform.localPosition = originalPosition;
 		}
 		#endregion
+	}
+
+	private void hitWhatever() {
+		Ray ray = new Ray(center.position, transform.forward);
+		RaycastHit rhit = new RaycastHit();
+
+		if(Physics.Raycast (ray, out rhit, 5.0f)) {
+			if(rhit.collider.CompareTag("MOB")) {
+				if(rhit.distance < 1.5f) {
+					//TODO: hit MOB
+				}
+			} else {
+				Chunk c = rhit.collider.GetComponent<Chunk>();
+				Vector3 cubePos = rhit.point;
+				int x = Mathf.FloorToInt(cubePos.x);
+				int y = Mathf.FloorToInt(cubePos.y);
+				int z = Mathf.FloorToInt(cubePos.z);
+				x %= Chunk.sizex;
+				//y--;
+				z %= Chunk.sizez;
+//				if(c.removeCube(new Vector3(x, y, z))) {
+//					c.ompleMesh();
+//				} else {
+//					Debug.LogError("Cannot remove Cube at "+cubePos);
+//				}
+				if(c.newCube(new Vector3(x,y,z), BlockType.Dirt)) {
+					c.ompleMesh ();
+				}else {
+					Debug.LogError("Cannot remove Cube at "+cubePos);
+				}
+			}
+		}
 	}
 
 }
