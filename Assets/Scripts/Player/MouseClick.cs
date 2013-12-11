@@ -19,9 +19,6 @@ public class MouseClick : MonoBehaviour {
 	private Quaternion originalRotation;
 	private Vector3 originalPosition;
 
-	public ParticleSystem _grassDestroy;
-	public ParticleSystem _dirtyDestroy;
-	public ParticleSystem _stoneDestroy;
 	public Transform center;
 	
 	private Vector3 _selectedBlockPosition;
@@ -45,6 +42,9 @@ public class MouseClick : MonoBehaviour {
 				dirVert = Vector3.up;
 
 				hitWhatever();
+			}
+			if(Input.GetMouseButton (1)) {
+				putCube();
 			}
 		}
 
@@ -70,14 +70,41 @@ public class MouseClick : MonoBehaviour {
 		#endregion
 	}
 
+	private void putCube() {
+		Ray ray = new Ray(center.position, transform.forward);
+		RaycastHit rhit = new RaycastHit();
+
+		if(Physics.Raycast (ray, out rhit, 5.0f)) {
+			if(!rhit.collider.CompareTag("MOB")) {
+				Chunk c = rhit.collider.GetComponent<Chunk>();
+				Vector3 cubePos = rhit.point;
+				int x = Mathf.FloorToInt(cubePos.x);
+				int y = Mathf.FloorToInt(cubePos.y);
+				int z = Mathf.FloorToInt(cubePos.z);
+				x %= Chunk.sizex;
+				z %= Chunk.sizez;
+
+				if(c.newCube(x, y, z, BlockType.Dirt)) {
+					c.meshLoad();
+				} else {
+					Debug.LogError("Cannot remove Cube at "+cubePos);
+				}
+			}
+		}
+	}
+
 	private void hitWhatever() {
 		Ray ray = new Ray(center.position, transform.forward);
 		RaycastHit rhit = new RaycastHit();
 
 		if(Physics.Raycast (ray, out rhit, 5.0f)) {
 			if(rhit.collider.CompareTag("MOB")) {
-				if(rhit.distance < 1.5f) {
-					//TODO: hit MOB
+				if(rhit.distance < 2.0f) {
+					IAZombie z = rhit.collider.GetComponent<IAZombie>();
+
+					Debug.Log (z);
+
+					z.damage(1.0f, rhit.normal);
 				}
 			} else {
 				Chunk c = rhit.collider.GetComponent<Chunk>();
@@ -86,18 +113,14 @@ public class MouseClick : MonoBehaviour {
 				int y = Mathf.FloorToInt(cubePos.y);
 				int z = Mathf.FloorToInt(cubePos.z);
 				x %= Chunk.sizex;
-				//y--;
+				--y;
 				z %= Chunk.sizez;
-//				if(c.removeCube(new Vector3(x, y, z))) {
-//					c.ompleMesh();
-//				} else {
-//					Debug.LogError("Cannot remove Cube at "+cubePos);
-//				}
-				if(c.newCube(new Vector3(x,y,z), BlockType.Dirt)) {
-					c.ompleMesh ();
-				}else {
+				if(c.removeCube(x, y, z)) {
+					c.meshLoad();
+				} else {
 					Debug.LogError("Cannot remove Cube at "+cubePos);
 				}
+
 			}
 		}
 	}

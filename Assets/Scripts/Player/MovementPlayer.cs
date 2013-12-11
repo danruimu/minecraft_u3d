@@ -73,10 +73,12 @@ public class MovementPlayer : MonoBehaviour {
 		//detecting if we are colliding with the floor or not
 		bool otherIsFloor = false;
 		bool otherIsMOB = false;
-		bool otherIsWall = false;
+		Vector3 normalMOB = new Vector3();
+		//bool otherIsWall = false;
 		for (int i = 0; i<other.contacts.Length; ++i) {
 			otherIsFloor = otherIsFloor || other.contacts[i].otherCollider.CompareTag("Chunk");
 			otherIsMOB = otherIsMOB || other.contacts[i].otherCollider.CompareTag ("MOB");
+			if(otherIsMOB) normalMOB = other.contacts[i].normal;
 			//otherIsWall = otherIsFloor && (otherIsWall || Vector3.Cross(other.contacts[i].normal, Vector3.up).magnitude > threshold);
 		}
 
@@ -115,7 +117,7 @@ public class MovementPlayer : MonoBehaviour {
 
 		#region collision MOB
 		if(otherIsMOB) {
-			transform.rigidbody.AddForce(-transform.forward * 500.0f, ForceMode.Impulse);
+			transform.rigidbody.AddForce(normalMOB * 500.0f, ForceMode.Impulse);
 			//TODO: vidas steve
 		}
 		#endregion
