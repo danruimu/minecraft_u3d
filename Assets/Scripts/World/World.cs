@@ -17,8 +17,8 @@ public class World : MonoBehaviour {
 	private static int[][] indexsBlocks;
 	private Chunk[,] chunks;
 
-	private int xa,ya,za;
-	private int xd,yd,zd;
+//	private int xa,ya,za;
+//	private int xd,yd,zd;
 
 
 	private void setMaterialIndexs(){
@@ -91,14 +91,14 @@ public class World : MonoBehaviour {
 
 	void Start () {
 		init();
-		xa=xd=za=zd=0;
-		yd=0;
-		ya=70;
+//		xa=xd=za=zd=0;
+//		yd=0;
+//		ya=70;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Chunk c = chunks[0,0];
+//		Chunk c = chunks[0,0];
 //		if(Input.GetKey(KeyCode.A)){
 //			if(za < Chunk.sizez && c.newCube(xa,ya,za,BlockType.Bedrock)){
 ////				Debug.Log("success");

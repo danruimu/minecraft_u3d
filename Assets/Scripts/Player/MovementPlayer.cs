@@ -159,14 +159,18 @@ public class MovementPlayer : MonoBehaviour {
 	private void treatDamage() {
 		damageTimer += Time.deltaTime;
 		steveEyes.backgroundColor = Color.red * (10.0f - steveLife);
-		if(damageTimer >= durationDamaged) {
-			recovering = true;
+		if(damageTimer >= durationDamaged && damaged) {
 			damaged = false;
+			damageTimer = 0.0f;
+		}
+		if(damageTimer >= timeToRecover) {
+			recovering = true;
 			damageTimer = 0.0f;
 		}
 		if(recovering) {
 			if(damageTimer >= 1.0f) {
 				steveLife += 0.5f;
+				damageTimer = 0.0f;
 			}
 			if(steveLife >= 10.0f) {
 				recovering = false;
