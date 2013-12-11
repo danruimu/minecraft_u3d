@@ -193,8 +193,8 @@ public class IAZombie : MonoBehaviour {
 
 	private void doAnimationDamaged() {
 		damageTimer += Time.deltaTime;
-		if(damageTimer <= damageAnimationDuration) {
-			
+		if(damageTimer <= damageAnimationDuration && died) {
+			transform.Rotate(Vector3.left, 90.0f*Time.deltaTime);
 		} else {
 			damaged = false;
 			blood.enableEmission = false;
