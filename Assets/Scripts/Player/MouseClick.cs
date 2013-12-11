@@ -84,9 +84,7 @@ public class MouseClick : MonoBehaviour {
 				x %= Chunk.sizex;
 				z %= Chunk.sizez;
 
-				if(c.newCube(x, y, z, BlockType.Dirt)) {
-					c.meshLoad();
-				} else {
+				if(!c.newCube(x, y, z, BlockType.Dirt)) {
 					Debug.LogError("Cannot remove Cube at "+cubePos);
 				}
 			}
@@ -102,8 +100,6 @@ public class MouseClick : MonoBehaviour {
 				if(rhit.distance < 2.0f) {
 					IAZombie z = rhit.collider.GetComponent<IAZombie>();
 
-					Debug.Log (z);
-
 					z.damage(1.0f, rhit.normal);
 				}
 			} else {
@@ -115,9 +111,7 @@ public class MouseClick : MonoBehaviour {
 				x %= Chunk.sizex;
 				--y;
 				z %= Chunk.sizez;
-				if(c.removeCube(x, y, z)) {
-					c.meshLoad();
-				} else {
+				if(!c.removeCube(x, y, z)) {
 					Debug.LogError("Cannot remove Cube at "+cubePos);
 				}
 

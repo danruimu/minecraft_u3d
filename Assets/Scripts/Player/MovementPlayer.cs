@@ -2,16 +2,17 @@
 using System.Collections;
 
 public class MovementPlayer : MonoBehaviour {
-	//private float threshold = 0.2f;
+
+	#region constant variables
+	private const float durationDamaged = 1.0f;
+	private const float timeToRecover = 5.0f;
+	#endregion
+
+	#region public variables
 	public float speed = 5.0f;
 	public float jumpForce = 5.0f;
 
-	private bool isGrounded;
-	private bool jumpEnough;
-	private bool godMode;
-	private bool objectCollision;
-
-	private bool[] dir;
+	public Camera steveEyes;
 
 	public enum directions {
 		UP = 0,
@@ -19,8 +20,22 @@ public class MovementPlayer : MonoBehaviour {
 		DOWN,
 		RIGHT,
 	}
+	#endregion
 
+	#region private variables
+	private bool isGrounded;
+	private bool jumpEnough;
+	private bool godMode;
+	private bool objectCollision;
+
+	private bool[] dir;
 	private float height;
+
+	private float steveLife;
+	private bool damaged;
+	private float damageTimer;
+	private bool recovering;
+	#endregion
 
 	void Start() {
 		isGrounded = false;
@@ -28,6 +43,9 @@ public class MovementPlayer : MonoBehaviour {
 		objectCollision = false;
 		dir = new bool[4];
 		dir[(int)directions.UP] = dir[(int)directions.LEFT] = dir[(int)directions.DOWN] = dir[(int)directions.RIGHT] = false;
+		steveLife = 10.0f;
+		damaged = false;
+		recovering = false;
 	}
 
 	// Update is called once per frame
@@ -67,6 +85,8 @@ public class MovementPlayer : MonoBehaviour {
 			}
 		}
 		#endregion
+
+		if(damaged || recovering) treatDamage();
 	}
 
 	void OnCollisionEnter(Collision other) {
@@ -116,9 +136,12 @@ public class MovementPlayer : MonoBehaviour {
 		#endregion
 
 		#region collision MOB
-		if(otherIsMOB) {
+		if(otherIsMOB && !damaged) {
 			transform.rigidbody.AddForce(normalMOB * 500.0f, ForceMode.Impulse);
-			//TODO: vidas steve
+			damaged = true;
+			recovering = false;
+			damageTimer = 0.0f;
+			steveLife -= 1.0f;
 		}
 		#endregion
 	}
@@ -130,6 +153,25 @@ public class MovementPlayer : MonoBehaviour {
 			dir[(int)directions.DOWN] = false;
 			dir[(int)directions.RIGHT] = false;
 			objectCollision = false;
+		}
+	}
+
+	private void treatDamage() {
+		damageTimer += Time.deltaTime;
+		steveEyes.backgroundColor = Color.red * (10.0f - steveLife);
+		if(damageTimer >= durationDamaged) {
+			recovering = true;
+			damaged = false;
+			damageTimer = 0.0f;
+		}
+		if(recovering) {
+			if(damageTimer >= 1.0f) {
+				steveLife += 0.5f;
+			}
+			if(steveLife >= 10.0f) {
+				recovering = false;
+				steveEyes.backgroundColor = Color.white;
+			}
 		}
 	}
 }

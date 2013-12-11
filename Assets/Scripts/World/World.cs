@@ -99,17 +99,17 @@ public class World : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Chunk c = chunks[0,0];
-		if(Input.GetKey(KeyCode.A)){
-			if(za < Chunk.sizez && c.newCube(xa,ya,za,BlockType.Bedrock)){
-//				Debug.Log("success");
-				xa++;
-				if(xa >=Chunk.sizex){
-					xa=0;
-					za++;
-				}
-			}
-//			else Debug.Log("failuer");
-		}
+//		if(Input.GetKey(KeyCode.A)){
+//			if(za < Chunk.sizez && c.newCube(xa,ya,za,BlockType.Bedrock)){
+////				Debug.Log("success");
+//				xa++;
+//				if(xa >=Chunk.sizex){
+//					xa=0;
+//					za++;
+//				}
+//			}
+////			else Debug.Log("failuer");
+//		}
 	}
 	
 	private Vector3 relativePos(Vector3 pos){
