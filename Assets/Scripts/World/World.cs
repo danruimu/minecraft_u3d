@@ -3,7 +3,6 @@ using System.Collections;
 using System;
 using System.IO;
 using System.Text;
-using Ionic.Zlib;
 
 public class World : MonoBehaviour {
 
@@ -18,8 +17,11 @@ public class World : MonoBehaviour {
 	private static int[][] indexsBlocks;
 	private Chunk[,] chunks;
 
+	private int xa,ya,za;
+	private int xd,yd,zd;
 
-	void setMaterialIndexs(){
+
+	private void setMaterialIndexs(){
 		BlockType[] types = (BlockType[])Enum.GetValues (typeof(BlockType));
 		string [] noms = Enum.GetNames (typeof(BlockType));
 		indexsBlocks = new int[numMaxMaterials][];
@@ -53,7 +55,7 @@ public class World : MonoBehaviour {
 		}
 	}
 
-	void init() {
+	private void init() {
 		DateTime tiempo1 = DateTime.Now;
 		
 		setMaterialIndexs();
@@ -84,18 +86,30 @@ public class World : MonoBehaviour {
 				chunks[x,z].ompleMesh();
 			}
 		}
-		DateTime tiempo2 = DateTime.Now;
-		TimeSpan total = new TimeSpan(tiempo2.Ticks - tiempo1.Ticks);
-		Debug.Log("creacion " + sizex + " * " + sizez + " Chunks -> tiempoTotal = " + total.ToString());
+		Debug.Log("creacion " + sizex + " * " + sizez + " Chunks -> tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
 	}
 
 	void Start () {
 		init();
+		xa=xd=za=zd=0;
+		yd=0;
+		ya=70;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		Chunk c = chunks[0,0];
+		if(Input.GetKey(KeyCode.A)){
+			if(za < Chunk.sizez && c.newCube(xa,ya,za,BlockType.Bedrock)){
+//				Debug.Log("success");
+				xa++;
+				if(xa >=Chunk.sizex){
+					xa=0;
+					za++;
+				}
+			}
+//			else Debug.Log("failuer");
+		}
 	}
 	
 	private Vector3 relativePos(Vector3 pos){
