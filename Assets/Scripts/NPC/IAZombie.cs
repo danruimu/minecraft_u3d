@@ -18,6 +18,8 @@ public class IAZombie : MonoBehaviour {
 	public Transform steve;
 	public Animator legLeft;
 	public Animator legRight;
+
+	public ParticleSystem blood;
 	#endregion
 
 	#region private variables
@@ -173,6 +175,8 @@ public class IAZombie : MonoBehaviour {
 		if(!damaged) {
 			life -= damage;
 			rigidbody.AddForce(-normalImpact * 250.0f, ForceMode.Impulse);
+			blood.enableEmission = true;
+			blood.Play ();
 			if(life <= 0.0f) die();
 			else {
 				damaged = true;
@@ -190,9 +194,11 @@ public class IAZombie : MonoBehaviour {
 	private void doAnimationDamaged() {
 		damageTimer += Time.deltaTime;
 		if(damageTimer <= damageAnimationDuration) {
-			//TODO:
+			
 		} else {
 			damaged = false;
+			blood.enableEmission = false;
+			blood.Stop();
 		}
 	}
 }
