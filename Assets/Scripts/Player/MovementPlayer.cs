@@ -35,6 +35,7 @@ public class MovementPlayer : MonoBehaviour {
 	private bool damaged;
 	private float damageTimer;
 	private bool recovering;
+	private bool delayedRecovering;
 	#endregion
 
 	void Start() {
@@ -46,6 +47,7 @@ public class MovementPlayer : MonoBehaviour {
 		steveLife = 10.0f;
 		damaged = false;
 		recovering = false;
+		delayedRecovering = false;
 	}
 
 	// Update is called once per frame
@@ -86,7 +88,7 @@ public class MovementPlayer : MonoBehaviour {
 		}
 		#endregion
 
-		if(damaged || recovering) treatDamage();
+		if(damaged || recovering || delayedRecovering) treatDamage();
 	}
 
 	void OnCollisionEnter(Collision other) {
@@ -140,8 +142,10 @@ public class MovementPlayer : MonoBehaviour {
 			transform.rigidbody.AddForce(normalMOB * 500.0f, ForceMode.Impulse);
 			damaged = true;
 			recovering = false;
+			delayedRecovering = false;
 			damageTimer = 0.0f;
 			steveLife -= 1.0f;
+			if(steveLife <= 0.0f) respawn();
 		}
 		#endregion
 	}
@@ -158,12 +162,13 @@ public class MovementPlayer : MonoBehaviour {
 
 	private void treatDamage() {
 		damageTimer += Time.deltaTime;
-		steveEyes.backgroundColor = Color.white * Color.red * (255.5f - (10.0f - steveLife));
 		if(damageTimer >= durationDamaged && damaged) {
 			damaged = false;
+			delayedRecovering = true;
 			damageTimer = 0.0f;
 		}
 		if(damageTimer >= timeToRecover) {
+			delayedRecovering = false;
 			recovering = true;
 			damageTimer = 0.0f;
 		}
@@ -174,8 +179,21 @@ public class MovementPlayer : MonoBehaviour {
 			}
 			if(steveLife >= 10.0f) {
 				recovering = false;
-				steveEyes.backgroundColor = Color.white;
 			}
 		}
+		Debug.Log ("steve Life = "+steveLife);
+	}
+
+	private void respawn() {
+		transform.position = new Vector3 (8.0f, 80.0f, 8.0f);
+		isGrounded = false;
+		godMode = false;
+		objectCollision = false;
+		dir = new bool[4];
+		dir[(int)directions.UP] = dir[(int)directions.LEFT] = dir[(int)directions.DOWN] = dir[(int)directions.RIGHT] = false;
+		steveLife = 10.0f;
+		damaged = false;
+		recovering = false;
+		delayedRecovering = false;
 	}
 }

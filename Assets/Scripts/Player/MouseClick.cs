@@ -32,6 +32,8 @@ public class MouseClick : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Debug.DrawRay(center.position, Vector3.left, Color.red);
+
 		if(!attack){
 			if(Input.GetMouseButton(0)) {
 				attack = true;
