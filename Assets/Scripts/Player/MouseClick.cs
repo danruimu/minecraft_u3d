@@ -85,7 +85,7 @@ public class MouseClick : MonoBehaviour {
 				z %= Chunk.sizez;
 
 				if(!c.newCube(x, y, z, BlockType.Dirt)) {
-					Debug.LogError("Cannot remove Cube at "+cubePos);
+					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
 				}
 			}
 		}
@@ -112,7 +112,7 @@ public class MouseClick : MonoBehaviour {
 				--y;
 				z %= Chunk.sizez;
 				if(!c.removeCube(x, y, z)) {
-					Debug.LogError("Cannot remove Cube at "+cubePos);
+					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
 				}
 
 			}
