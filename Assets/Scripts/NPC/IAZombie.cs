@@ -38,6 +38,7 @@ public class IAZombie : MonoBehaviour {
 	private float life;
 	private float damageTimer;
 	private bool damaged;
+	private bool died;
 	#endregion
 
 	// Use this for initialization
@@ -55,6 +56,7 @@ public class IAZombie : MonoBehaviour {
 
 		life = 5.0f;
 		damaged = false;
+		died = false;
 	}
 	
 	// Update is called once per frame
@@ -177,11 +179,9 @@ public class IAZombie : MonoBehaviour {
 			rigidbody.AddForce(-normalImpact * 250.0f, ForceMode.Impulse);
 			blood.enableEmission = true;
 			blood.Play ();
-			if(life <= 0.0f) die();
-			else {
-				damaged = true;
-				damageTimer = 0.0f;
-			}
+			if(life <= 0.0f) died = true;
+			damaged = true;
+			damageTimer = 0.0f;
 		}
 	}
 
@@ -199,6 +199,7 @@ public class IAZombie : MonoBehaviour {
 			damaged = false;
 			blood.enableEmission = false;
 			blood.Stop();
+			if(died) die ();
 		}
 	}
 }
