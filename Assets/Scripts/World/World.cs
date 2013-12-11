@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using System.IO;
 using System.Text;
-using Ionic.Zlib;
+//using Ionic.Zlib;
 
 public class World : MonoBehaviour {
 

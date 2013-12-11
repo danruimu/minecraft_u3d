@@ -7,6 +7,7 @@ public class IAZombie : MonoBehaviour {
 	private const float minTimeBetweenActions = 3.0f;
 	private const float actionDuration = 1.0f;
 	private const float detectionDistance = 10.0f;
+	private const float damageAnimationDuration = 1.0f;
 	#endregion
 
 	#region public variables
@@ -31,6 +32,10 @@ public class IAZombie : MonoBehaviour {
 	private bool isGrounded;
 	private bool jumpEnough;
 	private float heightZombie;
+
+	private float life;
+	private float damageTimer;
+	private bool damaged;
 	#endregion
 
 	// Use this for initialization
@@ -45,6 +50,9 @@ public class IAZombie : MonoBehaviour {
 
 		legLeft.enabled = false;
 		legRight.enabled = false;
+
+		life = 5.0f;
+		damaged = false;
 	}
 	
 	// Update is called once per frame
@@ -53,7 +61,8 @@ public class IAZombie : MonoBehaviour {
 
 		isSteveNear = detectSteve();
 
-		if(time >= timeBetweenActions) {
+		//we don't want to do anything when we are damaged
+		if(time >= timeBetweenActions && !damaged) {
 			time = 0.0f;
 			int action;
 			action = Random.Range(0, 2);
@@ -70,10 +79,12 @@ public class IAZombie : MonoBehaviour {
 			}
 		}
 
-		if(isSteveNear) goForSteve();
-		else doAction();
-
-		if(isJumping && !jumpEnough) doJump();
+		if(!damaged) {
+			if(isSteveNear) goForSteve();
+			else doAction();
+		
+			if(isJumping && !jumpEnough) doJump();
+		} else doAnimationDamaged ();
 	}
 
 	private void doAction() {
@@ -121,11 +132,6 @@ public class IAZombie : MonoBehaviour {
 			legRight.enabled = false;
 			float rotation = angle<0.0f ? -speedRotation : speedRotation;
 			transform.Rotate (Vector3.up, rotation * Time.deltaTime);
-//			if(angle < 0.0f) {
-//				transform.Rotate (Vector3.up, -speedRotation * Time.deltaTime);
-//			} else {
-//				transform.Rotate (Vector3.up, speedRotation * Time.deltaTime);
-//			}
 			
 		} else {
 			transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
@@ -146,7 +152,7 @@ public class IAZombie : MonoBehaviour {
 	private void doJump() {
 		transform.Translate(Vector3.up * speedJump * Time.deltaTime);
 		transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
-		if (transform.position.y - heightZombie > 1.0f) {
+		if (transform.position.y - heightZombie > 1.5f) {
 			jumpEnough = true;
 		}
 	}
@@ -159,6 +165,34 @@ public class IAZombie : MonoBehaviour {
 		} else {
 			isJumping = false;
 			jumpEnough = false;
+		}
+	}
+
+	//return the current life
+	public void damage(float damage, Vector3 normalImpact) {
+		if(!damaged) {
+			life -= damage;
+			rigidbody.AddForce(-normalImpact * 250.0f, ForceMode.Impulse);
+			if(life <= 0.0f) die();
+			else {
+				damaged = true;
+				damageTimer = 0.0f;
+			}
+		}
+	}
+
+	private void die() {
+		GameObject go = this.gameObject;
+
+		Destroy (go);
+	}
+
+	private void doAnimationDamaged() {
+		damageTimer += Time.deltaTime;
+		if(damageTimer <= damageAnimationDuration) {
+			//TODO:
+		} else {
+			damaged = false;
 		}
 	}
 }
