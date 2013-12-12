@@ -176,7 +176,7 @@ public class IAZombie : MonoBehaviour {
 	public void damage(float damage, Vector3 normalImpact) {
 		if(!damaged) {
 			life -= damage;
-			rigidbody.AddForce(-normalImpact * 250.0f, ForceMode.Impulse);
+			rigidbody.AddForce((Vector3.forward + -normalImpact) * 175.0f, ForceMode.Impulse);
 			blood.enableEmission = true;
 			blood.Play ();
 			if(life <= 0.0f) died = true;
@@ -187,7 +187,6 @@ public class IAZombie : MonoBehaviour {
 
 	private void die() {
 		GameObject go = this.gameObject;
-
 		Destroy (go);
 	}
 

@@ -98,7 +98,7 @@ public class MouseClick : MonoBehaviour {
 				z %= Chunk.sizez;
 
 				if(!c.newCube(x, y, z, BlockType.Dirt)) {
-					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
+					Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
 				}
 			}
 		}
@@ -125,8 +125,15 @@ public class MouseClick : MonoBehaviour {
 				y = Mathf.FloorToInt(cubePos.y);
 				z = Mathf.FloorToInt(cubePos.z);
 
+				if(normal.y >= 1.0f) {
+					y -= 1;
+				} else if(normal.x >= 1.0f) {
+					x -= 1;
+				} else if(normal.z >= 1.0f) {
+					z -= 1;
+				}
+
 				x %= Chunk.sizex;
-				y -= 1;
 				z %= Chunk.sizez;
 				
 				if(!c.removeCube(x, y, z)) {

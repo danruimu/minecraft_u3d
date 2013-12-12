@@ -128,8 +128,10 @@ public class Chunk : MonoBehaviour {
 		mesh.RecalculateNormals();
 		mesh.Optimize();
 		//TODO: colisions per box colliders
-		GetComponent<MeshCollider>().sharedMesh = null;
-		GetComponent<MeshCollider>().sharedMesh = mesh;
+		//if(!update){
+			GetComponent<MeshCollider>().sharedMesh = null;
+			GetComponent<MeshCollider>().sharedMesh = mesh;
+		//}
 	}
 
 	public bool removeCube(int x,int y,int z){
