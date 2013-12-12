@@ -32,7 +32,6 @@ public class MouseClick : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.DrawRay(center.position, Vector3.left, Color.red);
 
 		if(!attack){
 			if(Input.GetMouseButton(0)) {
@@ -73,16 +72,28 @@ public class MouseClick : MonoBehaviour {
 	}
 
 	private void putCube() {
-		Ray ray = new Ray(center.position, transform.forward);
+		Ray ray = new Ray(center.position, center.forward);
 		RaycastHit rhit = new RaycastHit();
 
 		if(Physics.Raycast (ray, out rhit, 5.0f)) {
 			if(!rhit.collider.CompareTag("MOB")) {
 				Chunk c = rhit.collider.GetComponent<Chunk>();
 				Vector3 cubePos = rhit.point;
+				Vector3 normal = rhit.normal;
+
+				//x,y,z depend on the normal of the face
 				int x = Mathf.FloorToInt(cubePos.x);
 				int y = Mathf.FloorToInt(cubePos.y);
 				int z = Mathf.FloorToInt(cubePos.z);
+
+				if(normal.y <= -1.0f) {
+					y -= 1;
+				} else if(normal.x <= -1.0f) {
+					x -= 1;
+				} else if(normal.z <= -1.0f) {
+					z -= 1	;
+				}
+
 				x %= Chunk.sizex;
 				z %= Chunk.sizez;
 
@@ -94,7 +105,7 @@ public class MouseClick : MonoBehaviour {
 	}
 
 	private void hitWhatever() {
-		Ray ray = new Ray(center.position, transform.forward);
+		Ray ray = new Ray(center.position, center.forward);
 		RaycastHit rhit = new RaycastHit();
 
 		if(Physics.Raycast (ray, out rhit, 5.0f)) {
@@ -107,12 +118,17 @@ public class MouseClick : MonoBehaviour {
 			} else {
 				Chunk c = rhit.collider.GetComponent<Chunk>();
 				Vector3 cubePos = rhit.point;
-				int x = Mathf.FloorToInt(cubePos.x);
-				int y = Mathf.FloorToInt(cubePos.y);
-				int z = Mathf.FloorToInt(cubePos.z);
+				Vector3 normal = rhit.normal;
+				int x, y, z;
+
+				x = Mathf.FloorToInt(cubePos.x);
+				y = Mathf.FloorToInt(cubePos.y);
+				z = Mathf.FloorToInt(cubePos.z);
+
 				x %= Chunk.sizex;
-				--y;
+				y -= 1;
 				z %= Chunk.sizez;
+				
 				if(!c.removeCube(x, y, z)) {
 					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
 				}
