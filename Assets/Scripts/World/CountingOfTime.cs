@@ -34,8 +34,8 @@ public class CountingOfTime : MonoBehaviour {
 		sizeX = Chunk.sizex * World.sizex;
 		sizeZ = Chunk.sizez * World.sizez;
 
-		sun.transform.position = new Vector3(0.0f, Chunk.sizey, 0.0f);
-		moon.transform.position = new Vector3(0.0f, -Chunk.sizey, 0.0f);
+		sun.transform.position = new Vector3(0.0f, Chunk.sizey*2.0f, 0.0f);
+		moon.transform.position = new Vector3(0.0f, -(Chunk.sizey*2.0f), 0.0f);
 
 		astroHeight = sun.transform.position.y;
 	}
