@@ -20,6 +20,8 @@ public class MovementPlayer : MonoBehaviour {
 		DOWN,
 		RIGHT,
 	}
+
+	public GUITexture blood;
 	#endregion
 
 	#region private variables
@@ -36,6 +38,8 @@ public class MovementPlayer : MonoBehaviour {
 	private float damageTimer;
 	private bool recovering;
 	private bool delayedRecovering;
+
+	private GUITexture bloodInst;
 	#endregion
 
 	void Start() {
@@ -48,6 +52,11 @@ public class MovementPlayer : MonoBehaviour {
 		damaged = false;
 		recovering = false;
 		delayedRecovering = false;
+
+		bloodInst = (GUITexture) Instantiate (blood);
+		Rect px = new Rect(0.0f, 0.0f, Screen.width, Screen.height);
+		bloodInst.pixelInset = px;
+		bloodInst.color = new Color(1.0f, 0.0f, 0.0f, 0.0f);
 	}
 
 	// Update is called once per frame
@@ -181,6 +190,7 @@ public class MovementPlayer : MonoBehaviour {
 				recovering = false;
 			}
 		}
+		bloodInst.color = new Color(1.0f, 0.0f, 0.0f, 0.4f * (1.0f - steveLife/10.0f));
 		Debug.Log ("steve Life = "+steveLife);
 	}
 
@@ -195,5 +205,6 @@ public class MovementPlayer : MonoBehaviour {
 		damaged = false;
 		recovering = false;
 		delayedRecovering = false;
+		bloodInst.color = new Color(1.0f, 0.0f, 0.0f, 0.4f * (1.0f - steveLife/10.0f));
 	}
 }

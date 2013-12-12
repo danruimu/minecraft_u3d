@@ -2697,8 +2697,8 @@ MonoBehaviour:
   sensitivityY: 15
   minimumX: -360
   maximumX: 360
-  minimumY: -75
-  maximumY: 75
+  minimumY: -90
+  maximumY: 90
   mainCamera: {fileID: 2000002}
   steveHead: {fileID: 100006}
   steveBody: {fileID: 100000}
@@ -2716,6 +2716,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 5
   steveEyes: {fileID: 2000002}
+  blood: {fileID: 13100000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
