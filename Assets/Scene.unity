@@ -248,62 +248,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1551837971}
   m_GameObject: {fileID: 107462970}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &115358215
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 13100000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_Color.a
-      value: .333333343
-      objectReference: {fileID: 0}
-    - target: {fileID: 13100000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 13100000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 13100000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-  m_RootGameObject: {fileID: 256235733}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &152776515
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,53 +364,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 819553126}
   m_GameObject: {fileID: 167099041}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &256235733
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-  m_PrefabInternal: {fileID: 115358215}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 256235735}
-  - 131: {fileID: 256235734}
-  m_Layer: 0
-  m_Name: Blood
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!131 &256235734
-GUITexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13100000, guid: 01de3972caccd874d9c81d2d0e8a9e6d,
-    type: 2}
-  m_PrefabInternal: {fileID: 115358215}
-  m_GameObject: {fileID: 256235733}
-  m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 53bbc311819c4124d815b9b68a60215d, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .333333343}
-  m_PixelInset:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 85888
-    height: 888
-  m_LeftBorder: 0
-  m_RightBorder: 0
-  m_TopBorder: 0
-  m_BottomBorder: 0
---- !u!4 &256235735
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
-  m_PrefabInternal: {fileID: 115358215}
-  m_GameObject: {fileID: 256235733}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &263251701
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,13 +35,13 @@ GUITexture:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Texture: {fileID: 2800000, guid: 53bbc311819c4124d815b9b68a60215d, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: .5}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_PixelInset:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 85888
-    height: 888
+    width: 725
+    height: 309
   m_LeftBorder: 0
   m_RightBorder: 0
   m_TopBorder: 0
