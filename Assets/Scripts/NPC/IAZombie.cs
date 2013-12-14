@@ -131,7 +131,7 @@ public class IAZombie : MonoBehaviour {
 		float zombieAngleY = transform.rotation.eulerAngles.y;
 
 		float angle = angleToSteve - zombieAngleY;
-		if( angle >= 5.0f || angle <= -5.0f) {	//ROT
+		if( angle >= 2.5f || angle <= -2.5f) {	//ROT
 			legLeft.enabled = false;
 			legRight.enabled = false;
 			float rotation = angle<0.0f ? -speedRotation : speedRotation;
@@ -161,18 +161,10 @@ public class IAZombie : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision other) {
-//		bool otherIsChunk = false;
-//		foreach(ContactPoint cp in other.contacts) {
-//			otherIsChunk = otherIsChunk || cp.otherCollider.CompareTag("Chunk");
-//		}
-	}
-
 	void OnCollisionStay(Collision other) {
 		bool otherIsWall = false;
 		foreach (ContactPoint cp in other.contacts) {
-			Debug.Log (cp.normal.y);
-			otherIsWall = otherIsWall || (cp.normal.y <= 0.5f && cp.normal.y >= -0.5f && cp.otherCollider.CompareTag("Chunk"));
+			otherIsWall = otherIsWall || (cp.normal.y <= 0.4f && cp.normal.y >= -0.4f && cp.otherCollider.CompareTag("Chunk"));
 		}
 		if(!isJumping && otherIsWall) {
 			isJumping = true;
@@ -188,7 +180,7 @@ public class IAZombie : MonoBehaviour {
 	public void damage(float damage, Vector3 normalImpact) {
 		if(!damaged) {
 			life -= damage;
-			rigidbody.AddForce(-normalImpact * 200.0f, ForceMode.Impulse);
+			rigidbody.AddForce((-normalImpact + Vector3.up) * 200.0f, ForceMode.Impulse);
 			blood.enableEmission = true;
 			blood.Play ();
 			if(life <= 0.0f) died = true;
