@@ -48,7 +48,7 @@ public class IAZombie : MonoBehaviour {
 		isMoving = false;
 		isRotating = false;
 		isSteveNear = false;
-		isJumping = false;
+		isJumping = true;
 		jumpEnough = false;
 
 		legLeft.enabled = false;
@@ -162,7 +162,19 @@ public class IAZombie : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other) {
-		if(!isJumping) {
+//		bool otherIsChunk = false;
+//		foreach(ContactPoint cp in other.contacts) {
+//			otherIsChunk = otherIsChunk || cp.otherCollider.CompareTag("Chunk");
+//		}
+	}
+
+	void OnCollisionStay(Collision other) {
+		bool otherIsWall = false;
+		foreach (ContactPoint cp in other.contacts) {
+			Debug.Log (cp.normal.y);
+			otherIsWall = otherIsWall || (cp.normal.y <= 0.5f && cp.normal.y >= -0.5f && cp.otherCollider.CompareTag("Chunk"));
+		}
+		if(!isJumping && otherIsWall) {
 			isJumping = true;
 			jumpEnough = false;
 			heightZombie = transform.position.y;
