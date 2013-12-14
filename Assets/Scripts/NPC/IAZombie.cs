@@ -48,7 +48,7 @@ public class IAZombie : MonoBehaviour {
 		isMoving = false;
 		isRotating = false;
 		isSteveNear = false;
-		isJumping = false;
+		isJumping = true;
 		jumpEnough = false;
 
 		legLeft.enabled = false;
@@ -131,7 +131,7 @@ public class IAZombie : MonoBehaviour {
 		float zombieAngleY = transform.rotation.eulerAngles.y;
 
 		float angle = angleToSteve - zombieAngleY;
-		if( angle >= 5.0f || angle <= -5.0f) {	//ROT
+		if( angle >= 2.5f || angle <= -2.5f) {	//ROT
 			legLeft.enabled = false;
 			legRight.enabled = false;
 			float rotation = angle<0.0f ? -speedRotation : speedRotation;
@@ -161,8 +161,12 @@ public class IAZombie : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision other) {
-		if(!isJumping) {
+	void OnCollisionStay(Collision other) {
+		bool otherIsWall = false;
+		foreach (ContactPoint cp in other.contacts) {
+			otherIsWall = otherIsWall || (cp.normal.y <= 0.4f && cp.normal.y >= -0.4f && cp.otherCollider.CompareTag("Chunk"));
+		}
+		if(!isJumping && otherIsWall) {
 			isJumping = true;
 			jumpEnough = false;
 			heightZombie = transform.position.y;
@@ -176,7 +180,7 @@ public class IAZombie : MonoBehaviour {
 	public void damage(float damage, Vector3 normalImpact) {
 		if(!damaged) {
 			life -= damage;
-			rigidbody.AddForce(-normalImpact * 250.0f, ForceMode.Impulse);
+			rigidbody.AddForce((-normalImpact + Vector3.up) * 200.0f, ForceMode.Impulse);
 			blood.enableEmission = true;
 			blood.Play ();
 			if(life <= 0.0f) died = true;
@@ -187,7 +191,6 @@ public class IAZombie : MonoBehaviour {
 
 	private void die() {
 		GameObject go = this.gameObject;
-
 		Destroy (go);
 	}
 

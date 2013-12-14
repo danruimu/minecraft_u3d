@@ -6,6 +6,7 @@ public class MovementPlayer : MonoBehaviour {
 	#region constant variables
 	private const float durationDamaged = 1.0f;
 	private const float timeToRecover = 5.0f;
+	private const float deadDuration = 10.0f;
 	#endregion
 
 	#region public variables
@@ -20,6 +21,8 @@ public class MovementPlayer : MonoBehaviour {
 		DOWN,
 		RIGHT,
 	}
+
+	public GUITexture blood;
 	#endregion
 
 	#region private variables
@@ -35,6 +38,13 @@ public class MovementPlayer : MonoBehaviour {
 	private bool damaged;
 	private float damageTimer;
 	private bool recovering;
+	private bool delayedRecovering;
+
+	private GUITexture bloodInst;
+	private bool dead;
+	private float timerDead;
+	private Quaternion origRot;
+	private Vector3 origPos;
 	#endregion
 
 	void Start() {
@@ -46,10 +56,22 @@ public class MovementPlayer : MonoBehaviour {
 		steveLife = 10.0f;
 		damaged = false;
 		recovering = false;
+		delayedRecovering = false;
+
+		bloodInst = (GUITexture) Instantiate (blood);
+		Rect px = new Rect(0.0f, 0.0f, Screen.width, Screen.height);
+		bloodInst.pixelInset = px;
+		bloodInst.color = new Color(1.0f, 0.0f, 0.0f, 0.0f);
+
+		origRot = steveEyes.transform.rotation;
+		origPos = steveEyes.transform.position;
+
+		dead = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
+		if(!dead) {
 		#region movement
 		//Movement with WASD
 		if(Input.GetKey(KeyCode.W) && !dir[(int)directions.UP]) {
@@ -85,8 +107,21 @@ public class MovementPlayer : MonoBehaviour {
 			}
 		}
 		#endregion
+		}
 
-		if(damaged || recovering) treatDamage();
+		#region life control
+		if((damaged || recovering || delayedRecovering) && !dead) treatDamage();
+		if(dead) {
+			timerDead += Time.deltaTime;
+			if(timerDead <= 1.0f) {
+				steveEyes.transform.Rotate (steveEyes.transform.forward, 90.0f*Time.deltaTime);
+				steveEyes.transform.Translate(1.5f*Vector3.down*Time.deltaTime);
+			} else if(timerDead >= deadDuration) {
+				respawn();
+			}
+
+		}
+		#endregion
 	}
 
 	void OnCollisionEnter(Collision other) {
@@ -137,11 +172,15 @@ public class MovementPlayer : MonoBehaviour {
 
 		#region collision MOB
 		if(otherIsMOB && !damaged) {
-			transform.rigidbody.AddForce(normalMOB * 500.0f, ForceMode.Impulse);
+			transform.rigidbody.AddForce(normalMOB * 250.0f, ForceMode.Impulse);
 			damaged = true;
 			recovering = false;
+			delayedRecovering = false;
 			damageTimer = 0.0f;
 			steveLife -= 1.0f;
+			if(steveLife <= 0.0f) {
+				dead = true;
+			}
 		}
 		#endregion
 	}
@@ -158,12 +197,13 @@ public class MovementPlayer : MonoBehaviour {
 
 	private void treatDamage() {
 		damageTimer += Time.deltaTime;
-		steveEyes.backgroundColor = Color.red * (10.0f - steveLife);
 		if(damageTimer >= durationDamaged && damaged) {
 			damaged = false;
+			delayedRecovering = true;
 			damageTimer = 0.0f;
 		}
 		if(damageTimer >= timeToRecover) {
+			delayedRecovering = false;
 			recovering = true;
 			damageTimer = 0.0f;
 		}
@@ -174,8 +214,26 @@ public class MovementPlayer : MonoBehaviour {
 			}
 			if(steveLife >= 10.0f) {
 				recovering = false;
-				steveEyes.backgroundColor = Color.white;
 			}
 		}
+		bloodInst.color = new Color(1.0f, 0.0f, 0.0f, 0.4f * (1.0f - steveLife/10.0f));
+		Debug.Log ("steve Life = "+steveLife);
+	}
+
+	private void respawn() {
+		transform.position = new Vector3 (8.0f, 80.0f, 8.0f);
+		steveEyes.transform.position = origPos;
+		steveEyes.transform.rotation = origRot;
+		dead = false;
+		isGrounded = false;
+		godMode = false;
+		objectCollision = false;
+		dir = new bool[4];
+		dir[(int)directions.UP] = dir[(int)directions.LEFT] = dir[(int)directions.DOWN] = dir[(int)directions.RIGHT] = false;
+		steveLife = 10.0f;
+		damaged = false;
+		recovering = false;
+		delayedRecovering = false;
+		bloodInst.color = new Color(1.0f, 0.0f, 0.0f, 0.4f * (1.0f - steveLife/10.0f));
 	}
 }

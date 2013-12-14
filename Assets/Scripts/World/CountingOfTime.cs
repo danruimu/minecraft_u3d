@@ -7,7 +7,7 @@ public class CountingOfTime : MonoBehaviour {
 	public GameObject sky;
 	public GameObject moon;
 
-	private float speed = 360.0f / (24.0f*60.0f); //one hour in game = minute in real life
+	private float speed = 360.0f / (24.0f*1.0f); //one hour in game = minute in real life
 	private float time;
 
 	//Days is set to simulate the moon phases
@@ -33,6 +33,9 @@ public class CountingOfTime : MonoBehaviour {
 
 		sizeX = Chunk.sizex * World.sizex;
 		sizeZ = Chunk.sizez * World.sizez;
+
+		sun.transform.position = new Vector3(0.0f, Chunk.sizey*2.0f, 0.0f);
+		moon.transform.position = new Vector3(0.0f, -(Chunk.sizey*2.0f), 0.0f);
 
 		astroHeight = sun.transform.position.y;
 	}

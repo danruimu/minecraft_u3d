@@ -1252,7 +1252,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 80, z: 10}
+  m_LocalPosition: {x: 6.32319546, y: 80, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400086}
@@ -2493,7 +2493,7 @@ MonoBehaviour:
   timeBetweenActions: 5
   speedMovement: 1
   speedRotation: 90
-  speedJump: 1
+  speedJump: 5
   steve: {fileID: 0}
   legLeft: {fileID: 9500004}
   legRight: {fileID: 9500006}
