@@ -129,12 +129,12 @@ public class MovementPlayer : MonoBehaviour {
 		bool otherIsFloor = false;
 		bool otherIsMOB = false;
 		Vector3 normalMOB = new Vector3();
-		//bool otherIsWall = false;
+		bool otherIsWall = false;
 		for (int i = 0; i<other.contacts.Length; ++i) {
 			otherIsFloor = otherIsFloor || other.contacts[i].otherCollider.CompareTag("Chunk");
 			otherIsMOB = otherIsMOB || other.contacts[i].otherCollider.CompareTag ("MOB");
 			if(otherIsMOB) normalMOB = other.contacts[i].normal;
-			//otherIsWall = otherIsFloor && (otherIsWall || Vector3.Cross(other.contacts[i].normal, Vector3.up).magnitude > threshold);
+			otherIsWall = other.contacts[i].otherCollider.CompareTag("Chunk") && (otherIsWall || (other.contacts[i].normal.y >= -0.5f && other.contacts[i].normal.y <= 0.5f));
 		}
 
 		#region collision floor
@@ -152,8 +152,8 @@ public class MovementPlayer : MonoBehaviour {
 		#endregion
 
 		#region collision wall
-		//if(otherIsWall) {	TODO: return to the otherIsWall
-		if(!otherIsFloor) {
+		if(otherIsWall) {	//TODO: return to the otherIsWall
+//		if(!otherIsFloor) {
 			objectCollision = true;
 			if(Input.GetKey(KeyCode.W)) {
 				dir[(int)directions.UP] = true;
