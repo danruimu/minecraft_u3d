@@ -2615,7 +2615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699a8ca1147fc574fb8316f321035aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {fileID: 400040}
+  center: {fileID: 400078}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2627,9 +2627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7d7add9b7680645b4d908be40e75b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  barra: {fileID: 0}
-  selector: {fileID: 0}
+  inventory: {fileID: 13100000, guid: 2cd0b8b75d9d88b4fa0f5d4d650f7200, type: 2}
+  barra: {fileID: 13100000, guid: 9b3efe22a60888c49a8d2df58437ca9c, type: 2}
+  selector: {fileID: 13100000, guid: 5e4a34ca7a2c0dd45a56c65b8c8c5199, type: 2}
   prefab: {fileID: 100000, guid: a60d0a0c6ca94164d92db2ae9a102fdc, type: 2}
   textures:
   - {fileID: 2800000, guid: 15adbe0aada5beb4ab139e3a5c3e4c4e, type: 3}
