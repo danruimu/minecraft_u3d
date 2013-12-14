@@ -152,8 +152,7 @@ public class MovementPlayer : MonoBehaviour {
 		#endregion
 
 		#region collision wall
-		if(otherIsWall) {	//TODO: return to the otherIsWall
-//		if(!otherIsFloor) {
+		if(otherIsWall) {
 			objectCollision = true;
 			if(Input.GetKey(KeyCode.W)) {
 				dir[(int)directions.UP] = true;
