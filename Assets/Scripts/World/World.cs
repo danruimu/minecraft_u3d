@@ -122,8 +122,8 @@ public class World : MonoBehaviour {
 
 	public bool existsCube(Vector3 pos){
 		//limites absolutos
-		if(pos.x < 0 ||pos.y < 0 || pos.z < 0)return false;// es true per a no pintar els bordes
-		if(pos.x >= sizex*Chunk.sizex || pos.y >= Chunk.sizey ||pos.z >= sizez*Chunk.sizez)return false;// es true per a no pintar els bordes
+		if(pos.x < 0 ||pos.y < 0 || pos.z < 0)return true;// es true per a no pintar els bordes
+		if(pos.x >= sizex*Chunk.sizex || pos.y >= Chunk.sizey ||pos.z >= sizez*Chunk.sizez)return true;// es true per a no pintar els bordes
 		return getChunk(pos).existsCube(relativePos(pos));
 	}
 
@@ -131,11 +131,10 @@ public class World : MonoBehaviour {
 		getChunk(pos).delFace(relativePos(pos),face);
 	}
 
-	public void addFace(Vector3 pos,faceType face){
-		getChunk(pos).addFace(relativePos(pos),face);
+	public bool addFace(Vector3 pos,faceType face){
+		return getChunk(pos).addFace(relativePos(pos),face);
 	}
-
-	//TODO hacer estructura para hacer esto rapido (array de tamaño BlockType.Length de (arrays de tamaño 6 de punteros a materiales))
+	
 	public static int[] getMatPointerArray(BlockType type){
 		if(indexsBlocks[(int)type] == null) throw new Exception("material " + type + " no dins del sistema");
 		return indexsBlocks[(int)type];

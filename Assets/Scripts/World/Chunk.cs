@@ -27,7 +27,6 @@ public class face{
 
 [RequireComponent (typeof (MeshFilter))]
 [RequireComponent (typeof (MeshRenderer))]
-[RequireComponent (typeof (MeshCollider))]
 
 //TODO: provar eliminar y afegir block edge chunk
 
@@ -128,8 +127,10 @@ public class Chunk : MonoBehaviour {
 		mesh.RecalculateNormals();
 		mesh.Optimize();
 		//TODO: colisions per box colliders
-		GetComponent<MeshCollider>().sharedMesh = null;
-		GetComponent<MeshCollider>().sharedMesh = mesh;
+	}
+
+	private Block getBlock(Vector3 pos){
+		return cubes[(int)pos.x,(int)pos.y,(int)pos.z];
 	}
 
 	public bool removeCube(int x,int y,int z){
@@ -154,7 +155,7 @@ public class Chunk : MonoBehaviour {
 			Vector3 colliding = props.posiciones[face] + position;
 			if(existsCube(colliding)){
 				if(insideChunk(colliding))
-					addFace(colliding,(faceType)(face^1));
+					if(addFace(colliding,(faceType)(face^1)))getBlock(colliding).initCollider(colliding);
 				else{
 					father.addFace(chunkPosition + colliding,(faceType)(face^1));
 				}
@@ -183,7 +184,7 @@ public class Chunk : MonoBehaviour {
 		return true;
 	}
 
-	public void addFace(Vector3 pos,faceType face){
+	public bool addFace(Vector3 pos,faceType face){
 		Block cub = cubes[(int)pos.x,(int)pos.y,(int)pos.z];
 		int material = cub.getMatIndex(face);
 		if(cub.getFace(face)==null){
@@ -208,10 +209,11 @@ public class Chunk : MonoBehaviour {
 			f.posV = indV;
 			f.mat = material;
 			refs[indV] = f;
-			cub.addFace(f,face);
+			return cub.addFace(f,face);
 		}
 		else{
 			Debug.LogError("cara a afegir ja afegida");
+			return false;
 		}
 	}
 
@@ -261,7 +263,7 @@ public class Chunk : MonoBehaviour {
 			p = props.posiciones[face] + position;
 			//TODO: casos maxims de numMaxFacesAdded en diferents chunks
 			if(!existsCube(p)){
-				addFace(position,(faceType)face);
+				if(addFace(position,(faceType)face))cub.initCollider(position);
 			}
 			else{
 				if(insideChunk(p))

@@ -103,17 +103,17 @@ public class MouseClick : MonoBehaviour {
 					z.damage(1.0f, rhit.normal);
 				}
 			} else {
-				Chunk c = rhit.collider.GetComponent<Chunk>();
-				Vector3 cubePos = rhit.point;
-				int x = Mathf.FloorToInt(cubePos.x);
-				int y = Mathf.FloorToInt(cubePos.y);
-				int z = Mathf.FloorToInt(cubePos.z);
-				x %= Chunk.sizex;
-				--y;
-				z %= Chunk.sizez;
-				if(!c.removeCube(x, y, z)) {
-					Debug.LogError("Cannot remove Cube at "+cubePos);
-				}
+//				Chunk c = rhit.collider.GetComponent<Chunk>();
+//				Vector3 cubePos = rhit.point;
+//				int x = Mathf.FloorToInt(cubePos.x);
+//				int y = Mathf.FloorToInt(cubePos.y);
+//				int z = Mathf.FloorToInt(cubePos.z);
+//				x %= Chunk.sizex;
+//				--y;
+//				z %= Chunk.sizez;
+//				if(!c.removeCube(x, y, z)) {
+//					Debug.LogError("Cannot remove Cube at "+cubePos);
+//				}
 
 			}
 		}

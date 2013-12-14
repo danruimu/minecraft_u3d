@@ -18,6 +18,7 @@ public enum BlockType {
 };
 
 public class Block {
+	private GameObject coll;
 	private int[] matPointer;
 	private face[] faces;
 	private BlockType type;
@@ -26,10 +27,18 @@ public class Block {
 		faces = new face[]{null,null,null,null,null,null};
 		matPointer = World.getMatPointerArray(type);
 		this.type = type;
+		coll = null;
 	}
 
-	public void addFace(face faceAdd,faceType f){
+	public bool addFace(face faceAdd,faceType f){
 		faces[(int)f]=faceAdd;
+		return coll == null;
+	}
+
+	public void initCollider(Vector3 pos){
+		coll = new GameObject();
+		coll.transform.position = pos;
+		BoxCollider bc = coll.AddComponent<BoxCollider>();
 	}
 
 	public face getFace(faceType f){
@@ -38,6 +47,13 @@ public class Block {
 
 	public void delFace(faceType f){
 		faces[(int)f] = null;
+		if(coll!=null){
+			foreach(face fa in faces){
+				if(fa!=null)return;
+			}
+			GameObject.Destroy(coll);
+			coll=null;
+		}
 	}
 
 	public int getMatIndex(faceType f){

@@ -327,10 +327,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400038}
-  - 33: {fileID: 3300030}
+  - 131: {fileID: 13100000}
   - 23: {fileID: 2300030}
+  - 33: {fileID: 3300030}
   m_Layer: 8
-  m_Name: CrossHair
+  m_Name: UnityWatermark-small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,6 +348,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400006}
   m_Layer: 9
   m_Name: Steve
   m_TagString: Player
@@ -1077,9 +1079,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100038}
-  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: .150000006, y: 1, z: .150000006}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
+  m_LocalPosition: {x: -8, y: -59.3168678, z: 7.50000191}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 400024}
 --- !u!4 &400040
@@ -1093,8 +1095,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400078}
-  - {fileID: 400024}
   - {fileID: 400000}
+  - {fileID: 400024}
   m_Father: {fileID: 0}
 --- !u!4 &400042
 Transform:
@@ -2728,6 +2730,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 400040}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7d7add9b7680645b4d908be40e75b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  barra: {fileID: 0}
+  crosshair: {fileID: 0}
+  selector: {fileID: 0}
+  prefab: {fileID: 100000, guid: a60d0a0c6ca94164d92db2ae9a102fdc, type: 2}
+  textures:
+  - {fileID: 2800000, guid: 15adbe0aada5beb4ab139e3a5c3e4c4e, type: 3}
+  - {fileID: 2800000, guid: e259861d9ef45a04f879e3e5031a798e, type: 3}
+  - {fileID: 2800000, guid: b86a4e8b8ebc1a441a10baf9e979fbee, type: 3}
+  - {fileID: 2800000, guid: 22880222f1d6ecb4e96bd0de123c9e98, type: 3}
+  - {fileID: 2800000, guid: 4f5b83366130ff942b3afdecac6608a7, type: 3}
+  - {fileID: 2800000, guid: b3fc3375a153b2045b7f4c485625042d, type: 3}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2735,6 +2760,25 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100078}
   m_Enabled: 1
+--- !u!131 &13100000
+GUITexture:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100038}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: bd90de331503a9c4bb06065091c02d50, type: 3}
+  m_Color: {r: .996078432, g: .996078432, b: .996078432, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -64
+    y: -29
+    width: 128
+    height: 58
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
