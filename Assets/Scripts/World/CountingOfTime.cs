@@ -56,7 +56,9 @@ public class CountingOfTime : MonoBehaviour {
 		//Sky color
 		float sunHeight = sun.transform.position.y;	//from [-astroHeight,astroHeight]
 		sunHeight += astroHeight; //from [0,astroHeight*2]
-		sky.camera.backgroundColor = new Color(0.0f, 0.0f + sunHeight/(astroHeight*2.0f) - 0.25f, 0.0f + sunHeight/(astroHeight*2.0f) - 0.25f, 1.0f);
+		if(sky != null) {
+			sky.camera.backgroundColor = new Color(0.0f, 0.0f + sunHeight/(astroHeight*2.0f) - 0.25f, 0.0f + sunHeight/(astroHeight*2.0f) - 0.25f, 1.0f);
+		}
 
 		//Sun and Moon will be less intense as are falling down
 		if(sunHeight >= astroHeight) {

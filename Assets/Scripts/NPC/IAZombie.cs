@@ -145,8 +145,10 @@ public class IAZombie : MonoBehaviour {
 	}
 
 	private bool detectSteve() {
-		if(Vector3.Distance(steve.position, transform.position) <= detectionDistance) {
-			return true;
+		if(steve != null) {
+			if(Vector3.Distance(steve.position, transform.position) <= detectionDistance) {
+				return true;
+			}
 		}
 		legLeft.enabled = false;
 		legRight.enabled = false;

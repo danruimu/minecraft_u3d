@@ -4,7 +4,6 @@ using System.Collections;
 public class Item:MonoBehaviour {
 	private int id;
 	private byte quantity;
-	private Texture text;
 	private Vector3 posBarra;
 	private Vector3 posInv;
 	private float tam;
@@ -14,7 +13,6 @@ public class Item:MonoBehaviour {
 	public void startGO(int id,byte quant,Texture text,float tam,Vector3 posInv,Vector3 posBarra = default(Vector3)){
 		this.id=id;
 		this.quantity = quant;
-		this.text=text;
 		this.tam = tam;
 		Rect r = new Rect(0,0,tam,tam);
 		transform.localScale = new Vector3(0,0,0);
@@ -76,7 +74,6 @@ public class Item:MonoBehaviour {
 	}
 
 	public bool delQuantity(byte num){
-		byte oldQuant = quantity;
 		quantity=(byte)Mathf.Max(quantity-num,0);
 		return quantity<=0;
 	}	

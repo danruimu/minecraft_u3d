@@ -5,8 +5,10 @@ public class InventoryManagment : MonoBehaviour {
 	public static bool invEnabled = false;
 	public GUITexture inventory;
 	public GUITexture barra;
-	public GUITexture crosshair;
 	public GUITexture selector;
+	private GUITexture _inventory;
+	private GUITexture _barra;
+	private GUITexture _selector;
 	public GameObject prefab;
 	public Texture[] textures;
 
@@ -23,21 +25,24 @@ public class InventoryManagment : MonoBehaviour {
 	private float offsetY;
 
 	void Start(){
+		_inventory = (GUITexture)Instantiate(inventory);
+		_barra = (GUITexture)Instantiate(barra);
+		_selector = (GUITexture)Instantiate(selector);
 		posInv=0;
-		Vector3 pos = barra.transform.position;
-		startBarra = pos.x - (barra.pixelInset.width/2)/Screen.width;
-		stepBarra = (barra.pixelInset.width/9) / Screen.width;
+		Vector3 pos = _barra.transform.position;
+		startBarra = pos.x - (_barra.pixelInset.width/2)/Screen.width;
+		stepBarra = (_barra.pixelInset.width/9) / Screen.width;
 		pos.x = startBarra+posInv*stepBarra;
 		pos.z = 1;
-		selector.transform.position = pos;
+		_selector.transform.position = pos;
 		itemsInv = new Item[27];
 		itemsBarra = new Item[9];
-		inventory.pixelInset = new Rect(-((Screen.height-64)/2),-((Screen.height-64)/2),Screen.height-64,Screen.height-64);
+		_inventory.pixelInset = new Rect(-((Screen.height-64)/2),-((Screen.height-64)/2),Screen.height-64,Screen.height-64);
 		itemSizePx = (Screen.height-64)/12.0f;
 		float ample = (Screen.height-64)/2.0f;
-		inventoryXStart = inventory.transform.position.x - ample/Screen.width + (itemSizePx*0.52f)/Screen.width;
-		inventoryYStart = inventory.transform.position.y - ample/Screen.height + (itemSizePx/Screen.height)*2.36f;
-		inventoryBarYStart = inventory.transform.position.y - ample/Screen.height + (itemSizePx*0.8f)/Screen.height;
+		inventoryXStart = _inventory.transform.position.x - ample/Screen.width + (itemSizePx*0.52f)/Screen.width;
+		inventoryYStart = _inventory.transform.position.y - ample/Screen.height + (itemSizePx/Screen.height)*2.36f;
+		inventoryBarYStart = _inventory.transform.position.y - ample/Screen.height + (itemSizePx*0.8f)/Screen.height;
 		offset = itemSizePx*0.2f;
 		offsetY = itemSizePx*0.3f;
 	}
@@ -80,13 +85,11 @@ public class InventoryManagment : MonoBehaviour {
 	}
 	
 	void Update () {
-		Transform t = transform;
 		if(Input.GetKeyDown(KeyCode.E)){
 			invEnabled = !invEnabled;
-			inventory.enabled = invEnabled;
-			selector.enabled = !invEnabled;
-			barra.enabled = !invEnabled;
-			crosshair.enabled = !invEnabled;
+			_inventory.enabled = invEnabled;
+			_selector.enabled = !invEnabled;
+			_barra.enabled = !invEnabled;
 			GetComponent<MouseLook>().enabled = !invEnabled;
 			GetComponent<MovementPlayer>().enabled = !invEnabled;
 			pintaItems(invEnabled);
@@ -94,22 +97,22 @@ public class InventoryManagment : MonoBehaviour {
 		else if(!invEnabled){
 			if (Input.GetAxis("Mouse ScrollWheel") > 0 && posInv > 0) {
 				posInv--;
-				Vector3 pos = selector.transform.position;
+				Vector3 pos = _selector.transform.position;
 				pos.x = startBarra+posInv*stepBarra;
-				selector.transform.position = pos;
+				_selector.transform.position = pos;
 			}
 			else if (Input.GetAxis("Mouse ScrollWheel") < 0 && posInv < 8) {
 				posInv++;
-				Vector3 pos = selector.transform.position;
+				Vector3 pos = _selector.transform.position;
 				pos.x = startBarra+posInv*stepBarra;
-				selector.transform.position = pos;
+				_selector.transform.position = pos;
 			}
 			else{
 				for(int i = 0;i<9;i++){
 					if(Input.GetKeyDown(i+KeyCode.Alpha1)){
-						Vector3 pos = selector.transform.position;
+						Vector3 pos = _selector.transform.position;
 						pos.x = startBarra+i*stepBarra;
-						selector.transform.position = pos;
+						_selector.transform.position = pos;
 						posInv = i;
 					}
 				}

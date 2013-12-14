@@ -122,17 +122,25 @@ public class World : MonoBehaviour {
 
 	public bool existsCube(Vector3 pos){
 		//limites absolutos
-		if(pos.x < 0 ||pos.y < 0 || pos.z < 0)return true;// es true per a no pintar els bordes
-		if(pos.x >= sizex*Chunk.sizex || pos.y >= Chunk.sizey ||pos.z >= sizez*Chunk.sizez)return true;// es true per a no pintar els bordes
+		if(pos.x < 0 ||pos.y < 0 || pos.z < 0)return false;
+		if(pos.x >= sizex*Chunk.sizex || pos.y >= Chunk.sizey ||pos.z >= sizez*Chunk.sizez)return false;
 		return getChunk(pos).existsCube(relativePos(pos));
 	}
 
+	private bool posValida(Vector3 pos){
+		if(pos.x < 0 ||pos.y < 0 || pos.z < 0)return false;
+		if(pos.x >= sizex*Chunk.sizex || pos.y >= Chunk.sizey ||pos.z >= sizez*Chunk.sizez)return false;
+		return true;
+	}
+
 	public void delFace(Vector3 pos,faceType face){
-		getChunk(pos).delFace(relativePos(pos),face);
+		if(posValida(pos))
+			getChunk(pos).delFace(relativePos(pos),face);
 	}
 
 	public bool addFace(Vector3 pos,faceType face){
-		return getChunk(pos).addFace(relativePos(pos),face);
+		if(posValida(pos))return getChunk(pos).addFace(relativePos(pos),face);
+		return false;
 	}
 	
 	public static int[] getMatPointerArray(BlockType type){
