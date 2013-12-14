@@ -38,7 +38,9 @@ public class Block {
 	public void initCollider(Vector3 pos){
 		coll = new GameObject();
 		coll.transform.position = pos;
+		coll.tag = "Chunk";
 		BoxCollider bc = coll.AddComponent<BoxCollider>();
+		bc.center = new Vector3(0.5f,0.5f,0.5f);
 	}
 
 	public face getFace(faceType f){

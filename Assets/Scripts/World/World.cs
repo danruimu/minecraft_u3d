@@ -122,8 +122,8 @@ public class World : MonoBehaviour {
 
 	public bool existsCube(Vector3 pos){
 		//limites absolutos
-		if(pos.x < 0 ||pos.y < 0 || pos.z < 0)return false;
-		if(pos.x >= sizex*Chunk.sizex || pos.y >= Chunk.sizey ||pos.z >= sizez*Chunk.sizez)return false;
+		if(pos.x < 0 ||pos.y < 0 || pos.z < 0)return true;
+		if(pos.x >= sizex*Chunk.sizex || pos.y >= Chunk.sizey ||pos.z >= sizez*Chunk.sizez)return true;
 		return getChunk(pos).existsCube(relativePos(pos));
 	}
 
