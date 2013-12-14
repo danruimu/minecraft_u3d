@@ -97,7 +97,7 @@ public class MouseClick : MonoBehaviour {
 				x %= Chunk.sizex;
 				z %= Chunk.sizez;
 
-				if(!c.newCube(x, y, z, BlockType.Dirt)) {
+				if(!c.newCube(x, y, z, BlockType.GoldOre)) {
 					Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
 				}
 			}
