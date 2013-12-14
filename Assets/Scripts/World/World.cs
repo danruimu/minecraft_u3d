@@ -111,6 +111,27 @@ public class World : MonoBehaviour {
 ////			else Debug.Log("failuer");
 //		}
 	}
+
+	public bool removeCube(int x,int y,int z){
+		Vector3 pos = new Vector3(x,y,z);
+		if(!posValida(pos))return false;
+		pos = relativePos(pos);
+		return getChunk(pos).removeCube((int)pos.x,(int)pos.y,(int)pos.z);
+	}
+
+	public bool addCube(int x,int y,int z,BlockType type){
+		Vector3 pos = new Vector3(x,y,z);
+		if(!posValida(pos))return false;
+		pos = relativePos(pos);
+		return getChunk(pos).newCube((int)pos.x,(int)pos.y,(int)pos.z,type);
+	}
+
+	public BlockType getBlockType(int x,int y,int z){
+		Vector3 pos = new Vector3(x,y,z);
+		if(!posValida(pos))return BlockType.Bedrock;//apaño pa' k no peteh(etxo por dni el reshulonako
+		pos = relativePos(pos);
+		return getChunk(pos).getBlockType((int)pos.x,(int)pos.y,(int)pos.z);
+	}
 	
 	private Vector3 relativePos(Vector3 pos){
 		return new Vector3(((int)pos.x)%Chunk.sizex,(int)pos.y,((int)pos.z)%Chunk.sizez);

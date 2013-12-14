@@ -169,6 +169,10 @@ public class Chunk : MonoBehaviour {
 		return true;
 	}
 
+	public BlockType getBlockType(int x,int y,int z){
+		return cubes[x,y,z].getType();
+	}
+
 	public bool newCube(int x,int y,int z, BlockType type){
 		Vector3 pos = new Vector3 (x, y, z);
 		if(!insideChunk(pos))return false;
