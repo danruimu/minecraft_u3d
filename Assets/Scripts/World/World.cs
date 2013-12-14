@@ -16,6 +16,7 @@ public class World : MonoBehaviour {
 
 	private static int[][] indexsBlocks;
 	private Chunk[,] chunks;
+	private GameObject collNorth,collSouth,collWest,collEast;
 
 //	private int xa,ya,za;
 //	private int xd,yd,zd;
@@ -91,6 +92,25 @@ public class World : MonoBehaviour {
 
 	void Start () {
 		init();
+		collSouth = new GameObject("Colider der sur");
+		collNorth = new GameObject("ahi va collider!");
+		collEast = new GameObject("col·lisionador de l'est");
+		collWest = new GameObject("collider de la vieira");
+		BoxCollider bc = collSouth.AddComponent<BoxCollider>();
+		bc.size = new Vector3(sizex*Chunk.sizex,Chunk.sizey,1f);
+		bc.center = new Vector3(sizex*Chunk.sizex/2f,Chunk.sizey/2f,-0.5f);
+
+		bc = collNorth.AddComponent<BoxCollider>();
+		bc.size = new Vector3(sizex*Chunk.sizex,Chunk.sizey,1f);
+		bc.center = new Vector3(sizex*Chunk.sizex/2f,Chunk.sizey/2f,sizez*Chunk.sizez+0.5f);
+
+		bc = collEast.AddComponent<BoxCollider>();
+		bc.size = new Vector3(1f,Chunk.sizey,sizez*Chunk.sizez);
+		bc.center = new Vector3(sizex*Chunk.sizex+0.5f,Chunk.sizey/2f,sizez*Chunk.sizez/2.0f);
+		
+		bc = collWest.AddComponent<BoxCollider>();
+		bc.size = new Vector3(1f,Chunk.sizey,sizez*Chunk.sizez);
+		bc.center = new Vector3(-0.5f,Chunk.sizey/2f,sizez*Chunk.sizez/2.0f);
 //		xa=xd=za=zd=0;
 //		yd=0;
 //		ya=70;
