@@ -67,8 +67,8 @@ public class InventoryManagment : MonoBehaviour {
 		GameObject go = (GameObject)Instantiate(prefab);
 		Item it = go.GetComponent<Item>();
 		if(barra){
-			Vector3 posInv = new Vector3(inventoryXStart + (offset*pos)/Screen.width + (itemSizePx*pos)/Screen.width,inventoryBarYStart,1f);
-			Vector3 posBarra = new Vector3(startBarra+stepBarra*pos,0f,1f);
+			Vector3 posInv = new Vector3(inventoryXStart + (offset*pos)/Screen.width + (itemSizePx*pos)/Screen.width,inventoryBarYStart,2f);
+			Vector3 posBarra = new Vector3(startBarra+stepBarra*pos,0f,2f);
 			it.startGO(id,quantitat,textures[id],itemSizePx,posInv,posBarra);
 			go.name = "barra["+pos+"]";
 			it.cambia(invEnabled);

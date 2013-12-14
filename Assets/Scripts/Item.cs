@@ -97,14 +97,14 @@ public class Item:MonoBehaviour {
 			}
 			if(Input.GetMouseButtonUp(0)){
 				dragging = false;
-				//if posicio on l'he deixat es invalida moulo a on estava abans
+				//if posicio on l'he deixat es invalida mou-l'ho a on estava abans
 				//else cambiali la pos per defecte
 			}
 			if(dragging){
 				Vector3 pos = Input.mousePosition;
 				pos.x /=Screen.width;
 				pos.y/=Screen.height;
-				pos.z=2;
+				pos.z=3f;
 				mou (pos - offsetClick);
 			}
 		}

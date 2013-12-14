@@ -61,6 +61,10 @@ public class IAZombie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(KeyCode.J)) {
+			damage (0.0f, Vector3.right);
+		}
+
 		time += Time.deltaTime;
 
 		isSteveNear = detectSteve();
@@ -200,7 +204,7 @@ public class IAZombie : MonoBehaviour {
 		damageTimer += Time.deltaTime;
 		if(damageTimer <= damageAnimationDuration && died) {
 			transform.Rotate(Vector3.left, 90.0f*Time.deltaTime);
-		} else {
+		} else if(damageTimer >= damageAnimationDuration) {
 			damaged = false;
 			blood.enableEmission = false;
 			blood.Stop();
