@@ -61,10 +61,6 @@ public class IAZombie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.J)) {
-			damage (0.0f, Vector3.right);
-		}
-
 		time += Time.deltaTime;
 
 		isSteveNear = detectSteve();
@@ -183,12 +179,13 @@ public class IAZombie : MonoBehaviour {
 	}
 
 	//return the current life
-	public void damage(float damage, Vector3 normalImpact) {
+	public void damage(float damage, Vector3 normalImpact, Vector3 point) {
 		if(!damaged) {
 			life -= damage;
 			rigidbody.AddForce((-normalImpact + Vector3.up) * 200.0f, ForceMode.Impulse);
 			blood.enableEmission = true;
 			blood.Play ();
+			blood.transform.position = point;
 			if(life <= 0.0f) died = true;
 			damaged = true;
 			damageTimer = 0.0f;

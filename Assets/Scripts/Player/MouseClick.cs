@@ -113,7 +113,7 @@ public class MouseClick : MonoBehaviour {
 				if(rhit.distance < 2.0f) {
 					IAZombie z = rhit.collider.GetComponent<IAZombie>();
 
-					z.damage(1.0f, rhit.normal);
+					z.damage(1.0f, rhit.normal, rhit.point);
 				}
 			} else {
 				Chunk c = rhit.collider.GetComponent<Chunk>();

@@ -172,7 +172,7 @@ public class MovementPlayer : MonoBehaviour {
 
 		#region collision MOB
 		if(otherIsMOB && !damaged) {
-			transform.rigidbody.AddForce(normalMOB * 250.0f, ForceMode.Impulse);
+			transform.rigidbody.AddForce((Vector3.up + normalMOB) * 250.0f, ForceMode.Impulse);
 			damaged = true;
 			recovering = false;
 			delayedRecovering = false;
