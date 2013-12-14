@@ -216,7 +216,6 @@ public class MovementPlayer : MonoBehaviour {
 			}
 		}
 		bloodInst.color = new Color(1.0f, 0.0f, 0.0f, 0.4f * (1.0f - steveLife/10.0f));
-		Debug.Log ("steve Life = "+steveLife);
 	}
 
 	private void respawn() {
