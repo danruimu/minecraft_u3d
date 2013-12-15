@@ -28,10 +28,9 @@ GameObject:
   - 4: {fileID: 400002}
   - 33: {fileID: 3300002}
   - 23: {fileID: 2300002}
-  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: PickAxe
-  m_TagString: Untagged
+  m_TagString: PickAxe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,20 +126,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699a8ca1147fc574fb8316f321035aa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grassDestroy: {fileID: 0}
-  _dirtyDestroy: {fileID: 0}
-  _stoneDestroy: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -47,8 +47,8 @@ GameObject:
   - 33: {fileID: 3300004}
   - 23: {fileID: 2300004}
   m_Layer: 0
-  m_Name: Sword Handgrip
-  m_TagString: Untagged
+  m_Name: Sword
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.35016404e-05, y: 4.52411366, z: 6.06735484e-05}
-  m_LocalScale: {x: 1, y: 5, z: .100000001}
+  m_LocalScale: {x: .75, y: 5, z: .100000001}
   m_Children: []
   m_Father: {fileID: 400004}
 --- !u!4 &400002
@@ -81,9 +81,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_LocalRotation: {x: .183012933, y: -.683012724, z: 0, w: .707106709}
-  m_LocalPosition: {x: 96.3643494, y: 49.5281448, z: 100.445755}
-  m_LocalScale: {x: .0510420129, y: .100000001, z: .0511160083}
+  m_LocalRotation: {x: -.129409522, y: -.0170371048, z: .129409656, w: -.982962906}
+  m_LocalPosition: {x: .44569999, y: -.215544701, z: .447601289}
+  m_LocalScale: {x: .0500000007, y: .100000001, z: .0511160083}
   m_Children:
   - {fileID: 400000}
   - {fileID: 400002}
