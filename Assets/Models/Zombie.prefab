@@ -2498,6 +2498,10 @@ MonoBehaviour:
   legLeft: {fileID: 9500004}
   legRight: {fileID: 9500006}
   blood: {fileID: 19800000}
+  hurt: {fileID: 8300000, guid: 0eb2a610e5f0a0c44aff36b391bb7706, type: 3}
+  say: {fileID: 8300000, guid: 841eed23b68a444459bda55b29d1a3d4, type: 3}
+  death: {fileID: 8300000, guid: 34b08429e4b785347abdfca849ec44f9, type: 3}
+  step: {fileID: 8300000, guid: 9216460ce9bfa024e835988ce87c6517, type: 3}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

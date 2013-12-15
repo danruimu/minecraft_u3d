@@ -29,6 +29,9 @@ public class MouseClick : MonoBehaviour {
 
 	public World world;
 
+	public AudioClip destroyBlock;
+	private AudioSource _destroyBlock;
+
 	public void shitTheWeapon() {
 		if(currentWeapon != null) {
 			Destroy (currentWeapon);
@@ -63,6 +66,11 @@ public class MouseClick : MonoBehaviour {
 	}
 
 	void Start() {
+		_destroyBlock = gameObject.AddComponent<AudioSource>();
+		_destroyBlock.playOnAwake = false;
+		_destroyBlock.loop = false;
+		_destroyBlock.clip = destroyBlock;
+
 		attack = false;
 
 		if(!changeWeapon(0)) {
@@ -193,6 +201,8 @@ public class MouseClick : MonoBehaviour {
 
 				if(!world.removeCube(x, y, z)) {
 					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
+				} else {
+
 				}
 			}
 		}

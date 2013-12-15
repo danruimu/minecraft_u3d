@@ -108,7 +108,15 @@ public class World : MonoBehaviour {
 		Debug.Log("creacion " + sizex + " * " + sizez + " Chunks -> tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
 	}
 
-	private byte getHeight(int x, int z){
+	public int getSizeX() {
+		return sizex;
+	}
+
+	public int getSizeZ() {
+		return sizez;
+	}
+
+	public byte getHeight(int x, int z){
 		return chunks[x/Chunk.sizex,z/Chunk.sizez].getHeight(x%Chunk.sizex,z%Chunk.sizez);
 	}
 
@@ -150,6 +158,7 @@ public class World : MonoBehaviour {
 
 		_steve = (GameObject) Instantiate (steve);
 		_steve.GetComponent<MouseClick>().world = this;
+		_steve.GetComponent<MovementPlayer>().setWorld(this);
 		this.gameObject.GetComponent<CountingOfTime>().sky = _steve.GetComponent<MovementPlayer>().steveEyes;
 		Vector3 pos;
 		pos.x = UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
@@ -195,15 +204,16 @@ public class World : MonoBehaviour {
 	}
 
 	private void spawnZombie() {
-		GameObject z = (GameObject) Instantiate(zombie);
-		z.GetComponent<IAZombie>().steve = _steve.transform;
 		Vector3 pos;
 		pos.x = UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
 		pos.z = UnityEngine.Random.Range (1f, Chunk.sizez * sizez);
 		pos.y = getHeight(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z));
 		pos.y += 2.0f;
-		z.transform.position = pos;
 		if(Vector3.Distance(_steve.transform.position, pos) < 15.0f) return;
+		
+		GameObject z = (GameObject) Instantiate(zombie);
+		z.GetComponent<IAZombie>().steve = _steve.transform;
+		z.transform.position = pos;
 		_zombies.Add (z);
 	}
 

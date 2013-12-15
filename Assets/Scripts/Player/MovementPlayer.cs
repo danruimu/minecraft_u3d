@@ -23,6 +23,10 @@ public class MovementPlayer : MonoBehaviour {
 	}
 
 	public GUITexture blood;
+
+	public AudioClip hurt;
+	public AudioClip death;
+	public AudioClip step;
 	#endregion
 
 	#region private variables
@@ -45,7 +49,20 @@ public class MovementPlayer : MonoBehaviour {
 	private float timerDead;
 	private Quaternion origRot;
 	private Vector3 origPos;
+	private Vector3 steveOrigPos;
+	private Quaternion steveOrigRot;
+
+	private float soundTimer;
+	private AudioSource _hurt;
+	private AudioSource _death;
+	private AudioSource _step;
+
+	private World world;
 	#endregion
+
+	public void setWorld(World w) {
+		world = w;
+	}
 
 	void Start() {
 		isGrounded = false;
@@ -66,26 +83,65 @@ public class MovementPlayer : MonoBehaviour {
 		origRot = steveEyes.transform.rotation;
 		origPos = steveEyes.transform.position;
 
+		steveOrigPos = transform.position;
+		steveOrigRot = transform.rotation;
+
 		dead = false;
+
+		//sound
+		_death = gameObject.AddComponent<AudioSource>();
+		_death.playOnAwake = false;
+		_death.clip = death;
+		_death.loop = false;
+		_death.Stop();
+		
+		_hurt = gameObject.AddComponent<AudioSource>();
+		_hurt.playOnAwake = false;
+		_hurt.clip = hurt;
+		_hurt.loop = false;
+		_hurt.Stop();
+		
+		_step = gameObject.AddComponent<AudioSource>();
+		_step.playOnAwake = false;
+		_step.clip = step;
+		_step.loop = true;
+		_step.Stop();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if(!dead) {
 		#region movement
-		//Movement with WASD
-		if(Input.GetKey(KeyCode.W) && !dir[(int)directions.UP]) {
-			transform.Translate(Vector3.forward * speed * Time.deltaTime);
-		}
-		if(Input.GetKey(KeyCode.S) && !dir[(int)directions.DOWN]) {
-			transform.Translate(Vector3.back * speed * Time.deltaTime);
-		}
-		if(Input.GetKey(KeyCode.A) && !dir[(int)directions.LEFT]) {
-			transform.Translate(Vector3.left * speed * Time.deltaTime);
-		}
-		if(Input.GetKey(KeyCode.D) && !dir[(int)directions.RIGHT]) {
-			transform.Translate(Vector3.right * speed * Time.deltaTime);
-		}
+			//Movement with WASD
+			if(Input.GetKey(KeyCode.W) && !dir[(int)directions.UP]) {
+				transform.Translate(Vector3.forward * speed * Time.deltaTime);
+				if(!_step.isPlaying) _step.Play();
+			}
+			if(Input.GetKey(KeyCode.S) && !dir[(int)directions.DOWN]) {
+				transform.Translate(Vector3.back * speed * Time.deltaTime);
+				if(!_step.isPlaying) _step.Play();
+			}
+			if(Input.GetKey(KeyCode.A) && !dir[(int)directions.LEFT]) {
+				transform.Translate(Vector3.left * speed * Time.deltaTime);
+				if(!_step.isPlaying) _step.Play();
+			}
+			if(Input.GetKey(KeyCode.D) && !dir[(int)directions.RIGHT]) {
+				transform.Translate(Vector3.right * speed * Time.deltaTime);
+				if(!_step.isPlaying) _step.Play();
+			}
+
+			if(Input.GetKeyUp(KeyCode.W) || !dir[(int)directions.UP]) {
+				if(_step.isPlaying) _step.Stop();
+			}
+			if(Input.GetKeyUp(KeyCode.A) || !dir[(int)directions.UP]) {
+				if(_step.isPlaying) _step.Stop();
+			}
+			if(Input.GetKeyUp(KeyCode.S) || !dir[(int)directions.UP]) {
+				if(_step.isPlaying) _step.Stop();
+			}
+			if(Input.GetKeyUp(KeyCode.D) || !dir[(int)directions.UP]) {
+				if(_step.isPlaying) _step.Stop();
+			}
 		#endregion
 
 		#region jump
@@ -118,6 +174,8 @@ public class MovementPlayer : MonoBehaviour {
 				steveEyes.transform.Translate(1.5f*Vector3.down*Time.deltaTime);
 			} else if(timerDead >= deadDuration) {
 				respawn();
+			} else {
+				if(_death.isPlaying) _death.Stop();
 			}
 
 		}
@@ -179,6 +237,9 @@ public class MovementPlayer : MonoBehaviour {
 			steveLife -= 1.0f;
 			if(steveLife <= 0.0f) {
 				dead = true;
+				if(!_death.isPlaying) _death.Play ();
+			} else {
+				if(!_hurt.isPlaying) _hurt.Play();
 			}
 		}
 		#endregion
@@ -198,6 +259,7 @@ public class MovementPlayer : MonoBehaviour {
 		damageTimer += Time.deltaTime;
 		if(damageTimer >= durationDamaged && damaged) {
 			damaged = false;
+			if(_hurt.isPlaying) _hurt.Stop();
 			delayedRecovering = true;
 			damageTimer = 0.0f;
 		}
@@ -219,9 +281,11 @@ public class MovementPlayer : MonoBehaviour {
 	}
 
 	private void respawn() {
-		transform.position = new Vector3 (8.0f, 80.0f, 8.0f);
+		transform.position = steveOrigPos;
+		transform.rotation = steveOrigRot;
 		steveEyes.transform.position = origPos;
 		steveEyes.transform.rotation = origRot;
+
 		dead = false;
 		isGrounded = false;
 		godMode = false;
