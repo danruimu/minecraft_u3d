@@ -2443,11 +2443,11 @@ AudioSource:
   m_GameObject: {fileID: 100040}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 037d1e559cf771b4eb616d7cb506733b, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: ae3be675091414f41a9c7086e1aa3e96, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: .25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -2536,6 +2536,9 @@ MonoBehaviour:
   jumpForce: 5
   steveEyes: {fileID: 2000002}
   blood: {fileID: 13100000, guid: 01de3972caccd874d9c81d2d0e8a9e6d, type: 2}
+  hurt: {fileID: 8300000, guid: b86c2254b06d7ec43b0d4612f6871fc5, type: 3}
+  death: {fileID: 8300000, guid: 57d841c2c41174541b754955a6997e41, type: 3}
+  step: {fileID: 8300000, guid: 9a708d275844c30409574c123ea84494, type: 3}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2552,6 +2555,7 @@ MonoBehaviour:
   - {fileID: 100002, guid: 3bcdfb8e654858945a62fc520890fa63, type: 2}
   - {fileID: 100004, guid: faabc7a99c9705a41a25d96f5fdecc75, type: 2}
   world: {fileID: 0}
+  destroyBlock: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
