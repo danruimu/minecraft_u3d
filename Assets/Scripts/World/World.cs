@@ -158,7 +158,6 @@ public class World : MonoBehaviour {
 
 		_steve = (GameObject) Instantiate (steve);
 		_steve.GetComponent<MouseClick>().world = this;
-		_steve.GetComponent<MovementPlayer>().setWorld(this);
 		this.gameObject.GetComponent<CountingOfTime>().sky = _steve.GetComponent<MovementPlayer>().steveEyes;
 		Vector3 pos;
 		pos.x = UnityEngine.Random.Range (1f, Chunk.sizex * sizex);

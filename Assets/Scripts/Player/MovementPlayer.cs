@@ -56,13 +56,7 @@ public class MovementPlayer : MonoBehaviour {
 	private AudioSource _hurt;
 	private AudioSource _death;
 	private AudioSource _step;
-
-	private World world;
 	#endregion
-
-	public void setWorld(World w) {
-		world = w;
-	}
 
 	void Start() {
 		isGrounded = false;
