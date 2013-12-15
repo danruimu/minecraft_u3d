@@ -177,15 +177,13 @@ public class World : MonoBehaviour {
 //		}
 
 		if(gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
-			Debug.Log ("Night");
 			if(!enoughZombiesPlease()) {
-				Debug.Log ("Spawn!");
 				spawnZombie();
 			}
 		} else {
-			Debug.Log ("NOT night");
 			foreach(GameObject z in _zombies) {
 				if(z != null) {
+					//kill the zombie
 					z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
 				}
 			}
@@ -205,6 +203,7 @@ public class World : MonoBehaviour {
 		pos.y = getHeight(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z));
 		pos.y += 2.0f;
 		z.transform.position = pos;
+		if(Vector3.Distance(_steve.transform.position, pos) < 15.0f) return;
 		_zombies.Add (z);
 	}
 
