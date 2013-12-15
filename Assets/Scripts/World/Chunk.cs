@@ -139,6 +139,7 @@ public class Chunk : MonoBehaviour {
 
 	public bool removeCube(int x,int y,int z){
 		Vector3 position = new Vector3 (x, y, z);
+		if(getBlockType(x,y,z) == BlockType.Bedrock)return false;
 		if(!existsCube(position))return false;
 	//TODO: casos limits de numMaxFaces
 //		int added = 0;
