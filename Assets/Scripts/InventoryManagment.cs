@@ -134,6 +134,7 @@ public class InventoryManagment : MonoBehaviour {
 	}
 
 	public bool getItem(out BlockType bt) {
+		bt = BlockType.GoldOre;
 		return false;
 	}
 }
