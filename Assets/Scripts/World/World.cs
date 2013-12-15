@@ -18,6 +18,12 @@ public class World : MonoBehaviour {
 	private Chunk[,] chunks;
 	private GameObject collNorth,collSouth,collWest,collEast;
 
+	public GameObject steve;
+	public GameObject zombie;
+
+	private GameObject _steve;
+	private ArrayList _zombies;
+
 //	private int xa,ya,za;
 //	private int xd,yd,zd;
 
@@ -114,6 +120,14 @@ public class World : MonoBehaviour {
 //		xa=xd=za=zd=0;
 //		yd=0;
 //		ya=70;
+
+		_steve = (GameObject) Instantiate (steve);
+
+		_zombies = new ArrayList();
+		GameObject z = (GameObject) Instantiate(zombie);
+		z.GetComponent<IAZombie>().steve = _steve.transform;
+		_zombies.Add (z);
+
 	}
 	
 	// Update is called once per frame

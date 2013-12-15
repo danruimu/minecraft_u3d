@@ -208,4 +208,8 @@ public class IAZombie : MonoBehaviour {
 			if(died) die ();
 		}
 	}
+
+	public void setSteveTransform(Transform newSteve) {
+		steve = newSteve;
+	}
 }
