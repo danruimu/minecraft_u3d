@@ -27,6 +27,15 @@ public class MouseClick : MonoBehaviour {
 	private Vector3 _selectedBlockPosition;
 	private Vector3 _colisionPoint;
 
+	public World world;
+
+	public void shitTheWeapon() {
+		if(currentWeapon != null) {
+			Destroy (currentWeapon);
+		}
+		currentWeapon = null;
+	}
+
 	public bool changeWeapon(int id) {
 		if(id >= weapons.Length || id < 0) return false;
 		if(currentWeapon != null) {
@@ -65,7 +74,7 @@ public class MouseClick : MonoBehaviour {
 	void Update () {
 
 		if(!attack){
-			if(Input.GetMouseButton(0)) {
+			if(Input.GetMouseButton(0) && currentWeapon != null) {
 				attack = true;
 				time = 0.0f;
 				dirRot = Vector3.right;
@@ -75,34 +84,42 @@ public class MouseClick : MonoBehaviour {
 
 				hitWhatever();
 			}
-			if(Input.GetMouseButton (1)) {
+			if(Input.GetMouseButtonDown (1)) {
 				putCube();
 			}
 
 			if(Input.GetKeyDown(KeyCode.Q)) {
-				if(currentWeapon.CompareTag("Sword")) changeWeapon(0);
-				else changeWeapon(1);
+				changeWeapon(0);
+			}
+			if(Input.GetKeyDown(KeyCode.Z)) {
+				changeWeapon(1);
+			}
+
+			if(Input.GetKeyDown (KeyCode.F)) {
+				shitTheWeapon();
 			}
 		}
 
 		#region attack_animation
-		if(attack && time <= 1.0f) { //pickaxe forward
-			currentWeapon.transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime * attackAngleRot);
-			currentWeapon.transform.Translate(dirForw * attackSpeed * Time.deltaTime * 2.0f);
-			currentWeapon.transform.Translate(dirHori * attackSpeed * Time.deltaTime * 3.0f);
-			currentWeapon.transform.Translate(dirVert * attackSpeed * Time.deltaTime * 4.0f);
-			time += Time.deltaTime * attackSpeedRot;
-		} else if(attack && time > 1.0f && dirRot.Equals(Vector3.right)) { //pickaxe back
-			currentWeapon.transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime);
-			time = 0.0f;
-			dirRot = Vector3.left;
-			dirForw = Vector3.back;
-			dirHori = Vector3.right;
-			dirVert = Vector3.down;
-		} else if(attack && time > 1.0f && dirRot.Equals(Vector3.left)) {
-			attack = false;
-			currentWeapon.transform.localRotation = originalRotation;
-			currentWeapon.transform.localPosition = originalPosition;
+		if(currentWeapon != null) {
+			if(attack && time <= 1.0f) { //pickaxe forward
+				currentWeapon.transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime * attackAngleRot);
+				currentWeapon.transform.Translate(dirForw * attackSpeed * Time.deltaTime * 2.0f);
+				currentWeapon.transform.Translate(dirHori * attackSpeed * Time.deltaTime * 3.0f);
+				currentWeapon.transform.Translate(dirVert * attackSpeed * Time.deltaTime * 4.0f);
+				time += Time.deltaTime * attackSpeedRot;
+			} else if(attack && time > 1.0f && dirRot.Equals(Vector3.right)) { //pickaxe back
+				currentWeapon.transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime);
+				time = 0.0f;
+				dirRot = Vector3.left;
+				dirForw = Vector3.back;
+				dirHori = Vector3.right;
+				dirVert = Vector3.down;
+			} else if(attack && time > 1.0f && dirRot.Equals(Vector3.left)) {
+				attack = false;
+				currentWeapon.transform.localRotation = originalRotation;
+				currentWeapon.transform.localPosition = originalPosition;
+			}
 		}
 		#endregion
 	}
@@ -129,9 +146,9 @@ public class MouseClick : MonoBehaviour {
 					z -= 1	;
 				}
 
-//				if(!World.newCube(x, y, z, BlockType.GoldOre)) {
-//					Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
-//				}
+				if(!world.addCube(x, y, z, BlockType.GoldOre)) {
+					Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+				}
 			}
 		}
 	}
@@ -171,9 +188,9 @@ public class MouseClick : MonoBehaviour {
 					z -= 1;
 				}
 
-//				if(!World.removeCube(x, y, z)) {
-//					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
-//				}
+				if(!world.removeCube(x, y, z)) {
+					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
+				}
 			}
 		}
 	}
