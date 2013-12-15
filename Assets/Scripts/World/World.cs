@@ -24,6 +24,8 @@ public class World : MonoBehaviour {
 	private GameObject _steve;
 	private ArrayList _zombies;
 
+	private const int maxZombies = 100;
+
 //	private int xa,ya,za;
 //	private int xd,yd,zd;
 
@@ -122,12 +124,10 @@ public class World : MonoBehaviour {
 //		ya=70;
 
 		_steve = (GameObject) Instantiate (steve);
+		_steve.GetComponent<MouseClick>().world = this;
+		this.gameObject.GetComponent<CountingOfTime>().sky = _steve.GetComponent<MovementPlayer>().steveEyes;
 
 		_zombies = new ArrayList();
-		GameObject z = (GameObject) Instantiate(zombie);
-		z.GetComponent<IAZombie>().steve = _steve.transform;
-		_zombies.Add (z);
-
 	}
 	
 	// Update is called once per frame
@@ -144,6 +144,31 @@ public class World : MonoBehaviour {
 //			}
 ////			else Debug.Log("failuer");
 //		}
+
+		if(this.gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
+			if(!enoughZombiesPlease()) {
+				spawnZombie();
+			}
+		} else {
+			foreach(GameObject z in _zombies) {
+				z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
+			}
+		}
+	}
+
+	private bool enoughZombiesPlease() {
+		return _zombies.Count > maxZombies;
+	}
+
+	private void spawnZombie() {
+		GameObject z = (GameObject) Instantiate(zombie);
+		z.GetComponent<IAZombie>().steve = _steve.transform;
+		Vector3 pos;
+		pos.x = UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
+		pos.y = 128.0f;
+		pos.z = UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
+		z.transform.position = pos;
+		_zombies.Add (z);
 	}
 
 	public bool removeCube(int x,int y,int z){
