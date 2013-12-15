@@ -132,4 +132,8 @@ public class InventoryManagment : MonoBehaviour {
 			}
 		}
 	}
+
+	public bool getItem(out BlockType bt) {
+		return false;
+	}
 }

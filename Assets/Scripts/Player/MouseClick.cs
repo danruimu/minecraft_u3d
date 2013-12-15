@@ -146,8 +146,11 @@ public class MouseClick : MonoBehaviour {
 					z -= 1	;
 				}
 
-				if(!world.addCube(x, y, z, BlockType.GoldOre)) {
-					Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+				BlockType bt;
+				if(gameObject.GetComponent<InventoryManagment>().getItem(out bt)) {
+					if(!world.addCube(x, y, z, bt)) {
+						Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+					}
 				}
 			}
 		}
