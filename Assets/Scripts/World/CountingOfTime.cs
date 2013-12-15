@@ -65,15 +65,17 @@ public class CountingOfTime : MonoBehaviour {
 		if(sunHeight >= astroHeight) {
 			sun.light.intensity = 0.3f * (sunHeight/(astroHeight*2.0f));
 			moon.light.intensity = 0.0f;
+			if(isNight) isNight = false;
 		} else {
 			sun.light.intensity = 0.0f;
 			moon.light.intensity = 0.1f * (sunHeight/(astroHeight*2.0f));
+			if(!isNight) isNight = true;
 		}
 
 		//We have to increment the days passed when sunHeight == astroHeight
 		//but only one time every two
 		if(sunHeight == astroHeight) {
-			if(sun.light.intensity == 0.0f) isNight = false;
+			if(sun.light.intensity <= 0.0f) isNight = false;
 			else isNight = true;
 			days += 0.5f;
 			if(days==28.0f) days = 0.0f;

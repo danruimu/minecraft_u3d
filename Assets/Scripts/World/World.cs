@@ -24,7 +24,7 @@ public class World : MonoBehaviour {
 	private GameObject _steve;
 	private ArrayList _zombies;
 
-	private const int maxZombies = 100;
+	private const int maxZombies = 10;
 
 //	private int xa,ya,za;
 //	private int xd,yd,zd;
@@ -176,13 +176,18 @@ public class World : MonoBehaviour {
 ////			else Debug.Log("failuer");
 //		}
 
-		if(this.gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
+		if(gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
+			Debug.Log ("Night");
 			if(!enoughZombiesPlease()) {
+				Debug.Log ("Spawn!");
 				spawnZombie();
 			}
 		} else {
+			Debug.Log ("NOT night");
 			foreach(GameObject z in _zombies) {
-				z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
+				if(z != null) {
+					z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
+				}
 			}
 		}
 	}
