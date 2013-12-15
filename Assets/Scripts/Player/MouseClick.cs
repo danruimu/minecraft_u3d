@@ -20,14 +20,15 @@ public class MouseClick : MonoBehaviour {
 	private Vector3 originalPosition;
 
 	public Transform center;
+	public Transform weapon;
 	
 	private Vector3 _selectedBlockPosition;
 	private Vector3 _colisionPoint;
 
 	void Start() {
 		attack = false;
-		originalRotation = transform.localRotation;
-		originalPosition = transform.localPosition;
+		originalRotation = weapon.localRotation;
+		originalPosition = weapon.localPosition;
 	}
 
 	// Update is called once per frame
@@ -51,13 +52,13 @@ public class MouseClick : MonoBehaviour {
 
 		#region attack_animation
 		if(attack && time <= 1.0f) { //pickaxe forward
-			transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime * attackAngleRot);
-			transform.Translate(dirForw * attackSpeed * Time.deltaTime * 2.0f);
-			transform.Translate(dirHori * attackSpeed * Time.deltaTime * 3.0f);
-			transform.Translate(dirVert * attackSpeed * Time.deltaTime * 4.0f);
+			weapon.Rotate (dirRot, attackSpeedRot * Time.deltaTime * attackAngleRot);
+			weapon.Translate(dirForw * attackSpeed * Time.deltaTime * 2.0f);
+			weapon.Translate(dirHori * attackSpeed * Time.deltaTime * 3.0f);
+			weapon.Translate(dirVert * attackSpeed * Time.deltaTime * 4.0f);
 			time += Time.deltaTime * attackSpeedRot;
 		} else if(attack && time > 1.0f && dirRot.Equals(Vector3.right)) { //pickaxe back
-			transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime);
+			weapon.Rotate (dirRot, attackSpeedRot * Time.deltaTime);
 			time = 0.0f;
 			dirRot = Vector3.left;
 			dirForw = Vector3.back;
@@ -65,8 +66,8 @@ public class MouseClick : MonoBehaviour {
 			dirVert = Vector3.down;
 		} else if(attack && time > 1.0f && dirRot.Equals(Vector3.left)) {
 			attack = false;
-			transform.localRotation = originalRotation;
-			transform.localPosition = originalPosition;
+			weapon.localRotation = originalRotation;
+			weapon.localPosition = originalPosition;
 		}
 		#endregion
 	}
