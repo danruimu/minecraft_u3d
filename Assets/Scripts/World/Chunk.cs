@@ -155,7 +155,7 @@ public class Chunk : MonoBehaviour {
 			Vector3 colliding = props.posiciones[face] + position;
 			if(existsCube(colliding)){
 				if(insideChunk(colliding))
-					if(addFace(colliding,(faceType)(face^1)))getBlock(colliding).initCollider(colliding+chunkPosition);
+					if(addFace(colliding,(faceType)(face^1)))getBlock(colliding).initCollider(colliding,this);
 				else{
 					father.addFace(chunkPosition + colliding,(faceType)(face^1));
 				}
@@ -267,7 +267,7 @@ public class Chunk : MonoBehaviour {
 			p = props.posiciones[face] + position;
 			//TODO: casos maxims de numMaxFacesAdded en diferents chunks
 			if(!existsCube(p)){
-				if(addFace(position,(faceType)face))cub.initCollider(position+chunkPosition);
+				if(addFace(position,(faceType)face))cub.initCollider(position,this);
 			}
 			else{
 				if(insideChunk(p))

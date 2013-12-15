@@ -10,8 +10,8 @@ public class World : MonoBehaviour {
 	public GameObject chunkPrefab;
 	public Material[] mats;
 	public string seed;
-	public static int sizex = 1;
-	public static int sizez = 1;
+	public static int sizex = 2;
+	public static int sizez = 2;
 	public const int numMaxMaterials = 256;
 
 	private static int[][] indexsBlocks;
@@ -56,6 +56,16 @@ public class World : MonoBehaviour {
 		}
 	}
 
+	private byte[] convert(byte[] data){
+		byte[] res = new byte[data.Length/2];
+		for(int i=0;i<data.Length;i+=2){
+			byte alt = asciiToHex(data[i]);
+			byte baix = asciiToHex(data[i+1]);
+			res[i/2] = (byte)((alt<<4 | baix));
+		}
+		return res;
+	}
+
 	private void init() {
 		DateTime tiempo1 = DateTime.Now;
 		
@@ -75,8 +85,8 @@ public class World : MonoBehaviour {
 				GO.transform.parent = transform;
 				c = GO.GetComponent<Chunk>();
 				c.init(new Vector3(x*Chunk.sizex,0,z*Chunk.sizez),this,mats);
-				heightmap = File.ReadAllBytes("World/h" + x + "," + z);
-				data = File.ReadAllBytes("World/d" + x + "," + z);
+				heightmap = convert(File.ReadAllBytes("World/" + x + "_" + z + ".hm.milf"));
+				data = convert(File.ReadAllBytes("World/" + x + "_" + z + ".b.milf"));
 				c.fillColums(heightmap,data);
 				chunks[x,z] = c;
 			}
@@ -90,12 +100,23 @@ public class World : MonoBehaviour {
 		Debug.Log("creacion " + sizex + " * " + sizez + " Chunks -> tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
 	}
 
+	private byte asciiToHex(byte input){
+		if(input >= 'A' && input <= 'F') return (byte)(input - 'A' + 10);
+		if(input >= 'a' && input <= 'f') return (byte)(input - 'a' + 10);
+		if(input >= '0' && input <= '9') return (byte)(input - '0');
+		throw new Exception("numero no hexadecimal");
+	}
+
 	void Start () {
 		init();
 		collSouth = new GameObject("Colider der sur");
+		collSouth.transform.parent = transform;
 		collNorth = new GameObject("ahi va collider!");
+		collNorth.transform.parent = transform;
 		collEast = new GameObject("col·lisionador de l'est");
+		collEast.transform.parent = transform;
 		collWest = new GameObject("collider de la vieira");
+		collWest.transform.parent = transform;
 		BoxCollider bc = collSouth.AddComponent<BoxCollider>();
 		bc.size = new Vector3(sizex*Chunk.sizex,Chunk.sizey,1f);
 		bc.center = new Vector3(sizex*Chunk.sizex/2f,Chunk.sizey/2f,-0.5f);
