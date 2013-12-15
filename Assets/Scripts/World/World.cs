@@ -106,6 +106,10 @@ public class World : MonoBehaviour {
 		Debug.Log("creacion " + sizex + " * " + sizez + " Chunks -> tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
 	}
 
+	private byte getHeight(int x, int z){
+		chunks[x/Chunk.sizex,z/Chunk.sizez].getHeight(x%Chunk.sizex,z%Chunk.sizez);
+	}
+
 	private byte asciiToHex(byte input){
 		if(input >= 'A' && input <= 'F') return (byte)(input - 'A' + 10);
 		if(input >= 'a' && input <= 'f') return (byte)(input - 'a' + 10);
@@ -170,24 +174,27 @@ public class World : MonoBehaviour {
 	public bool removeCube(int x,int y,int z){
 		Vector3 pos = new Vector3(x,y,z);
 		if(!posValida(pos))return false;
+		Chunk c = getChunk(pos);
 		pos = relativePos(pos);
-		return getChunk(pos).removeCube((int)pos.x,(int)pos.y,(int)pos.z);
+		return c.removeCube((int)pos.x,(int)pos.y,(int)pos.z);
 	}
 
 	public bool addCube(int x,int y,int z,BlockType type){
 		Vector3 pos = new Vector3(x,y,z);
 		if(!posValida(pos))return false;
+		Chunk c = getChunk(pos);
 		pos = relativePos(pos);
-		return getChunk(pos).newCube((int)pos.x,(int)pos.y,(int)pos.z,type);
+		return c.newCube((int)pos.x,(int)pos.y,(int)pos.z,type);
 	}
 
 	public BlockType getBlockType(int x,int y,int z){
 		Vector3 pos = new Vector3(x,y,z);
 		if(!posValida(pos))return BlockType.Bedrock;//apaño pa' k no peteh(etxo por dni el reshulonako
+		Chunk c = getChunk(pos);
 		pos = relativePos(pos);
-		return getChunk(pos).getBlockType((int)pos.x,(int)pos.y,(int)pos.z);
+		return c.getBlockType((int)pos.x,(int)pos.y,(int)pos.z);
 	}
-	
+
 	private Vector3 relativePos(Vector3 pos){
 		return new Vector3(((int)pos.x)%Chunk.sizex,(int)pos.y,((int)pos.z)%Chunk.sizez);
 	}

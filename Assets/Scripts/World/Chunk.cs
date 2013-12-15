@@ -100,6 +100,10 @@ public class Chunk : MonoBehaviour {
 		}
 	}
 
+	public byte getHeight(int x,int z){
+		return height[x,z];
+	}
+
 	public void ompleMesh(){
 		//TODO:barra progres
 		for(int x = 0; x < sizex; x++){
