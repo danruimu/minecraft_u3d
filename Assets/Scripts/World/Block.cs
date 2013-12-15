@@ -35,12 +35,15 @@ public class Block {
 		return coll == null;
 	}
 
-	public void initCollider(Vector3 pos){
+	public void initCollider(Vector3 pos,Chunk padre){
 		coll = new GameObject();
-		coll.transform.position = pos;
+
+
 		coll.tag = "Chunk";
 		coll.name = "Collider["+pos.x+","+pos.y+","+pos.z+"]";
 		BoxCollider bc = coll.AddComponent<BoxCollider>();
+		bc.transform.parent = padre.transform;
+		bc.transform.localPosition=pos;
 		bc.center = new Vector3(0.5f,0.5f,0.5f);
 	}
 

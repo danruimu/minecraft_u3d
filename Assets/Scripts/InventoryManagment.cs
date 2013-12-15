@@ -26,8 +26,11 @@ public class InventoryManagment : MonoBehaviour {
 
 	void Start(){
 		_inventory = (GUITexture)Instantiate(inventory);
+		_inventory.name="Inventory GUI";
 		_barra = (GUITexture)Instantiate(barra);
+		_barra.name="Inventory Bar";
 		_selector = (GUITexture)Instantiate(selector);
+		_selector.name="Inventory Bar Selector";
 		posInv=0;
 		Vector3 pos = _barra.transform.position;
 		startBarra = pos.x - (_barra.pixelInset.width/2)/Screen.width;
