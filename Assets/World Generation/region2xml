@@ -1,0 +1,52 @@
+#!/bin/bash
+
+MCWUTIL_PATH=/home/druiz/Descargas/mcwutil-1.1
+
+if [ $# -ne 2 ]
+then
+	echo "USAGE: `basename $0` REG_FILE OUT_DIR"
+	exit 1
+fi
+
+REG_FILE=$1
+OUT_DIR=$2
+
+echo -n "Unpacking region $REG_FILE..."
+mkdir $OUT_DIR &>/dev/null
+rm -f $OUT_DIR/* &>/dev/null
+$MCWUTIL_PATH/bin/mcwutil region-unpack $REG_FILE $OUT_DIR || exit
+echo
+
+rm -f $OUT_DIR/metadata.xml
+
+echo -n "Decompressing..."
+i=0
+for zlib in $OUT_DIR/*.zlib
+do
+	i=$((i + 1))
+	if [[ $i -eq 10 ]]
+	then
+		i=0
+		echo -n "."
+	fi
+	$MCWUTIL_PATH/bin/mcwutil zlib-decompress $zlib $OUT_DIR/$(basename $zlib .zlib) || exit
+done
+echo
+
+rm -f $OUT_DIR/*.zlib
+
+echo -n "Converting to XML..."
+i=0
+for nbt in $OUT_DIR/*.nbt
+do
+	i=$((i + 1))
+	if [[ $i -eq 10 ]]
+	then
+		i=0
+		echo -n "."
+	fi
+	$MCWUTIL_PATH/bin/mcwutil nbt-to-xml $nbt $OUT_DIR/$(basename $nbt .nbt).xml || exit
+done
+echo
+
+rm -f $OUT_DIR/*.nbt

@@ -77,7 +77,6 @@ public class MouseClick : MonoBehaviour {
 
 		if(Physics.Raycast (ray, out rhit, 5.0f)) {
 			if(!rhit.collider.CompareTag("MOB")) {
-				Chunk c = rhit.collider.GetComponent<Chunk>();
 				Vector3 cubePos = rhit.point;
 				Vector3 normal = rhit.normal;
 
@@ -94,12 +93,9 @@ public class MouseClick : MonoBehaviour {
 					z -= 1	;
 				}
 
-				x %= Chunk.sizex;
-				z %= Chunk.sizez;
-
-				if(!c.newCube(x, y, z, BlockType.GoldOre)) {
-					Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
-				}
+//				if(!World.newCube(x, y, z, BlockType.GoldOre)) {
+//					Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+//				}
 			}
 		}
 	}
@@ -116,7 +112,6 @@ public class MouseClick : MonoBehaviour {
 					z.damage(1.0f, rhit.normal, rhit.point);
 				}
 			} else {
-				Chunk c = rhit.collider.GetComponent<Chunk>();
 				Vector3 cubePos = rhit.point;
 				Vector3 normal = rhit.normal;
 				int x, y, z;
@@ -133,12 +128,9 @@ public class MouseClick : MonoBehaviour {
 					z -= 1;
 				}
 
-				x %= Chunk.sizex;
-				z %= Chunk.sizez;
-				
-				if(!c.removeCube(x, y, z)) {
-					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
-				}
+//				if(!World.removeCube(x, y, z)) {
+//					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
+//				}
 			}
 		}
 	}
