@@ -20,14 +20,45 @@ public class MouseClick : MonoBehaviour {
 	private Vector3 originalPosition;
 
 	public Transform center;
+	public GameObject[] weapons;
+
+	private GameObject currentWeapon;
 	
 	private Vector3 _selectedBlockPosition;
 	private Vector3 _colisionPoint;
 
+	public bool changeWeapon(int id) {
+		if(id >= weapons.Length || id < 0) return false;
+		if(currentWeapon != null) {
+			Destroy (currentWeapon);
+		}
+		currentWeapon = (GameObject) Instantiate(weapons[id]);
+		currentWeapon.transform.parent = center;
+		switch(id) {
+		case 0:
+			currentWeapon.transform.localPosition = new Vector3(0.445755f, -0.2155447f, 0.4476013f);
+			originalRotation.eulerAngles = new Vector3(15f, 0f, 345f);
+			currentWeapon .transform.localRotation = originalRotation;
+			break;
+		case 1:
+			currentWeapon.transform.localPosition = new Vector3(0.445755f, -0.2155447f, 0.4476013f);
+			originalRotation.eulerAngles = new Vector3(15f, 0f, 345f);
+			currentWeapon .transform.localRotation = originalRotation;
+			break;
+		}
+
+		originalRotation = currentWeapon.transform.localRotation;
+		originalPosition = currentWeapon.transform.localPosition;
+		return true;
+
+	}
+
 	void Start() {
 		attack = false;
-		originalRotation = transform.localRotation;
-		originalPosition = transform.localPosition;
+
+		if(!changeWeapon(0)) {
+			Debug.LogError("Cannot change to Weapon "+weapons[0]);
+		}
 	}
 
 	// Update is called once per frame
@@ -47,17 +78,22 @@ public class MouseClick : MonoBehaviour {
 			if(Input.GetMouseButton (1)) {
 				putCube();
 			}
+
+			if(Input.GetKeyDown(KeyCode.Q)) {
+				if(currentWeapon.CompareTag("Sword")) changeWeapon(0);
+				else changeWeapon(1);
+			}
 		}
 
 		#region attack_animation
 		if(attack && time <= 1.0f) { //pickaxe forward
-			transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime * attackAngleRot);
-			transform.Translate(dirForw * attackSpeed * Time.deltaTime * 2.0f);
-			transform.Translate(dirHori * attackSpeed * Time.deltaTime * 3.0f);
-			transform.Translate(dirVert * attackSpeed * Time.deltaTime * 4.0f);
+			currentWeapon.transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime * attackAngleRot);
+			currentWeapon.transform.Translate(dirForw * attackSpeed * Time.deltaTime * 2.0f);
+			currentWeapon.transform.Translate(dirHori * attackSpeed * Time.deltaTime * 3.0f);
+			currentWeapon.transform.Translate(dirVert * attackSpeed * Time.deltaTime * 4.0f);
 			time += Time.deltaTime * attackSpeedRot;
 		} else if(attack && time > 1.0f && dirRot.Equals(Vector3.right)) { //pickaxe back
-			transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime);
+			currentWeapon.transform.Rotate (dirRot, attackSpeedRot * Time.deltaTime);
 			time = 0.0f;
 			dirRot = Vector3.left;
 			dirForw = Vector3.back;
@@ -65,8 +101,8 @@ public class MouseClick : MonoBehaviour {
 			dirVert = Vector3.down;
 		} else if(attack && time > 1.0f && dirRot.Equals(Vector3.left)) {
 			attack = false;
-			transform.localRotation = originalRotation;
-			transform.localPosition = originalPosition;
+			currentWeapon.transform.localRotation = originalRotation;
+			currentWeapon.transform.localPosition = originalPosition;
 		}
 		#endregion
 	}
@@ -77,7 +113,6 @@ public class MouseClick : MonoBehaviour {
 
 		if(Physics.Raycast (ray, out rhit, 5.0f)) {
 			if(!rhit.collider.CompareTag("MOB")) {
-				Chunk c = rhit.collider.GetComponent<Chunk>();
 				Vector3 cubePos = rhit.point;
 				Vector3 normal = rhit.normal;
 
@@ -94,12 +129,9 @@ public class MouseClick : MonoBehaviour {
 					z -= 1	;
 				}
 
-				x %= Chunk.sizex;
-				z %= Chunk.sizez;
-
-				if(!c.newCube(x, y, z, BlockType.GoldOre)) {
-					Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
-				}
+//				if(!World.newCube(x, y, z, BlockType.GoldOre)) {
+//					Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+//				}
 			}
 		}
 	}
@@ -113,10 +145,16 @@ public class MouseClick : MonoBehaviour {
 				if(rhit.distance < 2.0f) {
 					IAZombie z = rhit.collider.GetComponent<IAZombie>();
 
-					z.damage(1.0f, rhit.normal, rhit.point);
+					float damage;
+					if(currentWeapon.CompareTag("Sword")) {
+						damage = 1.0f;
+					} else {
+						damage = 0.25f;
+					}
+
+					z.damage(damage, rhit.normal, rhit.point);
 				}
-			} else {
-				Chunk c = rhit.collider.GetComponent<Chunk>();
+			} else if(currentWeapon.CompareTag("PickAxe")) {
 				Vector3 cubePos = rhit.point;
 				Vector3 normal = rhit.normal;
 				int x, y, z;
@@ -133,12 +171,9 @@ public class MouseClick : MonoBehaviour {
 					z -= 1;
 				}
 
-				x %= Chunk.sizex;
-				z %= Chunk.sizez;
-				
-				if(!c.removeCube(x, y, z)) {
-					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
-				}
+//				if(!World.removeCube(x, y, z)) {
+//					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
+//				}
 			}
 		}
 	}

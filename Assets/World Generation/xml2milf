@@ -1,0 +1,100 @@
+#!/usr/bin/perl
+
+use List::Util qw(first);
+
+if($#ARGV+1 != 1) {
+	print STDERR "USAGE: $0 XML_FILE\n";
+	exit 1;
+}
+
+my $ext = ".hm.milf";
+my $ext2 = ".b.milf";
+my $xml_file = $ARGV[0];
+
+open FILE, $xml_file or die $!;
+
+my @lines = <FILE>;
+
+my $target = "zPos";
+my $index = 0;
+
+while(index($lines[$index], $target) == -1) {
+	++$index;
+}
+
+++$index;
+
+$line = $lines[$index];
+($i, $zPos, $k) = split(/\"/, $line);
+
+$target = "xPos";
+$index = 0;
+
+while(index($lines[$index], $target) == -1) {
+	++$index;
+}
+
+++$index;
+
+$line = $lines[$index];
+($i, $xPos, $k) = split(/\"/, $line);
+
+my $out_file = $zPos."_".$xPos.$ext;
+my $out_file2 = $zPos."_".$xPos.$ext2;
+
+$target = "HeightMap";
+#my $index = first { $lines[$_] eq $target } 0..$#lines;
+$index = 0;
+
+while(index($lines[$index], $target) == -1) {
+	++$index;
+}
+
+#at $index we have the HeightMap statement, we have to find now the barray declaration
+
+$target = "barray";
+while(index($lines[$index], $target) == -1) {
+	++$index;
+}
+
+open FILE_OUT, ">", $out_file or die $!;
+
+#print FILE_OUT "$xPos\n$zPos\n";
+
+++$index;
+while(index($lines[$index], $target) == -1) {
+	$line = $lines[$index];
+	chomp($line);
+	print FILE_OUT "$line";
+	++$index;
+}
+
+close FILE_OUT or die $!;
+
+# HeightMap file complete!
+
+$index = 0;
+$target = "Blocks";
+
+while(index($lines[$index], $target) == -1) {
+	++$index;
+}
+
+$target = "barray";
+while(index($lines[$index], $target) == -1) {
+	++$index;
+}
+
+open FILE_OUT, ">", $out_file2 or die $!;
+
+++$index;
+while(index($lines[$index], $target) == -1) {
+	$line = $lines[$index];
+	chomp($line);
+	print FILE_OUT "$line";
+	++$index;
+}
+
+close FILE_OUT or die $!;
+
+close FILE or die $!;
