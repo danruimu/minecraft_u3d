@@ -229,7 +229,7 @@ public class MouseClick : MonoBehaviour {
 
 		if(Physics.Raycast (ray, out rhit, 5.0f)) {
 			if(rhit.collider.CompareTag("MOB")) {
-				if(rhit.distance < 2.0f) {
+				if(rhit.distance < 2.5f) {
 					IAZombie z = rhit.collider.GetComponent<IAZombie>();
 
 					float damage;
