@@ -53,6 +53,10 @@ public class MouseClick : MonoBehaviour {
 
 	public Material[] destroyStages;
 
+	private int lastX;
+	private int lastY;
+	private int lastZ;
+
 	//public 
 
 	public void shitTheWeapon() {
@@ -292,17 +296,25 @@ public class MouseClick : MonoBehaviour {
 
 				BlockType bt = world.getBlockType(x,y,z);
 
+				if(lastX != x || lastY != y || lastZ != z) {
+					Debug.Log ("Different block!");
+					damagingBlock = false;
+				}
+
 				if(bt != BlockType.Bedrock) {
 					if(!damagingBlock) {
 						damagingBlock  = true;
 						damageDoneToBlock = 0;
+						if(_destroyPlane != null) Destroy (_destroyPlane);
 						_destroyPlane = (GameObject) Instantiate(destroyPlane);
-
 						_destroyPlane.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
 						_destroyPlane.transform.position = posPlane;
 						_destroyPlane.transform.eulerAngles = eulerRotPlane;
-
 						_destroyPlane.renderer.material = destroyStages[damageDoneToBlock];
+
+						lastX = x;
+						lastY = y;
+						lastZ = z;
 					} else {
 						_destroyPlane.renderer.material = destroyStages[damageDoneToBlock];
 						++damageDoneToBlock;
