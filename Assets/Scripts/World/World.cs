@@ -216,6 +216,7 @@ public class World : MonoBehaviour {
 		GameObject z = (GameObject) Instantiate(zombie);
 		z.GetComponent<IAZombie>().steve = _steve.transform;
 		z.transform.position = pos;
+		z.GetComponent<IAZombie>().setWorld(this);
 		_zombies.Add (z);
 	}
 

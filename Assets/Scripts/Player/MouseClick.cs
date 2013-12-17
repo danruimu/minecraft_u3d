@@ -142,9 +142,8 @@ public class MouseClick : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
 		if(!attack){
-			if(Input.GetMouseButton(0) && currentWeapon != null) {
+			if(Input.GetMouseButton(0) && currentWeapon != null && !world.GetComponent<PauseMenu>().isPaused()) {
 				attack = true;
 				time = 0.0f;
 				dirRot = Vector3.right;
@@ -297,7 +296,6 @@ public class MouseClick : MonoBehaviour {
 				BlockType bt = world.getBlockType(x,y,z);
 
 				if(lastX != x || lastY != y || lastZ != z) {
-					Debug.Log ("Different block!");
 					damagingBlock = false;
 				}
 
@@ -366,12 +364,16 @@ public class MouseClick : MonoBehaviour {
 					} else {
 						damagingBlock = false;
 						damageDoneToBlock = 0;
-						Destroy(_destroyPlane);
 
+						Destroy(_destroyPlane);
 					}
 				}
 			}
 		}
+	}
+
+	public World getWorld() {
+		return world;
 	}
 
 }

@@ -51,6 +51,8 @@ public class IAZombie : MonoBehaviour {
 	private AudioSource _say;
 	private AudioSource _death;
 	private AudioSource _step;
+
+	private World world;
 	#endregion
 
 	// Use this for initialization
@@ -103,8 +105,13 @@ public class IAZombie : MonoBehaviour {
 		soundTimer += Time.deltaTime;
 		if(soundTimer >= timeBetweenSayAnithing) {
 			soundTimer = 0f;
-			if(!_say.isPlaying) _say.Play();
+			if(!_say.isPlaying && !world.GetComponent<PauseMenu>().isPaused()) _say.Play();
 			else _say.Stop ();
+		}
+
+		if(world.GetComponent<PauseMenu>().isPaused()) {
+			if(_step.isPlaying) _step.Stop ();
+			return;
 		}
 
 		isSteveNear = detectSteve();
@@ -231,9 +238,9 @@ public class IAZombie : MonoBehaviour {
 		if(!damaged) {
 			life -= damage;
 			rigidbody.AddForce((-normalImpact + Vector3.up) * 200.0f, ForceMode.Impulse);
+			blood.transform.position = point;
 			blood.enableEmission = true;
 			blood.Play ();
-			blood.transform.position = point;
 			if(life <= 0.0f) {
 				died = true;
 				if(!_death.isPlaying) _death.Play ();
@@ -266,5 +273,9 @@ public class IAZombie : MonoBehaviour {
 
 	public void setSteveTransform(Transform newSteve) {
 		steve = newSteve;
+	}
+
+	public void setWorld(World w) {
+		world = w;
 	}
 }

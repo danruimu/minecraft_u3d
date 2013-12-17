@@ -104,7 +104,7 @@ public class MovementPlayer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(!dead) {
+		if(!dead && !gameObject.GetComponent<MouseClick>().getWorld().gameObject.GetComponent<PauseMenu>().isPaused()) {
 		#region movement
 			//Movement with WASD
 			if(Input.GetKey(KeyCode.W) && !dir[(int)directions.UP]) {
@@ -139,24 +139,26 @@ public class MovementPlayer : MonoBehaviour {
 		#endregion
 
 		#region jump
-		if(Input.GetKeyDown(KeyCode.Space) && isGrounded) {
-			isGrounded = false;
-			height = transform.position.y;
-			transform.Translate(Vector3.up * jumpForce * Time.deltaTime);
-			jumpEnough = false;
-		}
-		if(Input.GetKey(KeyCode.LeftShift) && godMode) {
-			transform.Translate(Vector3.down * speed * Time.deltaTime);
-		}
-
-
-		if(!isGrounded && !jumpEnough) {
-			transform.Translate(Vector3.up * jumpForce  * Time.deltaTime);
-			if(transform.position.y - height > 1.2f ) {
-				jumpEnough = true;
+			if(Input.GetKeyDown(KeyCode.Space) && isGrounded) {
+				isGrounded = false;
+				height = transform.position.y;
+				transform.Translate(Vector3.up * jumpForce * Time.deltaTime);
+				jumpEnough = false;
 			}
-		}
+			if(Input.GetKey(KeyCode.LeftShift) && godMode) {
+				transform.Translate(Vector3.down * speed * Time.deltaTime);
+			}
+
+
+			if(!isGrounded && !jumpEnough) {
+				transform.Translate(Vector3.up * jumpForce  * Time.deltaTime);
+				if(transform.position.y - height > 1.2f ) {
+					jumpEnough = true;
+				}
+			}
 		#endregion
+		} else if(gameObject.GetComponent<MouseClick>().getWorld().gameObject.GetComponent<PauseMenu>().isPaused() && _step.isPlaying){
+			_step.Stop ();
 		}
 
 		#region life control
