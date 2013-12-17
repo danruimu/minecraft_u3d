@@ -195,6 +195,9 @@ public class World : MonoBehaviour {
 					z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
 				}
 			}
+			if(_zombies.Count > 0) {
+				_zombies.Clear();
+			}
 		}
 	}
 

@@ -124,16 +124,16 @@ public class MovementPlayer : MonoBehaviour {
 				if(!_step.isPlaying) _step.Play();
 			}
 
-			if(Input.GetKeyUp(KeyCode.W) || !dir[(int)directions.UP]) {
+			if(Input.GetKeyUp(KeyCode.W)) {
 				if(_step.isPlaying) _step.Stop();
 			}
-			if(Input.GetKeyUp(KeyCode.A) || !dir[(int)directions.UP]) {
+			if(Input.GetKeyUp(KeyCode.A)) {
 				if(_step.isPlaying) _step.Stop();
 			}
-			if(Input.GetKeyUp(KeyCode.S) || !dir[(int)directions.UP]) {
+			if(Input.GetKeyUp(KeyCode.S)) {
 				if(_step.isPlaying) _step.Stop();
 			}
-			if(Input.GetKeyUp(KeyCode.D) || !dir[(int)directions.UP]) {
+			if(Input.GetKeyUp(KeyCode.D)) {
 				if(_step.isPlaying) _step.Stop();
 			}
 		#endregion

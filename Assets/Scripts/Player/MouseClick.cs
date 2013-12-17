@@ -29,8 +29,32 @@ public class MouseClick : MonoBehaviour {
 
 	public World world;
 
-	public AudioClip destroyBlock;
-	private AudioSource _destroyBlock;
+	public AudioClip destroyGrass;
+	public AudioClip destroyCloth;
+	public AudioClip destroyGravel;
+	public AudioClip destroySand;
+	public AudioClip destroySnow;
+	public AudioClip destroyStone;
+	public AudioClip destroyWood;
+
+	private AudioSource _destroyGrass;
+	private AudioSource _destroyCloth;
+	private AudioSource _destroyGravel;
+	private AudioSource _destroySand;
+	private AudioSource _destroySnow;
+	private AudioSource _destroyStone;
+	private AudioSource _destroyWood;
+
+	public Texture2D destroy1;
+	public Texture2D destroy2;
+	public Texture2D destroy3;
+	public Texture2D destroy4;
+
+	private bool damagingBlock;
+	private int damageDoneToBlock;
+
+	public GameObject destroyTexture;
+	private GameObject _destroyTexture;
 
 	public void shitTheWeapon() {
 		if(currentWeapon != null) {
@@ -66,16 +90,51 @@ public class MouseClick : MonoBehaviour {
 	}
 
 	void Start() {
-		_destroyBlock = gameObject.AddComponent<AudioSource>();
-		_destroyBlock.playOnAwake = false;
-		_destroyBlock.loop = false;
-		_destroyBlock.clip = destroyBlock;
+		//sound
+		_destroyGrass = gameObject.AddComponent<AudioSource>();
+		_destroyGrass.playOnAwake = false;
+		_destroyGrass.loop = false;
+		_destroyGrass.clip = destroyGrass;
+
+		_destroyCloth = gameObject.AddComponent<AudioSource>();
+		_destroyCloth.playOnAwake = false;
+		_destroyCloth.loop = false;
+		_destroyCloth.clip = destroyCloth;
+
+		_destroyGravel = gameObject.AddComponent<AudioSource>();
+		_destroyGravel.playOnAwake = false;
+		_destroyGravel.loop = false;
+		_destroyGravel.clip = destroyGravel;
+
+		_destroySand = gameObject.AddComponent<AudioSource>();
+		_destroySand.playOnAwake = false;
+		_destroySand.loop = false;
+		_destroySand.clip = destroySand;
+
+		_destroySnow = gameObject.AddComponent<AudioSource>();
+		_destroySnow.playOnAwake = false;
+		_destroySnow.loop = false;
+		_destroySnow.clip = destroySnow;
+
+		_destroyStone = gameObject.AddComponent<AudioSource>();
+		_destroyStone.playOnAwake = false;
+		_destroyStone.loop = false;
+		_destroyStone.clip = destroyStone;
+
+		_destroyWood = gameObject.AddComponent<AudioSource>();
+		_destroyWood.playOnAwake = false;
+		_destroyWood.loop = false;
+		_destroyWood.clip = destroyWood;
+		//endsound
 
 		attack = false;
 
 		if(!changeWeapon(0)) {
 			Debug.LogError("Cannot change to Weapon "+weapons[0]);
 		}
+
+		damagingBlock = false;
+
 	}
 
 	// Update is called once per frame
@@ -97,15 +156,12 @@ public class MouseClick : MonoBehaviour {
 			}
 
 			if(Input.GetKeyDown(KeyCode.Q)) {
-				changeWeapon(0);
+				if(currentWeapon.CompareTag("Sword") )changeWeapon(0);
+				else changeWeapon(1);
 			}
-			if(Input.GetKeyDown(KeyCode.Z)) {
-				changeWeapon(1);
-			}
-
-			if(Input.GetKeyDown (KeyCode.F)) {
-				shitTheWeapon();
-			}
+		}
+		if(Input.GetMouseButtonUp(0) && damagingBlock) {
+			damagingBlock = false;
 		}
 
 		#region attack_animation
@@ -199,10 +255,66 @@ public class MouseClick : MonoBehaviour {
 					z -= 1;
 				}
 
-				if(!world.removeCube(x, y, z)) {
-					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
-				} else {
+				BlockType bt = world.getBlockType(x,y,z);
 
+				if(bt != BlockType.Bedrock) {
+					if(!damagingBlock) {
+						damagingBlock  = true;
+						damageDoneToBlock = 0;
+
+					} else {
+						++damageDoneToBlock;
+					}
+
+					switch(bt) {
+					case BlockType.Clay:
+						_destroyGrass.Play ();
+						break;
+					case BlockType.CoalOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.DiamondOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.Dirt:
+						_destroyGrass.Play ();
+						break;
+					case BlockType.GoldOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.Grass:
+						_destroyGrass.Play ();
+						break;
+					case BlockType.Gravel:
+						_destroyGravel.Play ();
+						break;
+					case BlockType.IronOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.RedstoneOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.Sand:
+						_destroySand.Play();
+						break;
+					case BlockType.LapisOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.Stone:
+						_destroyStone.Play ();
+						break;
+					}
+				}
+
+				if(damageDoneToBlock >= 4) {
+					if(!world.removeCube(x, y, z)) {
+						Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
+					} else {
+						damagingBlock = false;
+						damageDoneToBlock = 0;
+						Destroy(destroyTexture);
+
+					}
 				}
 			}
 		}
