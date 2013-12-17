@@ -161,8 +161,15 @@ public class MouseClick : MonoBehaviour {
 			}
 
 			if(Input.GetKeyDown(KeyCode.Q)) {
-				if(currentWeapon.CompareTag("Sword") )changeWeapon(0);
-				else changeWeapon(1);
+				if(currentWeapon.CompareTag("Sword")) {
+					if(!changeWeapon(0)) {
+						Debug.Log("Cannot change to PickAxe");
+					}
+				} else {
+					if(!changeWeapon(1)) {
+						Debug.Log("Cannot change to Sword");
+					}
+				}
 			}
 		}
 		if(Input.GetMouseButtonUp(0) && damagingBlock) {
