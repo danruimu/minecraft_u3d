@@ -45,16 +45,15 @@ public class MouseClick : MonoBehaviour {
 	private AudioSource _destroyStone;
 	private AudioSource _destroyWood;
 
-	public Texture2D destroy1;
-	public Texture2D destroy2;
-	public Texture2D destroy3;
-	public Texture2D destroy4;
-
 	private bool damagingBlock;
 	private int damageDoneToBlock;
 
-	public GameObject destroyTexture;
-	private GameObject _destroyTexture;
+	public GameObject destroyPlane;
+	private GameObject _destroyPlane;
+
+	public Material[] destroyStages;
+
+	//public 
 
 	public void shitTheWeapon() {
 		if(currentWeapon != null) {
@@ -162,6 +161,7 @@ public class MouseClick : MonoBehaviour {
 		}
 		if(Input.GetMouseButtonUp(0) && damagingBlock) {
 			damagingBlock = false;
+			Destroy (_destroyPlane);
 		}
 
 		#region attack_animation
@@ -247,6 +247,41 @@ public class MouseClick : MonoBehaviour {
 				y = Mathf.FloorToInt(cubePos.y);
 				z = Mathf.FloorToInt(cubePos.z);
 
+				Vector3 posPlane = new Vector3(Mathf.Floor (cubePos.x), Mathf.Floor (cubePos.y), Mathf.Floor (cubePos.z));
+				Vector3 eulerRotPlane = new Vector3(0.0f,0.0f,0.0f);
+
+				if(normal.y >= 1.0f || normal.y <= -1.0f) {
+					posPlane.x += 0.5f;
+					posPlane.z += 0.5f;
+					if(normal.y <= -1.0f) {
+						eulerRotPlane.x = 180.0f;
+						posPlane.y -= 0.01f;
+					} else {
+						posPlane.y += 0.01f;
+					}
+
+				} else if(normal.x >= 1.0f || normal.x <= -1.0f) {
+					posPlane.y += 0.5f;
+					posPlane.z += 0.5f;
+					eulerRotPlane.z = 90.0f;
+					if(normal.x >= 1.0f) {
+						eulerRotPlane.z = 270.0f;
+						posPlane.x += 0.01f;
+					} else {
+						posPlane.x -= 0.01f;
+					}
+				} else if(normal.z >= 1.0f || normal.z <= -1.0f) {
+					posPlane.y += 0.5f;
+					posPlane.x += 0.5f;
+					eulerRotPlane.x = 90.0f;
+					if(normal.z <= -1.0f) {
+						eulerRotPlane.x = 270.0f;
+						posPlane.z -= 0.01f;
+					} else {
+						posPlane.z += 0.01f;
+					}
+				}
+
 				if(normal.y >= 1.0f) {
 					y -= 1;
 				} else if(normal.x >= 1.0f) {
@@ -261,8 +296,15 @@ public class MouseClick : MonoBehaviour {
 					if(!damagingBlock) {
 						damagingBlock  = true;
 						damageDoneToBlock = 0;
+						_destroyPlane = (GameObject) Instantiate(destroyPlane);
 
+						_destroyPlane.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
+						_destroyPlane.transform.position = posPlane;
+						_destroyPlane.transform.eulerAngles = eulerRotPlane;
+
+						_destroyPlane.renderer.material = destroyStages[damageDoneToBlock];
 					} else {
+						_destroyPlane.renderer.material = destroyStages[damageDoneToBlock];
 						++damageDoneToBlock;
 					}
 
@@ -306,13 +348,13 @@ public class MouseClick : MonoBehaviour {
 					}
 				}
 
-				if(damageDoneToBlock >= 4) {
+				if(damageDoneToBlock > 3) {
 					if(!world.removeCube(x, y, z)) {
 						Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
 					} else {
 						damagingBlock = false;
 						damageDoneToBlock = 0;
-						Destroy(destroyTexture);
+						Destroy(_destroyPlane);
 
 					}
 				}

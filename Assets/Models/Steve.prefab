@@ -2562,10 +2562,12 @@ MonoBehaviour:
   destroySnow: {fileID: 8300000, guid: 0d7e3147042253d4fa84ae72fa9f18dd, type: 3}
   destroyStone: {fileID: 8300000, guid: ab167a357b09b8c46932074f5fe0e787, type: 3}
   destroyWood: {fileID: 8300000, guid: edfcec460fe029a4197800c767552a7c, type: 3}
-  destroy1: {fileID: 2800000, guid: 4400d197663d6744cbd495d6aa49c083, type: 3}
-  destroy2: {fileID: 2800000, guid: 845a93e1c451f0b47b584d4db8c95bf5, type: 3}
-  destroy3: {fileID: 2800000, guid: f5e280116d0555843aa083c177102275, type: 3}
-  destroy4: {fileID: 2800000, guid: 2f221a5cb48630646976284974b6c5b0, type: 3}
+  destroyPlane: {fileID: 100000, guid: 2ef9462000372994584ba849ac4d0cfd, type: 2}
+  destroyStages:
+  - {fileID: 2100000, guid: ba30312f7f260b74a8a4147aa47a61c8, type: 2}
+  - {fileID: 2100000, guid: 403dc0af5726a0a479dd68ae5984a35e, type: 2}
+  - {fileID: 2100000, guid: 98bf8f9708527274f872c33298218b92, type: 2}
+  - {fileID: 2100000, guid: 3f9f638410c56f24f8098468f15508f4, type: 2}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
