@@ -7,7 +7,7 @@ public class CountingOfTime : MonoBehaviour {
 	public Camera sky;
 	public GameObject moon;
 
-	private float speed = 360.0f / (24.0f*60.0f); //one hour in game = minute in real life
+	private float speed = 360.0f / (24.0f*0.1f); //one hour in game = minute in real life
 	private float time;
 
 	//Days is set to simulate the moon phases
@@ -62,7 +62,7 @@ public class CountingOfTime : MonoBehaviour {
 
 		//Sun and Moon will be less intense as are falling down
 		if(sunHeight >= astroHeight) {
-			sun.light.intensity = 0.3f * (sunHeight/(astroHeight*2.0f));
+			sun.light.intensity = 1.0f * (sunHeight/(astroHeight*2.0f));
 			moon.light.intensity = 0.0f;
 			if(isNight) isNight = false;
 		} else {

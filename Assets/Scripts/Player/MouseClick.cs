@@ -218,11 +218,10 @@ public class MouseClick : MonoBehaviour {
 
 				BlockType bt;
 				if(gameObject.GetComponent<InventoryManagment>().getItem(out bt)) {
-					if(/*bt == BlockType.Torch*/true && !(rhit.normal.y <= -1.0f) && !rhit.collider.CompareTag("Torch")) {
+					if(/*bt == BlockType.Torch*/!(rhit.normal.y <= -1.0f) && !rhit.collider.CompareTag("Torch")) {
 						GameObject t = (GameObject) Instantiate(torch);
 						Vector3 posTorch = new Vector3(Mathf.Floor (rhit.point.x), Mathf.Floor (rhit.point.y), Mathf.Floor(rhit.point.z));
 						Vector3 eulerRotTorch = new Vector3(0.0f, 0.0f, 0.0f);
-						posTorch.y += 0.5f;
 						if(rhit.normal.x >= 1.0f) {
 							posTorch.y += 0.5f;
 							posTorch.z += 0.5f;
@@ -242,11 +241,12 @@ public class MouseClick : MonoBehaviour {
 						} else if(rhit.normal.y >= 1.0f) {
 							posTorch.x += 0.5f;
 							posTorch.z += 0.5f;
+							posTorch.y += 0.5f;
 						}
 						t.transform.position = posTorch;
 						t.transform.eulerAngles = eulerRotTorch;
 						torchs.Add(t);
-					} else {
+					} else if(rhit.collider.CompareTag("Chunk")) {
 						if(!world.addCube(x, y, z, bt)) {
 							Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
 						}
