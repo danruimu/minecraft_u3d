@@ -2568,8 +2568,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 403dc0af5726a0a479dd68ae5984a35e, type: 2}
   - {fileID: 2100000, guid: 98bf8f9708527274f872c33298218b92, type: 2}
   - {fileID: 2100000, guid: 3f9f638410c56f24f8098468f15508f4, type: 2}
-  blockDestroyParticles: {fileID: 19800000, guid: d040b73385d0047418493ec39cf45100,
-    type: 2}
+  torch: {fileID: 100006, guid: 2dd8b6b742462f9458f4a82b127dbdee, type: 2}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -57,6 +57,9 @@ public class MouseClick : MonoBehaviour {
 	private int lastY;
 	private int lastZ;
 
+	public GameObject torch;
+	private ArrayList torchs;
+
 	//public 
 
 	public void shitTheWeapon() {
@@ -137,7 +140,7 @@ public class MouseClick : MonoBehaviour {
 		}
 
 		damagingBlock = false;
-
+		torchs = new ArrayList();
 	}
 
 	// Update is called once per frame
@@ -215,8 +218,38 @@ public class MouseClick : MonoBehaviour {
 
 				BlockType bt;
 				if(gameObject.GetComponent<InventoryManagment>().getItem(out bt)) {
-					if(!world.addCube(x, y, z, bt)) {
-						Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+					if(/*bt == BlockType.Torch*/true && !(rhit.normal.y <= -1.0f) && !rhit.collider.CompareTag("Torch")) {
+						GameObject t = (GameObject) Instantiate(torch);
+						Vector3 posTorch = new Vector3(Mathf.Floor (rhit.point.x), Mathf.Floor (rhit.point.y), Mathf.Floor(rhit.point.z));
+						Vector3 eulerRotTorch = new Vector3(0.0f, 0.0f, 0.0f);
+						posTorch.y += 0.5f;
+						if(rhit.normal.x >= 1.0f) {
+							posTorch.y += 0.5f;
+							posTorch.z += 0.5f;
+							eulerRotTorch.z = 315.0f;
+						} else if(rhit.normal.x <= -1.0f) {
+							posTorch.y += 0.5f;
+							posTorch.z += 0.5f;
+							eulerRotTorch.z = 45.0f;
+						} else if(rhit.normal.z >= 1.0f) {
+							posTorch.x += 0.5f;
+							posTorch.y += 0.5f;
+							eulerRotTorch.x = 45.0f;
+						} else if(rhit.normal.z <= -1.0f) {
+							posTorch.x += 0.5f;
+							posTorch.y += 0.5f;
+							eulerRotTorch.x = 315.0f;
+						} else if(rhit.normal.y >= 1.0f) {
+							posTorch.x += 0.5f;
+							posTorch.z += 0.5f;
+						}
+						t.transform.position = posTorch;
+						t.transform.eulerAngles = eulerRotTorch;
+						torchs.Add(t);
+					} else {
+						if(!world.addCube(x, y, z, bt)) {
+							Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+						}
 					}
 				}
 			}
@@ -241,6 +274,12 @@ public class MouseClick : MonoBehaviour {
 
 					z.damage(damage, rhit.normal, rhit.point);
 				}
+			} else if(rhit.collider.CompareTag ("Torch")) { 
+				GameObject torchHit = rhit.collider.gameObject;
+				torchs.Remove(torchHit);
+				Destroy(torchHit);
+				if(!_destroyWood.isPlaying) _destroyWood.Play();
+
 			} else if(currentWeapon.CompareTag("PickAxe")) {
 				Vector3 cubePos = rhit.point;
 				Vector3 normal = rhit.normal;
