@@ -5,8 +5,8 @@ using System.IO;
 using System.Text;
 
 public enum ItemType{
-	Stick=1,
-	Torch=2
+	Stick=0,
+	Torch=-1
 }
 
 public class World : MonoBehaviour {
@@ -69,6 +69,7 @@ public class World : MonoBehaviour {
 				}
 			}
 		}
+		texts = new Texture[mats.Length]; 
 		for(int i=0;i<mats.Length;i++){
 			texts[i] = mats[i].mainTexture;
 			Debug.Log(texturesItem[0].name);

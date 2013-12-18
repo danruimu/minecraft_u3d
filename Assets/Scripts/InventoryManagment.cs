@@ -145,7 +145,7 @@ public class InventoryManagment : MonoBehaviour {
 		GameObject go = (GameObject)Instantiate(prefab);
 		Item it = go.GetComponent<Item>();
 		Texture t;
-		if(id < 0){
+		if(id <= 0){
 			t = texturesItem[-id];
 		}
 		else{
@@ -349,7 +349,7 @@ public class InventoryManagment : MonoBehaviour {
 		else{
 			if(Input.GetKeyDown(KeyCode.A)){
 				for (int i=0;i<5;i++){
-					addInventory(0,(byte)64);
+					addInventory(-1,(byte)64);
 				}
 //				GameObject go = (GameObject)Instantiate(prefab);
 //				Item it = go.GetComponent<Item>();
@@ -363,8 +363,11 @@ public class InventoryManagment : MonoBehaviour {
 		}
 	}
 
-	public bool getItem(out BlockType bt) {
-		bt = BlockType.GoldOre;
+	public bool getItem(out int bt) {
+		bt = 0;
+		if(itemsBarra[posInv] == null)return false;
+		if(itemsBarra[posInv].getId() < 0)return false;
+		bt = itemsBarra[posInv].getId();
 		return true;
 	}
 }
