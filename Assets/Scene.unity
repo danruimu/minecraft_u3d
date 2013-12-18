@@ -161,6 +161,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c6566722de3398445969a75ab1765c23, type: 2}
   - {fileID: 2100000, guid: fbfca8549e9442b4cac72bfd3915d27a, type: 2}
   - {fileID: 2100000, guid: 8902c3071a1835c48bb5f7840c8405d5, type: 2}
+  - {fileID: 2100000, guid: e10a3e41329497a419438f14244cdb42, type: 2}
+  - {fileID: 2100000, guid: ff26c8e026dc4f942838a575bc1163f8, type: 2}
+  - {fileID: 2100000, guid: 3e4db52cc2ee123488cafeb16ef5e877, type: 2}
   texturesItem:
   - {fileID: 2800000, guid: 5c7eee020fd3809478caf9ea4d12e4ca, type: 3}
   - {fileID: 2800000, guid: af855dab554844e44b3d351bb56205fb, type: 3}
@@ -464,6 +467,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400002, guid: 854d1a44dbcc90141a33734d20157bc1, type: 2}
+      propertyPath: mats.Array.size
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 854d1a44dbcc90141a33734d20157bc1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -492,6 +499,18 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 854d1a44dbcc90141a33734d20157bc1, type: 2}
+      propertyPath: mats.Array.data[15]
+      value: 
+      objectReference: {fileID: 2100000, guid: e10a3e41329497a419438f14244cdb42, type: 2}
+    - target: {fileID: 11400002, guid: 854d1a44dbcc90141a33734d20157bc1, type: 2}
+      propertyPath: mats.Array.data[16]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff26c8e026dc4f942838a575bc1163f8, type: 2}
+    - target: {fileID: 11400002, guid: 854d1a44dbcc90141a33734d20157bc1, type: 2}
+      propertyPath: mats.Array.data[17]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e4db52cc2ee123488cafeb16ef5e877, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 854d1a44dbcc90141a33734d20157bc1, type: 2}
   m_RootGameObject: {fileID: 717487830}

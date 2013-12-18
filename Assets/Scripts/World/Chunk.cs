@@ -93,7 +93,12 @@ public class Chunk : MonoBehaviour {
 				height[cx,cz] = heightmap[cx*Chunk.sizez + cz];
 				for(int cy=0;cy<Chunk.sizey && cy < height[cx,cz];cy++){
 					BlockType val = (BlockType)data[cx*Chunk.sizez*Chunk.sizey + cz*Chunk.sizey + cy];
-					if((int)val > 0 && (int)val != 9 && (int)val != 31 && (int)val != 11)//9=aigua,11=lava,31=tallgrass
+					/*8=aiguaquieta,9=aiguamoving,10=lavamoving,11=lavaquieta
+					,31=tallgrass,78=nieve,106=vines,111=lylipas,39&40=setas,37=dandelion,52=monsterspawner,
+					 54=chest*/
+					if((int)val > 0 && (int)val != 8 && (int)val != 10 &&(int)val != 9 && (int)val != 11 && (int)val != 31
+					   && (int)val != 111 && (int)val != 78 && (int)val != 106 && (int)val != 39 && (int)val != 40
+					   && (int)val != 37 && (int)val != 52 && (int) val != 54)
 						cubes[cx,cy,cz] = new Block(val);
 				}
 			}
@@ -110,7 +115,7 @@ public class Chunk : MonoBehaviour {
 			for (int z=0; z < sizez; z++){
 				for(int y = 0;y <= height[x,z] && y <sizey; y++){
 					if(cubes[x,y,z]!=null)
-						addCube(cubes[x,y,z],new Vector3(x,y,z));
+						addCube(cubes[x,y,z],new Vector3(x,y,z),false);
 				}
 			}
 		}
@@ -265,7 +270,7 @@ public class Chunk : MonoBehaviour {
 		}
 	}
 
-	private bool addCube (Block cub,Vector3 position,bool update = false) {
+	private bool addCube (Block cub,Vector3 position,bool update = true) {
 		Vector3 p;
 
 		for(int face=0;face<numFaces;face++){
@@ -275,10 +280,12 @@ public class Chunk : MonoBehaviour {
 				if(addFace(position,(faceType)face))cub.initCollider(position,this);
 			}
 			else{
-				if(insideChunk(p))
-					delFace(p,(faceType)(face^1));
-				else
-					father.delFace(p,(faceType)(face^1));
+				if(update){
+					if(insideChunk(p))
+						delFace(p,(faceType)(face^1));
+					else
+						father.delFace(p,(faceType)(face^1));
+				}
 			}
 		}
 		

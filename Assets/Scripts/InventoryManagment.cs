@@ -374,7 +374,7 @@ public class InventoryManagment : MonoBehaviour {
 	public bool resItem(byte num) {
 		if(itemsBarra[posInv] == null)return false;
 		if(itemsBarra[posInv].getId() < 0)return false;
-		if(itemsBarra[posInv].delQuantity(num))borrar(itemsBarra[posInv].delQuantity(num),true);
+		if(itemsBarra[posInv].delQuantity(num))borrar(itemsBarra[posInv],true);
 		return true;
 	}
 }

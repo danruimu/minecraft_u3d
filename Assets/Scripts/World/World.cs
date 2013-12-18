@@ -13,8 +13,8 @@ public class World : MonoBehaviour {
 	public Texture[] texturesItem;
 	public static Texture[] texts;
 	public string seed;
-	public static int sizex = 2;
-	public static int sizez = 2;
+	public static int sizex = 6;
+	public static int sizez = 6;
 	public const int numMaxMaterials = 256;
 
 	private static int[][] indexsBlocks;
@@ -53,6 +53,12 @@ public class World : MonoBehaviour {
 				especials[4] = "Grass_top";
 				especials[5] = "Dirt";
 				break;
+			
+			case "Wood":
+				especials = new string[6];
+				especials[4] = "Wood_top";
+				especials[5] = "Wood_top";
+				break;
 			}
 			if (especials != null){
 				for(int j = 0;j<6;j++){
@@ -68,7 +74,6 @@ public class World : MonoBehaviour {
 		texts = new Texture[mats.Length]; 
 		for(int i=0;i<mats.Length;i++){
 			texts[i] = mats[i].mainTexture;
-			Debug.Log(texturesItem[0].name);
 		}
 	}
 
@@ -101,8 +106,8 @@ public class World : MonoBehaviour {
 				GO.transform.parent = transform;
 				c = GO.GetComponent<Chunk>();
 				c.init(new Vector3(x*Chunk.sizex,0,z*Chunk.sizez),this,mats);
-				heightmap = convert(File.ReadAllBytes("World/" + x + "_" + z + ".hm.milf"));
-				data = convert(File.ReadAllBytes("World/" + x + "_" + z + ".b.milf"));
+				heightmap = convert(File.ReadAllBytes("milf_final/" + x + "_" + z + ".hm.milf"));
+				data = convert(File.ReadAllBytes("milf_final/" + x + "_" + z + ".b.milf"));
 				c.fillColums(heightmap,data);
 				chunks[x,z] = c;
 			}
