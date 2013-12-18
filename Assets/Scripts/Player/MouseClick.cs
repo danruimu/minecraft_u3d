@@ -29,6 +29,39 @@ public class MouseClick : MonoBehaviour {
 
 	public World world;
 
+	public AudioClip destroyGrass;
+	public AudioClip destroyCloth;
+	public AudioClip destroyGravel;
+	public AudioClip destroySand;
+	public AudioClip destroySnow;
+	public AudioClip destroyStone;
+	public AudioClip destroyWood;
+
+	private AudioSource _destroyGrass;
+	private AudioSource _destroyCloth;
+	private AudioSource _destroyGravel;
+	private AudioSource _destroySand;
+	private AudioSource _destroySnow;
+	private AudioSource _destroyStone;
+	private AudioSource _destroyWood;
+
+	private bool damagingBlock;
+	private int damageDoneToBlock;
+
+	public GameObject destroyPlane;
+	private GameObject _destroyPlane;
+
+	public Material[] destroyStages;
+
+	private int lastX;
+	private int lastY;
+	private int lastZ;
+
+	public GameObject torch;
+	public ArrayList torchs;
+
+	//public 
+
 	public void shitTheWeapon() {
 		if(currentWeapon != null) {
 			Destroy (currentWeapon);
@@ -63,18 +96,57 @@ public class MouseClick : MonoBehaviour {
 	}
 
 	void Start() {
+		//sound
+		_destroyGrass = gameObject.AddComponent<AudioSource>();
+		_destroyGrass.playOnAwake = false;
+		_destroyGrass.loop = false;
+		_destroyGrass.clip = destroyGrass;
+
+		_destroyCloth = gameObject.AddComponent<AudioSource>();
+		_destroyCloth.playOnAwake = false;
+		_destroyCloth.loop = false;
+		_destroyCloth.clip = destroyCloth;
+
+		_destroyGravel = gameObject.AddComponent<AudioSource>();
+		_destroyGravel.playOnAwake = false;
+		_destroyGravel.loop = false;
+		_destroyGravel.clip = destroyGravel;
+
+		_destroySand = gameObject.AddComponent<AudioSource>();
+		_destroySand.playOnAwake = false;
+		_destroySand.loop = false;
+		_destroySand.clip = destroySand;
+
+		_destroySnow = gameObject.AddComponent<AudioSource>();
+		_destroySnow.playOnAwake = false;
+		_destroySnow.loop = false;
+		_destroySnow.clip = destroySnow;
+
+		_destroyStone = gameObject.AddComponent<AudioSource>();
+		_destroyStone.playOnAwake = false;
+		_destroyStone.loop = false;
+		_destroyStone.clip = destroyStone;
+
+		_destroyWood = gameObject.AddComponent<AudioSource>();
+		_destroyWood.playOnAwake = false;
+		_destroyWood.loop = false;
+		_destroyWood.clip = destroyWood;
+		//endsound
+
 		attack = false;
 
 		if(!changeWeapon(0)) {
 			Debug.LogError("Cannot change to Weapon "+weapons[0]);
 		}
+
+		damagingBlock = false;
+		torchs = new ArrayList();
 	}
 
 	// Update is called once per frame
 	void Update () {
-
 		if(!attack){
-			if(Input.GetMouseButton(0) && currentWeapon != null) {
+			if(Input.GetMouseButton(0) && currentWeapon != null && !world.GetComponent<PauseMenu>().isPaused()) {
 				attack = true;
 				time = 0.0f;
 				dirRot = Vector3.right;
@@ -89,15 +161,20 @@ public class MouseClick : MonoBehaviour {
 			}
 
 			if(Input.GetKeyDown(KeyCode.Q)) {
-				changeWeapon(0);
+				if(currentWeapon.CompareTag("Sword")) {
+					if(!changeWeapon(0)) {
+						Debug.Log("Cannot change to PickAxe");
+					}
+				} else {
+					if(!changeWeapon(1)) {
+						Debug.Log("Cannot change to Sword");
+					}
+				}
 			}
-			if(Input.GetKeyDown(KeyCode.Z)) {
-				changeWeapon(1);
-			}
-
-			if(Input.GetKeyDown (KeyCode.F)) {
-				shitTheWeapon();
-			}
+		}
+		if(Input.GetMouseButtonUp(0) && damagingBlock) {
+			damagingBlock = false;
+			Destroy (_destroyPlane);
 		}
 
 		#region attack_animation
@@ -148,8 +225,38 @@ public class MouseClick : MonoBehaviour {
 
 				BlockType bt;
 				if(gameObject.GetComponent<InventoryManagment>().getItem(out bt)) {
-					if(!world.addCube(x, y, z, bt)) {
-						Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+					if(/*bt == BlockType.Torch*/!(rhit.normal.y <= -1.0f) && !rhit.collider.CompareTag("Torch")) {
+						GameObject t = (GameObject) Instantiate(torch);
+						Vector3 posTorch = new Vector3(Mathf.Floor (rhit.point.x), Mathf.Floor (rhit.point.y), Mathf.Floor(rhit.point.z));
+						Vector3 eulerRotTorch = new Vector3(0.0f, 0.0f, 0.0f);
+						if(rhit.normal.x >= 1.0f) {
+							posTorch.y += 0.5f;
+							posTorch.z += 0.5f;
+							eulerRotTorch.z = 315.0f;
+						} else if(rhit.normal.x <= -1.0f) {
+							posTorch.y += 0.5f;
+							posTorch.z += 0.5f;
+							eulerRotTorch.z = 45.0f;
+						} else if(rhit.normal.z >= 1.0f) {
+							posTorch.x += 0.5f;
+							posTorch.y += 0.5f;
+							eulerRotTorch.x = 45.0f;
+						} else if(rhit.normal.z <= -1.0f) {
+							posTorch.x += 0.5f;
+							posTorch.y += 0.5f;
+							eulerRotTorch.x = 315.0f;
+						} else if(rhit.normal.y >= 1.0f) {
+							posTorch.x += 0.5f;
+							posTorch.z += 0.5f;
+							posTorch.y += 0.5f;
+						}
+						t.transform.position = posTorch;
+						t.transform.eulerAngles = eulerRotTorch;
+						torchs.Add(t);
+					} else if(rhit.collider.CompareTag("Chunk")) {
+						if(!world.addCube(x, y, z, bt)) {
+							Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+						}
 					}
 				}
 			}
@@ -162,7 +269,7 @@ public class MouseClick : MonoBehaviour {
 
 		if(Physics.Raycast (ray, out rhit, 5.0f)) {
 			if(rhit.collider.CompareTag("MOB")) {
-				if(rhit.distance < 2.0f) {
+				if(rhit.distance < 2.5f) {
 					IAZombie z = rhit.collider.GetComponent<IAZombie>();
 
 					float damage;
@@ -174,6 +281,12 @@ public class MouseClick : MonoBehaviour {
 
 					z.damage(damage, rhit.normal, rhit.point);
 				}
+			} else if(rhit.collider.CompareTag ("Torch")) { 
+				GameObject torchHit = rhit.collider.gameObject;
+				torchs.Remove(torchHit);
+				Destroy(torchHit);
+				if(!_destroyWood.isPlaying) _destroyWood.Play();
+
 			} else if(currentWeapon.CompareTag("PickAxe")) {
 				Vector3 cubePos = rhit.point;
 				Vector3 normal = rhit.normal;
@@ -183,6 +296,41 @@ public class MouseClick : MonoBehaviour {
 				y = Mathf.FloorToInt(cubePos.y);
 				z = Mathf.FloorToInt(cubePos.z);
 
+				Vector3 posPlane = new Vector3(Mathf.Floor (cubePos.x), Mathf.Floor (cubePos.y), Mathf.Floor (cubePos.z));
+				Vector3 eulerRotPlane = new Vector3(0.0f,0.0f,0.0f);
+
+				if(normal.y >= 1.0f || normal.y <= -1.0f) {
+					posPlane.x += 0.5f;
+					posPlane.z += 0.5f;
+					if(normal.y <= -1.0f) {
+						eulerRotPlane.x = 180.0f;
+						posPlane.y -= 0.01f;
+					} else {
+						posPlane.y += 0.01f;
+					}
+
+				} else if(normal.x >= 1.0f || normal.x <= -1.0f) {
+					posPlane.y += 0.5f;
+					posPlane.z += 0.5f;
+					eulerRotPlane.z = 90.0f;
+					if(normal.x >= 1.0f) {
+						eulerRotPlane.z = 270.0f;
+						posPlane.x += 0.01f;
+					} else {
+						posPlane.x -= 0.01f;
+					}
+				} else if(normal.z >= 1.0f || normal.z <= -1.0f) {
+					posPlane.y += 0.5f;
+					posPlane.x += 0.5f;
+					eulerRotPlane.x = 90.0f;
+					if(normal.z <= -1.0f) {
+						eulerRotPlane.x = 270.0f;
+						posPlane.z -= 0.01f;
+					} else {
+						posPlane.z += 0.01f;
+					}
+				}
+
 				if(normal.y >= 1.0f) {
 					y -= 1;
 				} else if(normal.x >= 1.0f) {
@@ -191,11 +339,87 @@ public class MouseClick : MonoBehaviour {
 					z -= 1;
 				}
 
-				if(!world.removeCube(x, y, z)) {
-					Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
+				BlockType bt = world.getBlockType(x,y,z);
+
+				if(lastX != x || lastY != y || lastZ != z) {
+					damagingBlock = false;
+				}
+
+				if(bt != BlockType.Bedrock) {
+					if(!damagingBlock) {
+						damagingBlock  = true;
+						damageDoneToBlock = 0;
+						if(_destroyPlane != null) Destroy (_destroyPlane);
+						_destroyPlane = (GameObject) Instantiate(destroyPlane);
+						_destroyPlane.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
+						_destroyPlane.transform.position = posPlane;
+						_destroyPlane.transform.eulerAngles = eulerRotPlane;
+						_destroyPlane.renderer.material = destroyStages[damageDoneToBlock];
+
+						lastX = x;
+						lastY = y;
+						lastZ = z;
+					} else {
+						_destroyPlane.renderer.material = destroyStages[damageDoneToBlock];
+						++damageDoneToBlock;
+					}
+
+					switch(bt) {
+					case BlockType.Clay:
+						_destroyGrass.Play ();
+						break;
+					case BlockType.CoalOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.DiamondOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.Dirt:
+						_destroyGrass.Play ();
+						break;
+					case BlockType.GoldOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.Grass:
+						_destroyGrass.Play ();
+						break;
+					case BlockType.Gravel:
+						_destroyGravel.Play ();
+						break;
+					case BlockType.IronOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.RedstoneOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.Sand:
+						_destroySand.Play();
+						break;
+					case BlockType.LapisOre:
+						_destroyStone.Play ();
+						break;
+					case BlockType.Stone:
+						_destroyStone.Play ();
+						break;
+					}
+				}
+
+				if(damageDoneToBlock > 3) {
+					if(!world.removeCube(x, y, z)) {
+						Debug.LogError("Cannot remove Cube at "+x+","+y+","+z);
+					} else {
+						damagingBlock = false;
+						damageDoneToBlock = 0;
+
+						Destroy(_destroyPlane);
+					}
 				}
 			}
 		}
+	}
+
+	public World getWorld() {
+		return world;
 	}
 
 }

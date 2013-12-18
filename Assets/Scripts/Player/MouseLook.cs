@@ -26,6 +26,9 @@ public class MouseLook : MonoBehaviour {
 
 	void Update ()
 	{
+		if(gameObject.GetComponent<MouseClick>().getWorld().gameObject.GetComponent<PauseMenu>().isPaused()) {
+			return;
+		}
 		if (axes == RotationAxes.MouseXAndY)
 		{
 			// Read the mouse input axis

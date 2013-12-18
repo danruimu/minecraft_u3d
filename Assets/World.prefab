@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -190,7 +191,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.5999999
+  m_Intensity: 5
   m_Range: 100
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -263,6 +264,17 @@ MonoBehaviour:
   seed: Penes
   steve: {fileID: 100040, guid: 9c3c7e6f224fd2b44a75fc7b1a1e38c9, type: 2}
   zombie: {fileID: 100084, guid: 22a8a256a1eff5c488d5daf19a188901, type: 2}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3be5c89bcc0164f85cfd3c262e30ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!122 &12200000
 Halo:
   m_ObjectHideFlags: 1

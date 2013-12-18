@@ -8,6 +8,7 @@ public class IAZombie : MonoBehaviour {
 	private const float actionDuration = 1.0f;
 	private const float detectionDistance = 10.0f;
 	private const float damageAnimationDuration = 1.0f;
+	private const float timeBetweenSayAnithing = 5.0f;
 	#endregion
 
 	#region public variables
@@ -20,6 +21,11 @@ public class IAZombie : MonoBehaviour {
 	public Animator legRight;
 
 	public ParticleSystem blood;
+
+	public AudioClip hurt;
+	public AudioClip say;
+	public AudioClip death;
+	public AudioClip step;
 	#endregion
 
 	#region private variables
@@ -39,10 +45,19 @@ public class IAZombie : MonoBehaviour {
 	private float damageTimer;
 	private bool damaged;
 	private bool died;
+
+	private float soundTimer;
+	private AudioSource _hurt;
+	private AudioSource _say;
+	private AudioSource _death;
+	private AudioSource _step;
+
+	private World world;
 	#endregion
 
 	// Use this for initialization
 	void Start () {
+		soundTimer = 0.0f;
 		time = 0.0f;
 		timeBetweenActions = Mathf.Min(minTimeBetweenActions, timeBetweenActions);
 		isMoving = false;
@@ -57,11 +72,47 @@ public class IAZombie : MonoBehaviour {
 		life = 5.0f;
 		damaged = false;
 		died = false;
+
+		//sound
+		_say = gameObject.AddComponent<AudioSource>();
+		_say.playOnAwake = false;
+		_say.clip = say;
+		_say.loop = false;
+		_say.Stop();
+
+		_death = gameObject.AddComponent<AudioSource>();
+		_death.playOnAwake = false;
+		_death.clip = death;
+		_death.loop = false;
+		_death.Stop();
+
+		_hurt = gameObject.AddComponent<AudioSource>();
+		_hurt.playOnAwake = false;
+		_hurt.clip = hurt;
+		_hurt.loop = false;
+		_hurt.Stop();
+
+		_step = gameObject.AddComponent<AudioSource>();
+		_step.playOnAwake = false;
+		_step.clip = step;
+		_step.loop = true;
+		_step.Stop();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		time += Time.deltaTime;
+		soundTimer += Time.deltaTime;
+		if(soundTimer >= timeBetweenSayAnithing) {
+			soundTimer = 0f;
+			if(!_say.isPlaying && !world.GetComponent<PauseMenu>().isPaused()) _say.Play();
+			else _say.Stop ();
+		}
+
+		if(world.GetComponent<PauseMenu>().isPaused()) {
+			if(_step.isPlaying) _step.Stop ();
+			return;
+		}
 
 		isSteveNear = detectSteve();
 
@@ -74,6 +125,7 @@ public class IAZombie : MonoBehaviour {
 			case 0:	//MOV forward
 				isMoving = true;
 				actionTimer = 0.0f;
+				if(!_step.isPlaying) _step.Play();
 				break;
 			case 1:	//ROT and MOV
 				isRotating = true;
@@ -98,6 +150,7 @@ public class IAZombie : MonoBehaviour {
 			legLeft.enabled = true;
 			legRight.enabled = true;
 			if(actionTimer >= actionDuration) {
+				if(_step.isPlaying) _step.Stop();
 				isMoving = false;
 				actionTimer = 0.0f;
 			}
@@ -132,12 +185,14 @@ public class IAZombie : MonoBehaviour {
 
 		float angle = angleToSteve - zombieAngleY;
 		if( angle >= 2.5f || angle <= -2.5f) {	//ROT
+			if(_step.isPlaying) _step.Stop();
 			legLeft.enabled = false;
 			legRight.enabled = false;
 			float rotation = angle<0.0f ? -speedRotation : speedRotation;
 			transform.Rotate (Vector3.up, rotation * Time.deltaTime);
 			
 		} else {
+			if(!_step.isPlaying) _step.Play();
 			transform.Translate(Vector3.left * speedMovement * Time.deltaTime);
 			legLeft.enabled = true;
 			legRight.enabled = true;
@@ -183,10 +238,15 @@ public class IAZombie : MonoBehaviour {
 		if(!damaged) {
 			life -= damage;
 			rigidbody.AddForce((-normalImpact + Vector3.up) * 200.0f, ForceMode.Impulse);
+			blood.transform.position = point;
 			blood.enableEmission = true;
 			blood.Play ();
-			blood.transform.position = point;
-			if(life <= 0.0f) died = true;
+			if(life <= 0.0f) {
+				died = true;
+				if(!_death.isPlaying) _death.Play ();
+			} else {
+				if(!_hurt.isPlaying) _hurt.Play();
+			}
 			damaged = true;
 			damageTimer = 0.0f;
 		}
@@ -202,6 +262,8 @@ public class IAZombie : MonoBehaviour {
 		if(damageTimer <= damageAnimationDuration && died) {
 			transform.Rotate(Vector3.left, 90.0f*Time.deltaTime);
 		} else if(damageTimer >= damageAnimationDuration) {
+			if(_hurt.isPlaying) _hurt.Stop ();
+			if(_death.isPlaying) _death.Stop ();
 			damaged = false;
 			blood.enableEmission = false;
 			blood.Stop();
@@ -211,5 +273,9 @@ public class IAZombie : MonoBehaviour {
 
 	public void setSteveTransform(Transform newSteve) {
 		steve = newSteve;
+	}
+
+	public void setWorld(World w) {
+		world = w;
 	}
 }

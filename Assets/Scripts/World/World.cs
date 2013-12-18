@@ -119,7 +119,15 @@ public class World : MonoBehaviour {
 		Debug.Log("creacion " + sizex + " * " + sizez + " Chunks -> tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
 	}
 
-	private byte getHeight(int x, int z){
+	public int getSizeX() {
+		return sizex;
+	}
+
+	public int getSizeZ() {
+		return sizez;
+	}
+
+	public byte getHeight(int x, int z){
 		return chunks[x/Chunk.sizex,z/Chunk.sizez].getHeight(x%Chunk.sizex,z%Chunk.sizez);
 	}
 
@@ -190,31 +198,53 @@ public class World : MonoBehaviour {
 
 		if(gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
 			if(!enoughZombiesPlease()) {
-				Debug.Log ("Spawn!");
 				spawnZombie();
 			}
 		} else {
 			foreach(GameObject z in _zombies) {
 				if(z != null) {
+					//kill the zombie
 					z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
 				}
+			}
+			if(_zombies.Count > 0) {
+				_zombies.Clear();
 			}
 		}
 	}
 
+	//Returns true if there are enough zombies at the scene (so another zombie cannot be spawn)
 	private bool enoughZombiesPlease() {
-		return _zombies.Count > maxZombies;
+		int zombiesNear = 0;
+		foreach(GameObject z in _zombies) {
+			if(z != null) {
+				if(Vector3.Distance(z.transform.position, _steve.transform.position) < 20.0f) ++zombiesNear;
+			}
+		}
+		if(zombiesNear >= maxZombies) return true; 	//maximum of 10 zombies near steve
+
+		return _zombies.Count*sizex*sizez > maxZombies; //maximum of 10 zombies per chunk
 	}
 
 	private void spawnZombie() {
-		GameObject z = (GameObject) Instantiate(zombie);
-		z.GetComponent<IAZombie>().steve = _steve.transform;
+		float desX = UnityEngine.Random.Range (10.0f, 50.0f);
+		float desZ = UnityEngine.Random.Range (10.0f, 50.0f);
 		Vector3 pos;
-		pos.x = UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
-		pos.z = UnityEngine.Random.Range (1f, Chunk.sizez * sizez);
+		pos.x = _steve.transform.position.x + desX;
+		pos.z = _steve.transform.position.z + desZ;
+		if(pos.x <= 0.0f || pos.z <= 0.0f || pos.x >= (sizex * Chunk.sizex) || pos.z >= (sizez * Chunk.sizez)) return;
 		pos.y = getHeight(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z));
 		pos.y += 2.0f;
+		//only to be sure, but it's not needed
+		if(Vector3.Distance(_steve.transform.position, pos) < 10.0f) return;	//zombie cannot be spawned too close to Steve
+		foreach(GameObject torch in _steve.GetComponent<MouseClick>().torchs) {
+			if(Vector3.Distance(torch.transform.position, pos) < 10.0f) return;	//zombie cannot be spawned near a Torch
+		}
+		
+		GameObject z = (GameObject) Instantiate(zombie);
+		z.GetComponent<IAZombie>().steve = _steve.transform;
 		z.transform.position = pos;
+		z.GetComponent<IAZombie>().setWorld(this);
 		_zombies.Add (z);
 	}
 
