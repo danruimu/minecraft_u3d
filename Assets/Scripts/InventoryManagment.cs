@@ -321,6 +321,7 @@ public class InventoryManagment : MonoBehaviour {
 			GetComponent<MovementPlayer>().enabled = !invEnabled;
 			GetComponent<MouseClick>().enabled = !invEnabled;
 			pintaItems(invEnabled);
+			Screen.showCursor = invEnabled;
 		}
 		else if(!invEnabled){
 			if (Input.GetAxis("Mouse ScrollWheel") > 0 && posInv > 0) {

@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sun: {fileID: 100004}
-  sky: {fileID: 100078, guid: 9c3c7e6f224fd2b44a75fc7b1a1e38c9, type: 2}
+  sky: {fileID: 2000002, guid: 9c3c7e6f224fd2b44a75fc7b1a1e38c9, type: 2}
   moon: {fileID: 100002}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -258,6 +258,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c6566722de3398445969a75ab1765c23, type: 2}
   - {fileID: 2100000, guid: fbfca8549e9442b4cac72bfd3915d27a, type: 2}
   - {fileID: 2100000, guid: 8902c3071a1835c48bb5f7840c8405d5, type: 2}
+  - {fileID: 2100000, guid: e10a3e41329497a419438f14244cdb42, type: 2}
+  - {fileID: 2100000, guid: ff26c8e026dc4f942838a575bc1163f8, type: 2}
+  - {fileID: 2100000, guid: 3e4db52cc2ee123488cafeb16ef5e877, type: 2}
   texturesItem:
   - {fileID: 2800000, guid: 5c7eee020fd3809478caf9ea4d12e4ca, type: 3}
   - {fileID: 2800000, guid: af855dab554844e44b3d351bb56205fb, type: 3}
