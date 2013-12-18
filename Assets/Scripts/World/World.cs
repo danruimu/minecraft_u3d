@@ -199,16 +199,37 @@ public class World : MonoBehaviour {
 		_zombies = new ArrayList();
 		Debug.Log("resto de tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
 
-		infoPlayer = new Rect(10f, 10f, 150.0f, 60.0f);
-		infoPlayer.center = new Vector2(Screen.width-80.0f, 35.0f);
+		infoPlayer = new Rect(10f, 10f, 150.0f, 75.0f);
+		infoPlayer.center = new Vector2(Screen.width-80.0f, 47.5f);
 		theInfoPlayer = theInfo;
 	}
 
 	void theInfo(int windowID) {
 		gameObject.GetComponent<CountingOfTime>().getDate (out day, out month, out year);
+		int score = 0;
+		score += 100*zombiesDead;
+		int diffYear = year - 1;	//1 = initYear
+		int diffMonth = month - 1;	//1 = initMonth
+		int totalDays = diffYear*365;
+		if(diffMonth >= 1) totalDays += 31;
+		if(diffMonth >= 2) totalDays += 28;
+		if(diffMonth >= 3) totalDays += 31;
+		if(diffMonth >= 4) totalDays += 30;
+		if(diffMonth >= 5) totalDays += 31;
+		if(diffMonth >= 6) totalDays += 30;
+		if(diffMonth >= 7) totalDays += 31;
+		if(diffMonth >= 8) totalDays += 31;
+		if(diffMonth >= 9) totalDays += 30;
+		if(diffMonth >= 10) totalDays += 31;
+		if(diffMonth == 11) totalDays += 30;
+		totalDays += day - 1;
+
+		score += 50*totalDays;
+
 		GUI.skin.textField.alignment = TextAnchor.MiddleCenter;
 		GUILayout.TextField("Killed Zombies: "+zombiesDead+"\n" +
-							"Date: "+day+"/"+month+"/"+year);
+							"Date: "+day+"/"+month+"/"+year+"\n" +
+		                    "Score: "+score);
 	}
 	
 	// Update is called once per frame
