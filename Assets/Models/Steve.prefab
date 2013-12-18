@@ -2553,7 +2553,7 @@ MonoBehaviour:
   center: {fileID: 400078}
   weapons:
   - {fileID: 100002, guid: 3bcdfb8e654858945a62fc520890fa63, type: 2}
-  - {fileID: 100004, guid: faabc7a99c9705a41a25d96f5fdecc75, type: 2}
+  - {fileID: 100002, guid: faabc7a99c9705a41a25d96f5fdecc75, type: 2}
   world: {fileID: 0}
   destroyGrass: {fileID: 8300000, guid: ccefd4fb3fce19c42a29d48e9f7b8163, type: 3}
   destroyCloth: {fileID: 8300000, guid: 542dbca394794ae4282875c92bf9fdf2, type: 3}

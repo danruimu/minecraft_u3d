@@ -244,6 +244,7 @@ public class IAZombie : MonoBehaviour {
 			if(life <= 0.0f) {
 				died = true;
 				if(!_death.isPlaying) _death.Play ();
+				if(!(damage >= 5.0f)) world.addZombiesDead();
 			} else {
 				if(!_hurt.isPlaying) _hurt.Play();
 			}

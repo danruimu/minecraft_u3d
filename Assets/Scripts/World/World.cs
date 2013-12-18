@@ -27,11 +27,17 @@ public class World : MonoBehaviour {
 	private GameObject _steve;
 	private ArrayList _zombies;
 
-	private const int maxZombies = 10;
+	private int maxZombies;
+	private int zombiesDead;
 
-//	private int xa,ya,za;
-//	private int xd,yd,zd;
+	private Rect infoPlayer;
+	private GUI.WindowFunction theInfoPlayer;
 
+	private int day,month,year;
+
+	public void addZombies(int cant) {
+		maxZombies += cant;
+	}
 
 	private void setMaterialIndexs(){
 		BlockType[] types = (BlockType[])Enum.GetValues (typeof(BlockType));
@@ -89,9 +95,13 @@ public class World : MonoBehaviour {
 		return res;
 	}
 
+	void OnGUI() {
+		GUI.Window(0, infoPlayer, theInfo, "SCORE");
+	}
+
 	private void init() {
 		DateTime tiempo1 = DateTime.Now;
-		
+
 		setMaterialIndexs();
 
 		GameObject GO;
@@ -142,8 +152,14 @@ public class World : MonoBehaviour {
 		throw new Exception("numero no hexadecimal");
 	}
 
+	public void addZombiesDead() {
+		++zombiesDead;
+	}
+
 	void Start () {
 		init();
+		maxZombies = 5;
+		zombiesDead = 0;
 		DateTime tiempo1 = DateTime.Now;
 		collSouth = new GameObject("Colider der sur");
 		collSouth.transform.parent = transform;
@@ -182,6 +198,17 @@ public class World : MonoBehaviour {
 
 		_zombies = new ArrayList();
 		Debug.Log("resto de tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
+
+		infoPlayer = new Rect(10f, 10f, 150.0f, 60.0f);
+		infoPlayer.center = new Vector2(Screen.width-80.0f, 35.0f);
+		theInfoPlayer = theInfo;
+	}
+
+	void theInfo(int windowID) {
+		gameObject.GetComponent<CountingOfTime>().getDate (out day, out month, out year);
+		GUI.skin.textField.alignment = TextAnchor.MiddleCenter;
+		GUILayout.TextField("Killed Zombies: "+zombiesDead+"\n" +
+							"Date: "+day+"/"+month+"/"+year);
 	}
 	
 	// Update is called once per frame
@@ -199,6 +226,8 @@ public class World : MonoBehaviour {
 ////			else Debug.Log("failuer");
 //		}
 
+		gameObject.GetComponent<CountingOfTime>().getDate (out day, out month, out year);
+
 		if(gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
 			if(!enoughZombiesPlease()) {
 				spawnZombie();
@@ -212,6 +241,7 @@ public class World : MonoBehaviour {
 			}
 			if(_zombies.Count > 0) {
 				_zombies.Clear();
+				addZombies(5);
 			}
 		}
 	}
@@ -224,14 +254,18 @@ public class World : MonoBehaviour {
 				if(Vector3.Distance(z.transform.position, _steve.transform.position) < 20.0f) ++zombiesNear;
 			}
 		}
-		if(zombiesNear >= maxZombies) return true; 	//maximum of 10 zombies near steve
+		if(zombiesNear > maxZombies) return true; 	//maximum of maxZombies zombies near steve
 
-		return _zombies.Count*sizex*sizez > maxZombies; //maximum of 10 zombies per chunk
+		return _zombies.Count > maxZombies; //maximum of 10 zombies per chunk
 	}
 
 	private void spawnZombie() {
-		float desX = UnityEngine.Random.Range (10.0f, 50.0f);
-		float desZ = UnityEngine.Random.Range (10.0f, 50.0f);
+		float desX = UnityEngine.Random.Range (10.0f, 25.0f);
+		float desZ = UnityEngine.Random.Range (10.0f, 25.0f);
+		int xRand = UnityEngine.Random.Range (1, 3); if(xRand == 2) xRand = -1;
+		int zRand = UnityEngine.Random.Range (1, 3); if(zRand == 2) zRand = -1;
+		desX *= xRand;
+		desZ *= zRand;
 		Vector3 pos;
 		pos.x = _steve.transform.position.x + desX;
 		pos.z = _steve.transform.position.z + desZ;
