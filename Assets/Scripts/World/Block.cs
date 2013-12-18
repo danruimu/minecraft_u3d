@@ -14,7 +14,8 @@ public enum BlockType {
 	GoldOre=14,
 	LapisOre=21,
 	Sand=12,
-	Clay=82
+	Clay=82,
+	WoodenPlanks=5
 };
 
 public class Block {

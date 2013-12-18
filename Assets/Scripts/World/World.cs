@@ -4,11 +4,18 @@ using System;
 using System.IO;
 using System.Text;
 
+public enum ItemType{
+	Stick=1,
+	Torch=2
+}
+
 public class World : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject chunkPrefab;
 	public Material[] mats;
+	public Texture[] texturesItem;
+	public static Texture[] texts;
 	public string seed;
 	public static int sizex = 2;
 	public static int sizez = 2;
@@ -61,6 +68,10 @@ public class World : MonoBehaviour {
 					}
 				}
 			}
+		}
+		for(int i=0;i<mats.Length;i++){
+			texts[i] = mats[i].mainTexture;
+			Debug.Log(texturesItem[0].name);
 		}
 	}
 
@@ -157,6 +168,7 @@ public class World : MonoBehaviour {
 		pos.y = getHeight(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z));
 		pos.y += 2.0f;
 		_steve.transform.position = pos;
+		InventoryManagment.texturesItem = texturesItem;
 
 		_zombies = new ArrayList();
 	}
@@ -177,13 +189,11 @@ public class World : MonoBehaviour {
 //		}
 
 		if(gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
-			Debug.Log ("Night");
 			if(!enoughZombiesPlease()) {
 				Debug.Log ("Spawn!");
 				spawnZombie();
 			}
 		} else {
-			Debug.Log ("NOT night");
 			foreach(GameObject z in _zombies) {
 				if(z != null) {
 					z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
@@ -266,5 +276,11 @@ public class World : MonoBehaviour {
 	public static int[] getMatPointerArray(BlockType type){
 		if(indexsBlocks[(int)type] == null) throw new Exception("material " + type + " no dins del sistema");
 		return indexsBlocks[(int)type];
+	}
+
+	public static Texture getTextureBlock(BlockType type){
+		int []indexs = indexsBlocks[(int)type];
+		if(indexs == null) throw new Exception("material " + type + " no dins del sistema");
+		return texts[indexs[0]];
 	}
 }
