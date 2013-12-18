@@ -4,10 +4,6 @@ using System;
 using System.IO;
 using System.Text;
 
-public enum ItemType{
-	Stick=0,
-	Torch=-1
-}
 
 public class World : MonoBehaviour {
 

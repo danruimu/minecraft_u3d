@@ -348,8 +348,8 @@ public class InventoryManagment : MonoBehaviour {
 		}
 		else{
 			if(Input.GetKeyDown(KeyCode.A)){
-				for (int i=0;i<5;i++){
-					addInventory(-1,(byte)64);
+				for (int i=0;i<1;i++){
+					addInventory(5,(byte)64);
 				}
 //				GameObject go = (GameObject)Instantiate(prefab);
 //				Item it = go.GetComponent<Item>();
@@ -368,6 +368,13 @@ public class InventoryManagment : MonoBehaviour {
 		if(itemsBarra[posInv] == null)return false;
 		if(itemsBarra[posInv].getId() < 0)return false;
 		bt = itemsBarra[posInv].getId();
+		return true;
+	}
+
+	public bool resItem(byte num) {
+		if(itemsBarra[posInv] == null)return false;
+		if(itemsBarra[posInv].getId() < 0)return false;
+		itemsBarra[posInv].delQuantity(num);
 		return true;
 	}
 }
