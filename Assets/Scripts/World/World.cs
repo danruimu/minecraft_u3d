@@ -96,7 +96,7 @@ public class World : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		GUI.Window(0, infoPlayer, theInfo, "SCORE");
+		GUI.Window(2, infoPlayer, theInfo, "SCORE");
 	}
 
 	private void init() {

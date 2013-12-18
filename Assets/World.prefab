@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 108: {fileID: 10800000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - 23: {fileID: 2300002}
   - 108: {fileID: 10800002}
   - 122: {fileID: 12200000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: af855dab554844e44b3d351bb56205fb, type: 3}
   - {fileID: 2800000, guid: 5c7eee020fd3809478caf9ea4d12e4ca, type: 3}
   seed: Penes
-  steve: {fileID: 100040, guid: 9c3c7e6f224fd2b44a75fc7b1a1e38c9, type: 2}
+  steve: {fileID: 100092, guid: 9c3c7e6f224fd2b44a75fc7b1a1e38c9, type: 2}
   zombie: {fileID: 100084, guid: 22a8a256a1eff5c488d5daf19a188901, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
