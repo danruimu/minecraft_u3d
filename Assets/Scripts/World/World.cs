@@ -163,9 +163,6 @@ public class World : MonoBehaviour {
 		bc = collWest.AddComponent<BoxCollider>();
 		bc.size = new Vector3(1f,Chunk.sizey,sizez*Chunk.sizez);
 		bc.center = new Vector3(-0.5f,Chunk.sizey/2f,sizez*Chunk.sizez/2.0f);
-//		xa=xd=za=zd=0;
-//		yd=0;
-//		ya=70;
 
 		_steve = (GameObject) Instantiate (steve);
 		_steve.GetComponent<MouseClick>().world = this;
