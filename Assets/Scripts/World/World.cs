@@ -193,21 +193,21 @@ public class World : MonoBehaviour {
 ////			else Debug.Log("failuer");
 //		}
 
-		if(gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
-			if(!enoughZombiesPlease()) {
-				spawnZombie();
-			}
-		} else {
-			foreach(GameObject z in _zombies) {
-				if(z != null) {
-					//kill the zombie
-					z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
-				}
-			}
-			if(_zombies.Count > 0) {
-				_zombies.Clear();
-			}
-		}
+//		if(gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
+//			if(!enoughZombiesPlease()) {
+//				spawnZombie();
+//			}
+//		} else {
+//			foreach(GameObject z in _zombies) {
+//				if(z != null) {
+//					//kill the zombie
+//					z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
+//				}
+//			}
+//			if(_zombies.Count > 0) {
+//				_zombies.Clear();
+//			}
+//		}
 	}
 
 	//Returns true if there are enough zombies at the scene (so another zombie cannot be spawn)
