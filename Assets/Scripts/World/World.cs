@@ -281,10 +281,10 @@ public class World : MonoBehaviour {
 	}
 
 	private void spawnZombie() {
-		float desX = UnityEngine.Random.Range (10.0f, 25.0f);
-		float desZ = UnityEngine.Random.Range (10.0f, 25.0f);
-		int xRand = UnityEngine.Random.Range (1, 3); if(xRand == 2) xRand = -1;
-		int zRand = UnityEngine.Random.Range (1, 3); if(zRand == 2) zRand = -1;
+		float desX = UnityEngine.Random.Range (10.0f, 20.0f);
+		float desZ = UnityEngine.Random.Range (10.0f, 20.0f);
+		int xRand = UnityEngine.Random.Range (1, 3); if(xRand == 2) xRand = -1; else xRand = 1;
+		int zRand = UnityEngine.Random.Range (1, 3); if(zRand == 2) zRand = -1; else zRand = 1;
 		desX *= xRand;
 		desZ *= zRand;
 		Vector3 pos;

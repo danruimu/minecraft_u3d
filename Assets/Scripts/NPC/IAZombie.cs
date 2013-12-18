@@ -6,7 +6,7 @@ public class IAZombie : MonoBehaviour {
 	#region constant variables
 	private const float minTimeBetweenActions = 3.0f;
 	private const float actionDuration = 1.0f;
-	private const float detectionDistance = 10.0f;
+	private const float detectionDistance = 20.0f;
 	private const float damageAnimationDuration = 1.0f;
 	private const float timeBetweenSayAnithing = 5.0f;
 	#endregion
@@ -96,6 +96,7 @@ public class IAZombie : MonoBehaviour {
 		_step.playOnAwake = false;
 		_step.clip = step;
 		_step.loop = true;
+		_step.volume = 0.25f;
 		_step.Stop();
 	}
 	

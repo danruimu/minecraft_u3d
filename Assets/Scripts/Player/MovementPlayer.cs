@@ -99,6 +99,7 @@ public class MovementPlayer : MonoBehaviour {
 		_step.playOnAwake = false;
 		_step.clip = step;
 		_step.loop = true;
+		_step.volume = 0.25f;
 		_step.Stop();
 	}
 

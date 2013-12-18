@@ -408,6 +408,9 @@ public class MouseClick : MonoBehaviour {
 					case BlockType.Stone:
 						_destroyStone.Play ();
 						break;
+					default:
+						_destroyStone.Play ();
+						break;
 					}
 				}
 
