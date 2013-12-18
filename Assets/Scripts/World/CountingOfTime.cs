@@ -7,7 +7,7 @@ public class CountingOfTime : MonoBehaviour {
 	public Camera sky;
 	public GameObject moon;
 
-	private float speed = 360.0f / (24.0f*60f); //one hour in game = minute in real life
+	private float speed = 360.0f / (24.0f*0.1f); //one hour in game = minute in real life
 	private float time;
 
 	//Days is set to simulate the moon phases
@@ -58,6 +58,10 @@ public class CountingOfTime : MonoBehaviour {
 		sunHeight += astroHeight; //from [0,astroHeight*2]
 		if(sky != null) {
 			sky.camera.backgroundColor = new Color(0.0f, 0.0f + sunHeight/(astroHeight*2.0f) - 0.25f, 0.0f + sunHeight/(astroHeight*2.0f) - 0.25f, 1.0f);
+			float aux = Mathf.Max(0.0f, sunHeight/astroHeight);
+			aux /= 3.0f;
+			aux += 0.1f;
+			RenderSettings.ambientLight = new Color(aux, aux, aux);
 		}
 
 		//Sun and Moon will be less intense as are falling down
