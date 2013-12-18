@@ -13,8 +13,8 @@ public class World : MonoBehaviour {
 	public Texture[] texturesItem;
 	public static Texture[] texts;
 	public string seed;
-	public static int sizex = 2;
-	public static int sizez = 2;
+	public static int sizex = 12;
+	public static int sizez = 12;
 	public const int numMaxMaterials = 256;
 
 	private static int[][] indexsBlocks;
@@ -101,8 +101,8 @@ public class World : MonoBehaviour {
 
 		byte[] heightmap;
 		byte[] data;
-		for (int x=0;x<sizex;x++){
-			for(int z=0;z<sizez;z++){
+		for (int z=0;z<sizex;z++){
+			for(int x=0;x<sizez;x++){
 				GO = (GameObject)Instantiate(chunkPrefab);
 				GO.name = "Chunk[" + x + ","+z+"]";
 				GO.transform.parent = transform;
@@ -117,7 +117,7 @@ public class World : MonoBehaviour {
 		//pinto chunks
 		for (int x=0;x<sizez;x++){
 			for(int z=0;z<sizez;z++){
-				chunks[x,z].ompleMesh();
+				chunks[x,z].ompleMesh(42);
 			}
 		}
 		Debug.Log("creacion " + sizex + " * " + sizez + " Chunks -> tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
@@ -173,8 +173,8 @@ public class World : MonoBehaviour {
 		_steve.GetComponent<MouseClick>().world = this;
 		this.gameObject.GetComponent<CountingOfTime>().sky = _steve.GetComponent<MovementPlayer>().steveEyes;
 		Vector3 pos;
-		pos.x = UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
-		pos.z = UnityEngine.Random.Range (1f, Chunk.sizez * sizez);
+		pos.x = 0f;//UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
+		pos.z = 0f;//UnityEngine.Random.Range (1f, Chunk.sizez * sizez);
 		pos.y = getHeight(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z));
 		pos.y += 2.0f;
 		_steve.transform.position = pos;

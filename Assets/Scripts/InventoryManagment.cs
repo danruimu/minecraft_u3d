@@ -12,7 +12,7 @@ public class InventoryManagment : MonoBehaviour {
 	public GameObject prefab;
 	public static Texture[] texturesItem;
 
-	public static int numCrafting = 1;
+	public static int numCrafting = 8;
 	public static int[][] craftings;
 	public static int[][] quantities;
 	public static int[] ids;
@@ -38,12 +38,33 @@ public class InventoryManagment : MonoBehaviour {
 		craftings = new int[numCrafting][];
 		quantities = new int[numCrafting][];
 		ids = new int[numCrafting];
-		for(int i=0;i<numCrafting;i++){
-			craftings[i] = new int[]{-1,-1,0,0};
-			quantities[i] = new int[]{0,0,1,2};
-			ids[i] = 2;
+		craftings[0] = new int[]{-10,-10,-10,17};
+		quantities[0] = new int[]{0,0,0,1};
+		ids[0] = 5;
+		craftings[1] = new int[]{-10,-10,17,-10};
+		quantities[1] = new int[]{0,0,1,0};
+		ids[1] = 5;
+		craftings[2] = new int[]{-10,17,-10,-10};
+		quantities[2] = new int[]{0,1,0,0};
+		ids[2] = 5;
+		craftings[3] = new int[]{17,-10,-10,-10};
+		quantities[3] = new int[]{1,0,0,0};
+		ids[3] = 5;
 
-		}
+		craftings[4] = new int[]{5,-10,5,-10};
+		quantities[4] = new int[]{1,0,1,0};
+		ids[4] = -1;
+		craftings[5] = new int[]{-10,5,-10,5};
+		quantities[5] = new int[]{0,1,0,1};
+		ids[5] = -1;
+
+		craftings[6] = new int[]{-1,-10,16,-10};
+		quantities[6] = new int[]{1,0,1,0};
+		ids[6] = 0;
+		craftings[7] = new int[]{-10,-1,-10,16};
+		quantities[7] = new int[]{0,1,0,1};
+		ids[7] = 0;
+
 	}
 
 	void Start(){
@@ -241,7 +262,7 @@ public class InventoryManagment : MonoBehaviour {
 						borrar(target);
 						itemsCraft[fila*2+col] = target;
 						int craftPotencial = comprovaCraft();
-						if(craftPotencial!=-1){
+						if(craftPotencial!=-10){
 							GameObject go = new GameObject();
 							GUIText text = go.AddComponent<GUIText>();
 							text.anchor = TextAnchor.LowerLeft;
@@ -259,7 +280,7 @@ public class InventoryManagment : MonoBehaviour {
 								}
 							}
 							Texture t;
-							if(id < 0){
+							if(id <= 0){
 								t = texturesItem[-id];
 							}
 							else{
@@ -295,7 +316,7 @@ public class InventoryManagment : MonoBehaviour {
 	private static int comprovaCraft(){
 		int[]mostra=new int[itemsCraft.Length];
 		for(int i=0;i<mostra.Length;i++){
-			if(itemsCraft[i]==null)mostra[i]= -1;
+			if(itemsCraft[i]==null)mostra[i]= -10;
 			else mostra[i] = itemsCraft[i].getId();
 		}
 		bool nextCraft;
@@ -308,7 +329,7 @@ public class InventoryManagment : MonoBehaviour {
 			}
 			if(!nextCraft)return i;
 		}
-		return -1;
+		return -10;
 	}
 	
 	void Update () {
@@ -350,7 +371,7 @@ public class InventoryManagment : MonoBehaviour {
 		else{
 			if(Input.GetKeyDown(KeyCode.A)){
 				for (int i=0;i<1;i++){
-					addInventory(5,(byte)64);
+					addInventory(17,(byte)64);
 				}
 //				GameObject go = (GameObject)Instantiate(prefab);
 //				Item it = go.GetComponent<Item>();

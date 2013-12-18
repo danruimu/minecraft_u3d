@@ -7,7 +7,7 @@ public class CountingOfTime : MonoBehaviour {
 	public Camera sky;
 	public GameObject moon;
 
-	private float speed = 360.0f / (24.0f*0.1f); //one hour in game = minute in real life
+	private float speed = 360.0f / (24.0f*60f); //one hour in game = minute in real life
 	private float time;
 
 	//Days is set to simulate the moon phases

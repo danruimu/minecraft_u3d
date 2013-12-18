@@ -92,13 +92,13 @@ public class Chunk : MonoBehaviour {
 			for(int cz=0;cz<Chunk.sizez;cz++){
 				height[cx,cz] = heightmap[cx*Chunk.sizez + cz];
 				for(int cy=0;cy<Chunk.sizey && cy < height[cx,cz];cy++){
-					BlockType val = (BlockType)data[cx*Chunk.sizez*Chunk.sizey + cz*Chunk.sizey + cy];
+					BlockType val = (BlockType)data[cz*Chunk.sizex*Chunk.sizey + cx*Chunk.sizey + cy];
 					/*8=aiguaquieta,9=aiguamoving,10=lavamoving,11=lavaquieta
 					,31=tallgrass,78=nieve,106=vines,111=lylipas,39&40=setas,37=dandelion,52=monsterspawner,
-					 54=chest*/
+					 54=chest,85=fence*/
 					if((int)val > 0 && (int)val != 8 && (int)val != 10 &&(int)val != 9 && (int)val != 11 && (int)val != 31
 					   && (int)val != 111 && (int)val != 78 && (int)val != 106 && (int)val != 39 && (int)val != 40
-					   && (int)val != 37 && (int)val != 52 && (int) val != 54)
+					   && (int)val != 37 && (int)val != 52 && (int) val != 54 && (int)val!=85)
 						cubes[cx,cy,cz] = new Block(val);
 				}
 			}
@@ -109,13 +109,18 @@ public class Chunk : MonoBehaviour {
 		return height[x,z];
 	}
 
-	public void ompleMesh(){
+	public void ompleMesh(int alturaMaxima){
 		//TODO:barra progres
 		for(int x = 0; x < sizex; x++){
 			for (int z=0; z < sizez; z++){
 				for(int y = 0;y <= height[x,z] && y <sizey; y++){
-					if(cubes[x,y,z]!=null)
+					if(y<alturaMaxima && cubes[x,y,z]==null){
+						cubes[x,y,z] = new Block(BlockType.Stone);
+						continue;
+					}
+					if(y >= alturaMaxima && cubes[x,y,z]!=null){
 						addCube(cubes[x,y,z],new Vector3(x,y,z),false);
+					}
 				}
 			}
 		}
