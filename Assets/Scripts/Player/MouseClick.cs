@@ -292,7 +292,7 @@ public class MouseClick : MonoBehaviour {
 				torchs.Remove(torchHit);
 				Destroy(torchHit);
 				if(!_destroyWood.isPlaying) _destroyWood.Play();
-				gameObject.GetComponent<InventoryManagment>().addInventory(-1, (byte) 1);
+				gameObject.GetComponent<InventoryManagment>().addInventory(0, (byte) 1);
 
 			} else if(currentWeapon.CompareTag("PickAxe")) {
 				Vector3 cubePos = rhit.point;
