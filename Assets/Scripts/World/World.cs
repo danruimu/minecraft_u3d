@@ -35,6 +35,11 @@ public class World : MonoBehaviour {
 
 	private int day,month,year;
 
+	public Texture textureForeground;
+	private float progress;
+	private bool started = false;
+	private DateTime tiempo1;
+	
 	public void addZombies(int cant) {
 		maxZombies += cant;
 	}
@@ -96,12 +101,19 @@ public class World : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		GUI.Window(2, infoPlayer, theInfo, "SCORE");
+		if(started){
+			Time.timeScale = 0f;
+			GUI.DrawTexture(new Rect(0,0,((float)Screen.width)*progress,20),textureForeground);
+			GUI.Label(new Rect(Screen.width/2f,0,150,20),"Loading Level... "+((int)(progress*100f))+"%");
+		} else{
+			Time.timeScale = 1f;
+			GUI.Window(2, infoPlayer, theInfo, "SCORE");
+		}
 	}
 
-	private void init() {
-		DateTime tiempo1 = DateTime.Now;
+	private IEnumerator init() {
 
+		
 		setMaterialIndexs();
 
 		GameObject GO;
@@ -122,14 +134,27 @@ public class World : MonoBehaviour {
 				data = convert(File.ReadAllBytes("milf_final/" + x + "_" + z + ".b.milf"));
 				c.fillColums(heightmap,data);
 				chunks[x,z] = c;
+
 			}
 		}
+		yield return new WaitForEndOfFrame();
+		_steve.GetComponent<MovementPlayer>().enabled = false;
+		_steve.GetComponent<MouseClick>().enabled = false;
+		
+		
 		//pinto chunks
 		for (int x=0;x<sizez;x++){
 			for(int z=0;z<sizez;z++){
-				chunks[x,z].ompleMesh(42);
+				chunks[x,z].ompleMesh(50);
+				progress = ((float)(x*sizex + z))/((float)(sizez*sizex));
+				started = true;
+				yield return new WaitForEndOfFrame();
 			}
 		}
+		_steve.GetComponent<MovementPlayer>().enabled = true;
+		_steve.GetComponent<MouseClick>().enabled = true;
+		
+		started = false;
 		Debug.Log("creacion " + sizex + " * " + sizez + " Chunks -> tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
 	}
 
@@ -157,10 +182,11 @@ public class World : MonoBehaviour {
 	}
 
 	void Start () {
-		init();
+		tiempo1 = DateTime.Now;
+		progress = 0;
+		StartCoroutine(init());
 		maxZombies = 5;
 		zombiesDead = 0;
-		DateTime tiempo1 = DateTime.Now;
 		collSouth = new GameObject("Colider der sur");
 		collSouth.transform.parent = transform;
 		collNorth = new GameObject("ahi va collider!");
@@ -189,15 +215,14 @@ public class World : MonoBehaviour {
 		_steve.GetComponent<MouseClick>().world = this;
 		this.gameObject.GetComponent<CountingOfTime>().sky = _steve.GetComponent<MovementPlayer>().steveEyes;
 		Vector3 pos;
-		pos.x = 0f;//UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
-		pos.z = 0f;//UnityEngine.Random.Range (1f, Chunk.sizez * sizez);
+		pos.x = UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
+		pos.z = UnityEngine.Random.Range (1f, Chunk.sizez * sizez);
 		pos.y = getHeight(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z));
-		pos.y += 2.0f;
+		pos.y += 7.5f;
 		_steve.transform.position = pos;
 		InventoryManagment.texturesItem = texturesItem;
 
 		_zombies = new ArrayList();
-		Debug.Log("resto de tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
 
 		infoPlayer = new Rect(10f, 10f, 150.0f, 75.0f);
 		infoPlayer.center = new Vector2(Screen.width-80.0f, 47.5f);
