@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour {
 			if(isPause) Time.timeScale = 0f;
 			else Time.timeScale = 1f;
 		}
-		Screen.showCursor = isPause;
+		Screen.showCursor = isPause || InventoryManagment.invEnabled;
 	}
 
 	void OnGUI() {
