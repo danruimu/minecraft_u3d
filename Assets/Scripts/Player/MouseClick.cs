@@ -223,9 +223,10 @@ public class MouseClick : MonoBehaviour {
 					z -= 1	;
 				}
 
-				BlockType bt;
-				if(gameObject.GetComponent<InventoryManagment>().getItem(out bt)) {
-					if(/*bt == BlockType.Torch*/!(rhit.normal.y <= -1.0f) && !rhit.collider.CompareTag("Torch")) {
+				int bt;
+				bool res = gameObject.GetComponent<InventoryManagment>().getItem(out bt);
+				if(res) {
+					if((int)bt == 0 && !(rhit.normal.y <= -1.0f) && !rhit.collider.CompareTag("Torch")) {
 						GameObject t = (GameObject) Instantiate(torch);
 						Vector3 posTorch = new Vector3(Mathf.Floor (rhit.point.x), Mathf.Floor (rhit.point.y), Mathf.Floor(rhit.point.z));
 						Vector3 eulerRotTorch = new Vector3(0.0f, 0.0f, 0.0f);
@@ -254,7 +255,7 @@ public class MouseClick : MonoBehaviour {
 						t.transform.eulerAngles = eulerRotTorch;
 						torchs.Add(t);
 					} else if(rhit.collider.CompareTag("Chunk")) {
-						if(!world.addCube(x, y, z, bt)) {
+						if(!world.addCube(x, y, z, (BlockType) bt)) {
 							Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
 						}
 					}
@@ -286,6 +287,7 @@ public class MouseClick : MonoBehaviour {
 				torchs.Remove(torchHit);
 				Destroy(torchHit);
 				if(!_destroyWood.isPlaying) _destroyWood.Play();
+				gameObject.GetComponent<InventoryManagment>().addInventory(-1, (byte) 1);
 
 			} else if(currentWeapon.CompareTag("PickAxe")) {
 				Vector3 cubePos = rhit.point;
@@ -412,6 +414,7 @@ public class MouseClick : MonoBehaviour {
 						damageDoneToBlock = 0;
 
 						Destroy(_destroyPlane);
+						gameObject.GetComponent<InventoryManagment>().addInventory((int)bt, (byte)1);
 					}
 				}
 			}
