@@ -58,7 +58,7 @@ public class MouseClick : MonoBehaviour {
 	private int lastZ;
 
 	public GameObject torch;
-	private ArrayList torchs;
+	public ArrayList torchs;
 
 	//public 
 
