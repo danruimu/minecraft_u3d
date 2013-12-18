@@ -13,8 +13,8 @@ public class World : MonoBehaviour {
 	public Texture[] texturesItem;
 	public static Texture[] texts;
 	public string seed;
-	public static int sizex = 6;
-	public static int sizez = 6;
+	public static int sizex = 2;
+	public static int sizez = 2;
 	public const int numMaxMaterials = 256;
 
 	private static int[][] indexsBlocks;
@@ -41,7 +41,9 @@ public class World : MonoBehaviour {
 			string typeName = noms[i];
 			int indexBase = 0;
 			while(indexBase<mats.Length && mats[indexBase].name.CompareTo(typeName) != 0)indexBase++;
-			if(indexBase>=mats.Length) throw new Exception("material no dins del sistema");
+			if(indexBase>=mats.Length) {
+				throw new Exception("material no dins del sistema");
+			}
 			indexsBlocks[(int)types[i]] = new int[6];
 			for(int j = 0;j<6;j++){
 				indexsBlocks[(int)types[i]][j] = indexBase;
@@ -142,6 +144,7 @@ public class World : MonoBehaviour {
 
 	void Start () {
 		init();
+		DateTime tiempo1 = DateTime.Now;
 		collSouth = new GameObject("Colider der sur");
 		collSouth.transform.parent = transform;
 		collNorth = new GameObject("ahi va collider!");
@@ -178,6 +181,7 @@ public class World : MonoBehaviour {
 		InventoryManagment.texturesItem = texturesItem;
 
 		_zombies = new ArrayList();
+		Debug.Log("resto de tiempoTotal = " + new TimeSpan(DateTime.Now.Ticks - tiempo1.Ticks).ToString());
 	}
 	
 	// Update is called once per frame
@@ -195,21 +199,21 @@ public class World : MonoBehaviour {
 ////			else Debug.Log("failuer");
 //		}
 
-//		if(gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
-//			if(!enoughZombiesPlease()) {
-//				spawnZombie();
-//			}
-//		} else {
-//			foreach(GameObject z in _zombies) {
-//				if(z != null) {
-//					//kill the zombie
-//					z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
-//				}
-//			}
-//			if(_zombies.Count > 0) {
-//				_zombies.Clear();
-//			}
-//		}
+		if(gameObject.GetComponent<CountingOfTime>().ThisIsNight()) {
+			if(!enoughZombiesPlease()) {
+				spawnZombie();
+			}
+		} else {
+			foreach(GameObject z in _zombies) {
+				if(z != null) {
+					//kill the zombie
+					z.GetComponent<IAZombie>().damage(10.0f, new Vector3(0f,0f,0f), new Vector3(0f,0f,0f));
+				}
+			}
+			if(_zombies.Count > 0) {
+				_zombies.Clear();
+			}
+		}
 	}
 
 	//Returns true if there are enough zombies at the scene (so another zombie cannot be spawn)
