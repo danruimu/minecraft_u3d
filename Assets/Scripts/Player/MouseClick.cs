@@ -254,9 +254,14 @@ public class MouseClick : MonoBehaviour {
 						t.transform.position = posTorch;
 						t.transform.eulerAngles = eulerRotTorch;
 						torchs.Add(t);
+
+						gameObject.GetComponent<InventoryManagment>().resItem((byte) 1);
+
 					} else if(rhit.collider.CompareTag("Chunk")) {
 						if(!world.addCube(x, y, z, (BlockType) bt)) {
 							Debug.LogError("Cannot add Cube at "+x+","+y+","+z);
+						} else {
+							gameObject.GetComponent<InventoryManagment>().resItem((byte) 1);
 						}
 					}
 				}
