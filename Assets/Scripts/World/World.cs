@@ -13,8 +13,8 @@ public class World : MonoBehaviour {
 	public Texture[] texturesItem;
 	public static Texture[] texts;
 	public string seed;
-	public static int sizex = 8;
-	public static int sizez = 8;
+	public static int sizex = 12;
+	public static int sizez = 12;
 	public const int numMaxMaterials = 256;
 
 	private static int[][] indexsBlocks;
@@ -185,7 +185,9 @@ public class World : MonoBehaviour {
 		tiempo1 = DateTime.Now;
 		progress = 0;
 		StartCoroutine(init());
-		maxZombies = 5;
+		//QUITAR
+		maxZombies = 0;
+//		maxZombies = 5;
 		zombiesDead = 0;
 		collSouth = new GameObject("Colider der sur");
 		collSouth.transform.parent = transform;
@@ -290,7 +292,8 @@ public class World : MonoBehaviour {
 			}
 			if(_zombies.Count > 0) {
 				_zombies.Clear();
-				addZombies(5);
+				//QUITAR
+//				addZombies(5);
 			}
 		}
 	}
@@ -303,7 +306,7 @@ public class World : MonoBehaviour {
 				if(Vector3.Distance(z.transform.position, _steve.transform.position) < 20.0f) ++zombiesNear;
 			}
 		}
-		if(zombiesNear > maxZombies) return true; 	//maximum of maxZombies zombies near steve
+		if(zombiesNear >= maxZombies) return true; 	//maximum of maxZombies zombies near steve
 
 		return _zombies.Count > maxZombies; //maximum of 10 zombies per chunk
 	}
@@ -359,7 +362,10 @@ public class World : MonoBehaviour {
 	}
 
 	private Vector3 relativePos(Vector3 pos){
-		return new Vector3(((int)pos.x)%Chunk.sizex,(int)pos.y,((int)pos.z)%Chunk.sizez);
+		int x = Mathf.FloorToInt(pos.x)%Chunk.sizex;
+		int y = Mathf.FloorToInt(pos.y);
+		int z = Mathf.FloorToInt(pos.z)%Chunk.sizez;
+		return new Vector3(x,y,z);
 	}
 
 	private Chunk getChunk(Vector3 p){
@@ -385,7 +391,14 @@ public class World : MonoBehaviour {
 	}
 
 	public bool addFace(Vector3 pos,faceType face){
-		if(posValida(pos))return getChunk(pos).addFace(relativePos(pos),face);
+		if(posValida(pos)){
+			Chunk c = getChunk(pos);
+			Vector3 rpos = relativePos(pos);
+			bool res = c.addFace(rpos,face);
+			c.meshLoad();
+			return res;
+
+		}
 		return false;
 	}
 	

@@ -127,7 +127,7 @@ public class Chunk : MonoBehaviour {
 		meshLoad(false);
 	}
 
-	private void meshLoad(bool update = true){
+	public void meshLoad(bool update = true){
 		if(update)
 			mesh.Clear();
 		mesh.subMeshCount = numMaterials;
@@ -169,8 +169,11 @@ public class Chunk : MonoBehaviour {
 		for(int face=0;face<numFaces;face++){
 			Vector3 colliding = props.posiciones[face] + position;
 			if(existsCube(colliding)){
-				if(insideChunk(colliding))
-					if(addFace(colliding,(faceType)(face^1)))getBlock(colliding).initCollider(colliding,this);
+				if(insideChunk(colliding)){
+					if(addFace(colliding,(faceType)(face^1))){
+						getBlock(colliding).initCollider(colliding,this);
+					}
+				}
 				else{
 					father.addFace(chunkPosition + colliding,(faceType)(face^1));
 				}
@@ -234,6 +237,7 @@ public class Chunk : MonoBehaviour {
 			Debug.LogError("cara a afegir ja afegida");
 			return false;
 		}
+		return true;
 	}
 
 	public void delFace(Vector3 pos,faceType face,bool update=false){
@@ -298,7 +302,9 @@ public class Chunk : MonoBehaviour {
 	}
 
 	private bool insideChunk(Vector3 pos){
-		return (pos.x >=0 && pos.y>=0 && pos.z>=0 && pos.x < sizex && pos.y < sizey && pos.z < sizez);
+		if(pos.x <0 || pos.y<0 || pos.z<0)return false;
+		if(pos.x >=sizex || pos.y>=sizey || pos.z>=sizez)return false;
+		return true;
 	}
 
 	public bool existsCube(Vector3 position){
