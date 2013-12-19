@@ -13,8 +13,8 @@ public class World : MonoBehaviour {
 	public Texture[] texturesItem;
 	public static Texture[] texts;
 	public string seed;
-	public static int sizex = 12;
-	public static int sizez = 12;
+	public static int sizex = 8;
+	public static int sizez = 8;
 	public const int numMaxMaterials = 256;
 
 	private static int[][] indexsBlocks;
@@ -213,7 +213,10 @@ public class World : MonoBehaviour {
 
 		_steve = (GameObject) Instantiate (steve);
 		_steve.GetComponent<MouseClick>().world = this;
-		this.gameObject.GetComponent<CountingOfTime>().sky = _steve.GetComponent<MovementPlayer>().steveEyes;
+
+		Camera[] auxCams = _steve.GetComponent<MovementPlayer>().steveEyes.GetComponentsInChildren<Camera>();
+		this.gameObject.GetComponent<CountingOfTime>().sky = auxCams[1/* <- Because of yes*/];
+
 		Vector3 pos;
 		pos.x = UnityEngine.Random.Range (1f, Chunk.sizex * sizex);
 		pos.z = UnityEngine.Random.Range (1f, Chunk.sizez * sizez);

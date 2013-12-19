@@ -7,7 +7,7 @@ public class CountingOfTime : MonoBehaviour {
 	public Camera sky;
 	public GameObject moon;
 
-	private float speed = 360.0f / (24.0f*15f); //one hour in game = 15s in real life
+	private float speed = 360.0f / (24.0f*1.0f); //one hour in game = 15s in real life
 	private float time;
 
 	//Days is set to simulate the moon phases
@@ -49,15 +49,15 @@ public class CountingOfTime : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		time+=Time.deltaTime;
-		if(time >= 1.0f) {
+//		if(time >= 1.0f) {
 			//Sun movement
 			sun.transform.RotateAround(new Vector3(sizeX/2.0f, 0.0f, sizeZ/2.0f), Vector3.left, speed*Time.deltaTime);
 
 			//Moon movement
 			moon.transform.RotateAround(new Vector3(sizeX/2.0f, 0.0f, sizeZ/2.0f), Vector3.left, speed*Time.deltaTime);
 
-			time = 0.0f;
-		}
+//			time = 0.0f;
+//		}
 
 		//Sky color
 		float sunHeight = sun.transform.position.y;	//from [-astroHeight,astroHeight]

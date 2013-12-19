@@ -11,7 +11,7 @@ Platform assembly: C:\Users\Dani\Desktop\minecraft_u3d\meinkampfz_Data\Managed\U
 Loading C:\Users\Dani\Desktop\minecraft_u3d\meinkampfz_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Dani\Desktop\minecraft_u3d\meinkampfz_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Dani\Desktop\minecraft_u3d\meinkampfz_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.134 seconds
+- Completed reload, in  0.087 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -591,7 +591,7 @@ null texture passed to GUI.DrawTexture
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-creacion 12 * 12 Chunks -> tiempoTotal = 00:00:42.1620180
+creacion 12 * 12 Chunks -> tiempoTotal = 00:00:37.1685695
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
@@ -630,6 +630,1262 @@ cara a afegir ja afegida
 cara a afegir ja afegida
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+StackOverflowException: The requested operation caused a stack overflow.
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+  at InventoryManagment.addInventory (Int32 id, Byte quantitat) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Chunk.delFace (Vector3 pos, faceType face, Boolean update) [0x00000] in <filename unknown>:0 
+  at World.delFace (Vector3 pos, faceType face) [0x00000] in <filename unknown>:0 
+  at Chunk.addCube (.Block cub, Vector3 position, Boolean update) [0x00000] in <filename unknown>:0 
+  at Chunk.newCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at World.addCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at MouseClick.putCube () [0x00000] in <filename unknown>:0 
+  at MouseClick.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Chunk.delFace (Vector3 pos, faceType face, Boolean update) [0x00000] in <filename unknown>:0 
+  at World.delFace (Vector3 pos, faceType face) [0x00000] in <filename unknown>:0 
+  at Chunk.addCube (.Block cub, Vector3 position, Boolean update) [0x00000] in <filename unknown>:0 
+  at Chunk.newCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at World.addCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at MouseClick.putCube () [0x00000] in <filename unknown>:0 
+  at MouseClick.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+cara a afegir ja afegida
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Chunk.delFace (Vector3 pos, faceType face, Boolean update) [0x00000] in <filename unknown>:0 
+  at Chunk.removeCube (Int32 x, Int32 y, Int32 z) [0x00000] in <filename unknown>:0 
+  at World.removeCube (Int32 x, Int32 y, Int32 z) [0x00000] in <filename unknown>:0 
+  at MouseClick.hitWhatever () [0x00000] in <filename unknown>:0 
+  at MouseClick.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Chunk.delFace (Vector3 pos, faceType face, Boolean update) [0x00000] in <filename unknown>:0 
+  at World.delFace (Vector3 pos, faceType face) [0x00000] in <filename unknown>:0 
+  at Chunk.addCube (.Block cub, Vector3 position, Boolean update) [0x00000] in <filename unknown>:0 
+  at Chunk.newCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at World.addCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at MouseClick.putCube () [0x00000] in <filename unknown>:0 
+  at MouseClick.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Cannot add Cube at 36,64,111
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Chunk.delFace (Vector3 pos, faceType face, Boolean update) [0x00000] in <filename unknown>:0 
+  at World.delFace (Vector3 pos, faceType face) [0x00000] in <filename unknown>:0 
+  at Chunk.addCube (.Block cub, Vector3 position, Boolean update) [0x00000] in <filename unknown>:0 
+  at Chunk.newCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at World.addCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at MouseClick.putCube () [0x00000] in <filename unknown>:0 
+  at MouseClick.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Chunk.delFace (Vector3 pos, faceType face, Boolean update) [0x00000] in <filename unknown>:0 
+  at World.delFace (Vector3 pos, faceType face) [0x00000] in <filename unknown>:0 
+  at Chunk.addCube (.Block cub, Vector3 position, Boolean update) [0x00000] in <filename unknown>:0 
+  at Chunk.newCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at World.addCube (Int32 x, Int32 y, Int32 z, BlockType type) [0x00000] in <filename unknown>:0 
+  at MouseClick.putCube () [0x00000] in <filename unknown>:0 
+  at MouseClick.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at Chunk.delFace (Vector3 pos, faceType face, Boolean update) [0x00000] in <filename unknown>:0 
+  at Chunk.removeCube (Int32 x, Int32 y, Int32 z) [0x00000] in <filename unknown>:0 
+  at World.removeCube (Int32 x, Int32 y, Int32 z) [0x00000] in <filename unknown>:0 
+  at MouseClick.hitWhatever () [0x00000] in <filename unknown>:0 
+  at MouseClick.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
 cara a afegir ja afegida
  
